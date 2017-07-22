@@ -1,8 +1,8 @@
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-var db = require('../dbhelpter');
+var db = require('../dbhelper');
 
-exports.register = function(app){
+exports.account = function(app){
 
     app.post('/login', urlencodedParser, function(request, response){
         //请求数据库

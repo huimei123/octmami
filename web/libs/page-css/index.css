@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	width: 100%;
+}
+.swiper-pagination{
+	bottom: 0px;
+}
+.swiper-pagination-bullet{
+	width:14px;
+	height:14px;
+}
+.swiper-container{
+	height:3.746667rem;
+
+}
+

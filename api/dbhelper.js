@@ -9,7 +9,7 @@ var uatDB = '3000phone';
 var productionDB = '4000phone';
 var  db = new mongodb.Db(productionDB, server);
 
-module.expres = {
+module.exports = {
     add: function(collection, data, callback){
         db.open(function(error, db){
             db.collection(collection, function(error, collection){

@@ -1,0 +1,25 @@
+body,ul,li,p,form,input,a,img{
+	margin: 0 ;
+	padding: 0 ; 
+}
+
+header{
+	width: 100%;
+	height: 1.173333rem;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	font-size: 0.48rem;
+	line-height: 1.333333rem;
+	background: #4dc496;
+	.header_left{
+		a{
+			display: block;
+			width:0.586667rem;
+			height:0.586667rem;
+		}
+	}
+	.header_title{
+
+	}
+}

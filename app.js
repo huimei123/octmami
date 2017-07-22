@@ -1,4 +1,4 @@
 var express = require('express');
-var router = require('./api/router/index.js')
+var router = require('./api/router/main.js')
 
-router.register(express);
+router.main(express);
