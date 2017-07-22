@@ -17,18 +17,9 @@
 	    <!--屏幕顶部条的颜色-->
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="shortcut icon" href="./libs/img/favicon.ico"  />
+        <link rel="stylesheet" href="./libs/common/common.css">
         <link rel="stylesheet" href="./libs/swiper/swiper-3.4.2.min.css">
         <link rel="stylesheet" type="text/css" href="./libs/page-css/index.css">
-        <script type="text/javascript">		
-		//动态设置viewport的scale
-		var iScale = 1;
-        iScale = iScale / window.devicePixelRatio;
-        document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=' + iScale + ',minimum-scale=' + iScale + ',maximum-scale=' + iScale + '">')
-		//动态计算html的font-size
-		var iWidth = document.documentElement.clientWidth;
-    	document.getElementsByTagName('html')[0].style.fontSize = iWidth / 10+ 'px';       	
-    	//1rem=75px
-		</script>
         <script src="./libs/common/common.js"></script>
         <script src="./libs/page-js/require.js" data-main="./libs/page-js/index"></script>
 
@@ -46,16 +37,17 @@
 	  	<div class="swiper-pagination"></div>
 	</div>
 	<section>
-		<div>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
-			<a href=""><img src="" alt=""></a>
+		<div class="icon_set">
+			<a href="" class="icon_list"><img src="./libs/img/pic_icon_set_01.png" alt="" class="icon_img">热销榜</a>
+			<a href="" class="icon_list"><img src="./libs/img/pic_icon_set_02.png" alt="" class="icon_img">分类</a>
+			<a href="" class="icon_list"><img src="./libs/img/pic_icon_set_03.png" alt="" class="icon_img">门店</a>
+			<a href="" class="icon_list"><img src="./libs/img/pic_icon_set_04.png" alt="" class="icon_img">领券</a>
+			<a href="" class="icon_list"><img src="./libs/img/c8f18e342d344031bb23860a9763625d.png" alt="" class="icon_img">防辐射服</a>
+			<a href="" class="icon_list"><img src="./libs/img/1795d57357da4a889260644e3ccbb42e.png" alt="" class="icon_img">时尚孕装</a>
+			<a href="" class="icon_list"><img src="./libs/img/5f331a541a8d4773809541a8303a1b0e.png" alt="" class="icon_img">内衣用品</a>
+			<a href="" class="icon_list"><img src="./libs/img/b76537024b2b49aaa7c545a32947585f.png" alt="" class="icon_img">妈咪护肤</a>
 		</div>
 	</section>
+	
     </body>
 </html>

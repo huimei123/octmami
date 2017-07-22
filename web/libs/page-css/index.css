@@ -18,3 +18,27 @@
 
 }
 
+.icon_set{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border-bottom: 0.013333rem solid black;
+	padding-bottom:0.133333rem;
+	margin:0.266667rem 0.066667rem 0 0.066667rem;
+}
+.icon_list{
+	width:25%;
+	font-size: 0.32rem;
+	text-align:center;
+	height:1.866667rem;
+	display: inline-block;
+	padding:0.213333rem 0 0 0 ;
+	line-height: 0.586667rem;
+}
+
+.icon_img{
+	width:1.066667rem;
+	height:1.066667rem;
+	display: block;
+	margin:0 auto;
+}
