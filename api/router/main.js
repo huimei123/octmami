@@ -1,8 +1,9 @@
 var path = require('path');
 var product = require('./product');
-var account = require('./account')
+var account = require('./account');
+var getBrand = require('./getBrand');
 
-exports.register = function(express){
+exports.main = function(express){
     var app = express();
 
     app.use(express.static(path.join(__dirname, '/')));
@@ -11,8 +12,8 @@ exports.register = function(express){
         response.send('Home Page');
     })    
 
-    product.register(app);
-    account.register(app);
-
-    app.listen(1703);
+    product.product(app);
+    account.account(app);
+    getBrand.getBrand(app);
+    app.listen(8888);
 }
