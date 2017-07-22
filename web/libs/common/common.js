@@ -11,4 +11,3 @@ document.write('<meta name="viewport" content="width=device-width,user-scalable=
 var iWidth = document.documentElement.clientWidth;
 document.getElementsByTagName('html')[0].style.fontSize = iWidth / 10+ 'px';       	
 //1rem=75px
-
