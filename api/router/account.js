@@ -41,7 +41,7 @@ exports.account = function(app){
         //搜索用户，找到用户，把之前的密码删除，添加新的，查找userName
         console.log(request.body);
         response.send({status: true, message:'获取密码'});
-       /* db.query('users',{username:request.body.username},function(result){
+        db.query('users',{username:request.body.username},function(result){
            if(result.length>0){
                 db.delete('users',request.body);
                 db.add('users', request.body, function(data){
@@ -52,7 +52,7 @@ exports.account = function(app){
                response.send({status: false, message:'用户还没注册'});
                 console.log('用户还没注册');
             }
-        })*/
+        })
     })
 
 }

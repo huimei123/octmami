@@ -30,11 +30,8 @@ exports.management = function(app){
 				response.send({status: false, message:'获取失败', data:[]});
 				console.log('获取失败');
 			}
-<<<<<<< HEAD
-			
-=======
->>>>>>> 2d219910cfce783531312c9c8dfb1b5f101e47c7
-		});
+
+		})
 	})
 	//删除商品
 	app.post('/delete',urlencodedParser,function(request, response){
@@ -51,13 +48,9 @@ exports.management = function(app){
 	//添加商品
 	app.post('/add',urlencodedParser,function(request, response){
 		db.add('octmamiProducts',request.body, function(result){
-			if(result.length>0){
-				response.send({status: true, message: '添加成功', data:result});
-				console.log('添加成功');
-			}else{
-				response.send({status: false, message: '添加失败', data:[]});
-				console.log('添加失败');
-			}
+			response.send({status: true, message: '添加成功', data:result});
+			console.log('添加成功');
+			
 		});
 	})
 	//修改商品
