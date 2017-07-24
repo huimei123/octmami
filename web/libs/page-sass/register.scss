@@ -1,0 +1,22 @@
+.section{
+	padding-top:2.08rem;
+	legend{
+		margin: 0 2rem 3rem;
+		border: 0.026667rem solid #b5b5b5;
+		border-radius: 0.133333rem;
+		padding: 0 0.48rem;
+		height: 1.173333rem;
+		line-height: 1.2rem;
+		input{
+			font-size:3.2rem;
+			color: #999;
+		}
+		i{
+			width: 0.533333rem;
+		    height: 0.533333rem;
+		    background: url(../libs/img//pic_icon_pd_01.png?v=6) -0.8rem -1.093333rem no-repeat;
+		    background-size: 6.666667rem;
+		    display: inline-block;
+		}
+	}
+}
