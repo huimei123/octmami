@@ -4,6 +4,7 @@ var account = require('./account');
 var getBrand = require('./getBrand');
 var management = require('./ManagementSystem');
 var timeLimit = require('./timeLimit');
+var selection = require('./selection');
 
 exports.main = function(express){
     var app = express();
@@ -36,6 +37,7 @@ exports.main = function(express){
     getBrand.getBrand(app);
     management.management(app);
     timeLimit.timeLimit(app);
+    selection.selection(app);
     app.listen(8888);
 
 }
