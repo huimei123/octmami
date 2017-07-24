@@ -1,3 +1,10 @@
+*{
+	margin: 0 ;
+	padding: 0;
+	
+}
+ul li{list-style: none;}
+a{text-decoration: none;}
 /* 禁用iPhone中Safari的字号自动调整 */
 html { -webkit-text-size-adjust: none; }
 /* 设置HTML5元素为块 */
