@@ -45,10 +45,10 @@ module.exports = {
             db.close();
         });
     },
-    update: function(collection, data, callback){
+    update: function(collection, olddata, newdata, callback){
          db.open(function(error, db){
             db.collection(collection, function(error, collection){
-                collection.update(data, function(){
+                collection.updateMany( olddata, newdata,function(){
                     if(callback && typeof callback == 'function'){
                         callback()
                     }

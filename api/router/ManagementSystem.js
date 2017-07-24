@@ -33,7 +33,7 @@ exports.management = function(app){
 		});
 	})
 	//删除商品
-	app.post('/management/delete',urlencodedParser,function(request, response){
+	app.post('/delete',urlencodedParser,function(request, response){
 		db.delete('octmamiProducts', request.body, function(result){
 			if(result.length>0){
 				response.send({status: true, message: '删除成功', data:result});
@@ -45,7 +45,7 @@ exports.management = function(app){
 		});
 	})
 	//添加商品
-	app.post('/management/add',urlencodedParser,function(request, response){
+	app.post('/add',urlencodedParser,function(request, response){
 		db.add('octmamiProducts',request.body, function(result){
 			if(result.length>0){
 				response.send({status: true, message: '添加成功', data:result});
@@ -57,15 +57,13 @@ exports.management = function(app){
 		});
 	})
 	//修改商品
-	app.post('/management/update',function(request, response){
-		db.update('octmamiProducts', request.body, function(result){
-			if(result.length>0){
-				response.send({status: true, message: '修改成功', data:result});
-				console.log('修改成功');
-			}else{
-				response.send({status: false, message: '修改失败', data:[]});
-				console.log('修改失败');
-			}
+	app.post('/update',urlencodedParser,function(request, response){
+		console.log(request.body);
+		//response.send({status: true, message: '修改成功'});
+		console.log(request.body.brand)
+		db.update('octmamiProducts',{id:request.body.id},{$set:request.body.brand}, function(result){
+			response.send({status: true, message: '修改成功', data:result});
+			console.log('修改成功');
 		});
 	})
 
