@@ -1,0 +1,63 @@
+.brands_main .brands_title {
+  height: 0.533333rem;
+  line-height: 0.533333rem;
+  background: #eee;
+  border-bottom: 0.013333rem solid #c1c1c1;
+  font-size: 0.373333rem;
+  color: #666;
+  padding-left: 0.4rem;
+}
+
+.brands_main .new_brands .brands_list_set .brands_list {
+  display: block;
+  line-height: 1.226667rem;
+  font-size: 0.206667rem;
+  color: #999;
+  border-bottom: 0.013333rem solid #c1c1c1;
+}
+
+.brands_main .new_brands .brands_list_set .brands_list span {
+  width: 0.933333rem;
+  height: 0.933333rem;
+  display: inline-block;
+  margin: 0 0.466667rem 0 0.526667rem;
+}
+
+.brands_main .new_brands .brands_list_set .brands_list span img {
+  width: 0.906667rem;
+  height: 0.906667rem;
+  border-radius: 0.453333rem;
+  box-shadow: 0.0rem 0.0rem 0.013333rem 0.013333rem #c1c1c1;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 0.453333rem;
+  display: inline-block;
+}
+
+.brands_main .new_brands .brands_list_set .brands_list i {
+  font-style: normal;
+  font-size: 0.313333rem;
+}
+
+.brands_index {
+  position: fixed;
+  width: 0.586667rem;
+  top: 0;
+  right: 0;
+  padding: 1.173333rem 0;
+}
+
+.brands_index .brands_index_md {
+  width: 0.586667rem;
+  background: rgba(183, 183, 183, 0.8);
+  border-radius: 0.293333rem;
+  text-align: center;
+  padding: 0.293333rem 0;
+}
+
+.brands_index .brands_index_md a {
+  display: block;
+  color: #fff;
+  font-size: 0.4rem;
+  padding: 0.266667rem 0;
+}
