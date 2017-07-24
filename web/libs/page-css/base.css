@@ -3,7 +3,7 @@ body, ul, li, p, form, input, a, img {
   padding: 0;
 }
 
-header {
+.header {
   width: 100%;
   height: 1.173333rem;
   display: flex;
@@ -14,8 +14,24 @@ header {
   background: #4dc496;
 }
 
-header .header_left a {
+.header .header_left a {
   display: block;
   width: 0.586667rem;
   height: 0.586667rem;
+}
+
+.header .header_left a img {
+  vertical-align: middle;
+}
+
+.header .header_title {
+  color: #fff;
+}
+
+.header .header_right {
+  padding-right: 0.133333rem;
+}
+
+.header .header_right a {
+  color: #fff;
 }

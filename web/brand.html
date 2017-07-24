@@ -3,23 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>十月商城</title>
-	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no" />
-	<link rel="stylesheet" type="text/css" href="./libs/page-css/brand.css">
-	<link rel="stylesheet" type="text/css" href="./libs/common/common.css">
-	<script type="text/javascript">		
-		//动态设置viewport的scale
-		var iScale = 1;
-        iScale = iScale / window.devicePixelRatio;
-        document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=' + iScale + ',minimum-scale=' + iScale + ',maximum-scale=' + iScale + '">')
-		//动态计算html的font-size
-		var iWidth = document.documentElement.clientWidth;
-    	document.getElementsByTagName('html')[0].style.fontSize = iWidth / 10+ 'px';       	
-    	//1rem=75px
-	</script>
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./libs/page-css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="./libs/common/common.css"/>
+	<script src="./libs/page-js/require.js" data-main="./libs/page-js/brand.js"></script>
+
 </head>
 <body>
-	<div class="header_logo">
+	<header class="header">
+		<div class="header_left">
+			<a href="">
+				<img src="./libs/img/lable_abnner/pic_btArrow_back_01.png" alt="">
+			</a>
+		</div>
+		<div class="header_title">
+			品牌
+		</div>
+		<div class="header_right">
+			<a href="">首页</a>
+		</div>
 		
-	</div>
+	</header>
 </body>
 </html>
