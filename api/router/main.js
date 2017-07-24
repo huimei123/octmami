@@ -2,7 +2,7 @@ var path = require('path');
 var product = require('./product');
 var account = require('./account');
 var getBrand = require('./getBrand');
-
+var management = require('./ManagementSystem');
 
 exports.main = function(express){
     var app = express();
@@ -15,5 +15,7 @@ exports.main = function(express){
     product.product(app);
     account.account(app);
     getBrand.getBrand(app);
+    management.management(app);
     app.listen(8888);
+
 }
