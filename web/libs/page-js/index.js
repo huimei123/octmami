@@ -38,8 +38,16 @@ require(['config'],function(){
 				});
 			}
 		});
-
-		
-		
+		setInterval(function(){
+			console.log($('body').scrollTop());
+			if($('body').scrollTop()>=1000){
+				$('.toTop').show().click(function(){
+					$('body').stop(true).animate({scrollTop:0});
+					$('.toTop').hide();
+				});
+			}else{
+				$('.toTop').hide();
+			}
+		},1500);
 	});
 });
