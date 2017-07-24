@@ -4,10 +4,12 @@ require.config({
 		swiper : '../swiper/swiper-3.4.2.jquery.min',
 		hxLimitTime : '../hxLimitTime/hx-limitTime',
 		common : '../common/common',
+		hxchoice : '../hxchoice/hxchoice',
 
 	},
 	shim : {
 		swiper : ['jquery'],
 		hxLimitTime : ['jquery'],
+		hxchoice : ['jquery'],
 	}
 });

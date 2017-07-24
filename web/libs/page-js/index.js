@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery','swiper','hxLimitTime'],function($){
+	require(['jquery','swiper','hxLimitTime','hxchoice'],function($){
 		var mySwiper = new Swiper('.swiper-container',{
 		    loop: true,
 			autoplay: 3000,
@@ -8,7 +8,7 @@ require(['config'],function(){
 			autoplayDisableOnInteraction : false,
   		});
 		$.ajax({
-			url:'http://10.3.134.228:8888/timeLimit',
+			url:'http://10.3.134.228:8888/flashSale',
 			dataType:'json',
 			type:'POST',
 			success:function(res){
@@ -20,6 +20,20 @@ require(['config'],function(){
 				}
 			}
 		});
+		$.ajax({
+			url: 'http://10.3.134.228:8888/selection',
+			dataType:'json',
+			type:'POST',
+			success:function(res){
+				console.log(res);
+				if(res.status==true){
+					$('.choice').hxchoice({
+
+					});
+				}
+			}
+		});
+		
 		
 	});
 });

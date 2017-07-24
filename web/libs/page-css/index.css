@@ -67,3 +67,117 @@
 	width: 3.706667rem;
 	height:3.093333rem;
 }
+
+footer{
+	margin-top: 0.133333rem;
+	border-top:  #c1c1c1 0.026667rem solid;
+}
+
+.ensure{
+    color: #4db28b;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    padding: 0 0 0 0.266667rem;
+    font-weight: bold;
+    font-size:0.48rem;
+}
+
+.ensurePic1{
+	vertical-align: middle;
+    display: inline-block;
+    background: url(../img/pic_icon_pd_04.png) 0 -2.16rem no-repeat;
+    background-size: 6.666667rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    margin:0 auto;
+    display:block; 
+}
+.ensurePic2{
+	vertical-align: middle;
+    display: inline-block;
+    background: url(../img/pic_icon_pd_04.png) -1.12rem -2.16rem; no-repeat;
+    background-size: 6.666667rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    margin:0 auto;
+    display:block; 
+}
+.ensurePic3{
+	vertical-align: middle;
+    display: inline-block;
+    background: url(../img/pic_icon_pd_04.png) -2.24rem -2.16rem no-repeat;
+    background-size: 6.666667rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    margin:0 auto;
+    display:block; 
+}
+.ensurePic4{
+	vertical-align: middle;
+    display: inline-block;
+    background: url(../img/pic_icon_pd_04.png) -3.36rem -2.16rem no-repeat;
+    background-size: 6.666667rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    margin:0 auto;
+    display:block; 
+}
+.ensureFont{
+	font-size:0.32rem;
+	text-align: center;
+}
+.guarantee ul{
+	overflow: hidden;
+	margin-top: 0.2rem;
+	padding-bottom: 0.4rem;
+	border-bottom: #c1c1c1 0.026667rem solid;
+}
+.guarantee ul li{
+	float:left;
+	width:25%;
+	position:relative;
+}
+
+.guarantee ul li a{
+	width:100%;
+	display:block; 
+}
+.guarantee ul li::after{
+	content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 80%;
+    background: #48ba8f;
+    width: 0.026667rem;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+}
+.guarantee ul li:nth-of-type(4)::after{
+	content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 80%;
+    background: #48ba8f;
+    width: 0;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+}
+.footerInfo{
+	margin-top:0.666667rem;
+}
+.footlast{
+	margin-bottom: 1.333333rem;
+	margin-top: 0.133333rem;
+}
+.typPho::after{
+	content:"|";
+	margin:0.133333rem;
+}
+.typPho{
+	color:#999;
+}
+.typCom{
+	color:#555756;
+}
