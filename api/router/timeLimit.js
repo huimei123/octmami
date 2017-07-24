@@ -7,7 +7,7 @@ exports.timeLimit = function(app){
 		//res.send('注册post请求！');
 		//注册业务逻辑,
 		//查询字符
-		db.query('products',{}, function(result){
+		db.query('timeLimit',{}, function(result){
 			if(result.length>0){
 				response.send({status: true, message:'获取成功', data:result});
 				console.log('获取成功');

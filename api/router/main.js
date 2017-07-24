@@ -3,6 +3,7 @@ var product = require('./product');
 var account = require('./account');
 var getBrand = require('./getBrand');
 var management = require('./ManagementSystem');
+var timeLimit = require('./timeLimit');
 
 exports.main = function(express){
     var app = express();
@@ -34,6 +35,7 @@ exports.main = function(express){
     account.account(app);
     getBrand.getBrand(app);
     management.management(app);
+    timeLimit.timeLimit(app);
     app.listen(8888);
 
 }
