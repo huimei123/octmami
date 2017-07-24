@@ -11,7 +11,7 @@ exports.getBrand = function(app){
 			}else{
 				console.log('获取失败');
 			}
-			db.close();
 		});
+		
 	})
 }
