@@ -221,22 +221,71 @@
 
 .main ._main .show {
   width: 100%;
-  height: 400px;
+  height: 590px;
   float: left;
   margin-top: 8px;
   overflow: auto;
 }
 
 .main ._main .show .show_table {
-  width: 350%;
-  float: left;
+  width: 260%;
   overflow: auto;
 }
 
-.main ._main .show .show_table li span {
-  display: inline-block;
-  float: left;
-  width: 120px;
-  text-align: center;
+.main ._main .show .show_table tr {
+  width: 100%;
+  overflow: hidden;
   background: lavender;
+}
+
+.main ._main .show .show_table tr th {
+  line-height: 50px;
+  display: inline-block;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main ._main .show .show_table tr td {
+  display: inline-block;
+  width: 160px;
+  height: 70px;
+  text-align: center;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 70px;
+}
+
+.main ._main .show .show_table tr td input {
+  width: 80%;
+}
+
+.main ._main .show .show_table tr:nth-of-type(even) {
+  background: white;
+}
+
+.main ._main .show .show_table tr button {
+  margin-left: 2px;
+}
+
+.main ._main .show .show_table tr th:nth-child(1) {
+  width: 70px;
+}
+
+.main ._main .show .show_table tr td:nth-child(1) {
+  width: 70px;
+  line-height: 70px;
+}
+
+.main ._main .show .show_table tr th:nth-child(2) {
+  width: 30px;
+}
+
+.main ._main .show .show_table tr td:nth-child(2) {
+  width: 30px;
+  line-height: 70px;
 }

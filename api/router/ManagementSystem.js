@@ -15,7 +15,7 @@ exports.management = function(app){
 				response.send({status: false, message:'获取失败', data:[]});
 				console.log('获取失败');
 			}
-			db.close();
+			
 		});
 	})
 	//删除商品
