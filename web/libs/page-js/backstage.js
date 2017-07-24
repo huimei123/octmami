@@ -1,6 +1,7 @@
 require(['config'],function(){
 	require(['jquery'],function(){
-		$.post('http://localhost:8888/management/query',function(result){
+	
+		$.post('http://localhost:8888/query',function(result){
 			console.log(result);
 		});
 		//时间

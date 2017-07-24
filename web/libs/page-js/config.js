@@ -6,8 +6,6 @@ require.config({
 		common : '../common/common',
 		hxchoice : '../hxchoice/hxchoice',
 		bootstrap : '../bootstrap/bootstrap.min.js',
-
-	},
 	shim : {
 		swiper : ['jquery'],
 		hxLimitTime : ['jquery'],
