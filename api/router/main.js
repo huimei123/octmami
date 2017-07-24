@@ -5,7 +5,7 @@ var getBrand = require('./getBrand');
 var management = require('./ManagementSystem');
 var timeLimit = require('./timeLimit');
 var selection = require('./selection');
-
+var flashSale = require('./flashSale');
 exports.main = function(express){
     var app = express();
 
@@ -38,6 +38,7 @@ exports.main = function(express){
     management.management(app);
     timeLimit.timeLimit(app);
     selection.selection(app);
+    flashSale.flashSale(app);
     app.listen(8888);
 
 }
