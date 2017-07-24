@@ -1,5 +1,6 @@
 require(['config'],function(){
 	require(['jquery'],function(){
+
 		//打开页面请求加载数据库内容
 		$.ajaxSetup({
 			type:"post",
@@ -42,6 +43,11 @@ require(['config'],function(){
                     
 			});	
 			}
+
+	
+		$.post('http://localhost:8888/query',function(result){
+			console.log(result);
+
 		});
 		$.post();
 		//导航二级菜单

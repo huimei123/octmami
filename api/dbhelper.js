@@ -1,7 +1,7 @@
 //npm install mongodb --save-dev
 var  mongodb = require('mongodb');
 //联接 mongodb 服务器
-var  server  = new mongodb.Server('localhost', 27017);
+var  server  = new mongodb.Server('10.3.134.228', 27017);
 //指定要操作哪个数据库 => use  1000phone
 var productionDB = 'octmamiDB';
 var  db = new mongodb.Db(productionDB, server);

@@ -12,6 +12,15 @@ body,ul,li,p,form,input,a,img{
 	font-size: 0.48rem;
 	line-height: 1.333333rem;
 	background: #4dc496;
+	.header_logo{
+		.logo{
+			display: inline-block;
+			vertical-align: middle;
+			width: 1.68rem;
+			height: 0.56rem;
+			margin-left: 0.133333rem;
+		}
+	}
 	.header_left{
 		a{
 			display: block;
@@ -32,4 +41,52 @@ body,ul,li,p,form,input,a,img{
 			color:#fff;
 		}
 	}
+}
+
+.footer{
+	height: 1.2rem;
+    border-top: 1px solid #94d7bd;
+    background: #4dc496;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    ul{
+    	li{
+    		float:left;
+    		width: 24%;
+    		text-align: center;
+    		a{
+    			display: inline-block;
+    			text-align: center;
+    			.oct_ico{
+    			display: block;
+    			width: 0.666667rem;
+    			height: 0.666667rem;
+    			margin-top: 0.08rem;
+    			vertical-align: middle;
+    			background:url(../img/lable_abnner/pic_icon_pd_04.png) no-repeat;
+	    		}
+	    		.oct_ico1{
+	    			background-position: 0 -3.333333rem;
+	    		}
+	    		.oct_ico2{
+	    			background-position: -0.666667rem -3.333333rem;
+	    		}
+	    		.oct_ico3{
+	    			background-position: -2.0rem -3.333333rem;
+	    		}
+	    		.oct_ico4{
+	    			background-position: -2.666667rem -3.333333rem;
+	    		}
+	    		span{
+	    			display: block;
+	    			color:#fff;
+	    			font-size:0.32rem;
+	    			line-height: 0.426667rem;
+	    		}
+    		}
+    	}
+    }
 }

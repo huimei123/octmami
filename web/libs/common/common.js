@@ -1,6 +1,6 @@
 var global = global || {};
 
-global.baseurl = 'http://localhost:8888/';
+global.baseurl = 'http:10.3.134.228:8888/';
 
 
 //动态设置viewport的scale
@@ -11,7 +11,4 @@ document.write('<meta name="viewport" content="width=device-width,user-scalable=
 var iWidth = document.documentElement.clientWidth;
 document.getElementsByTagName('html')[0].style.fontSize = iWidth / 10+ 'px';       	
 //1rem=75px
-
-
-
 

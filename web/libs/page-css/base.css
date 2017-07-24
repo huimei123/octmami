@@ -14,6 +14,14 @@ body, ul, li, p, form, input, a, img {
   background: #4dc496;
 }
 
+.header .header_logo .logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.68rem;
+  height: 0.56rem;
+  margin-left: 0.133333rem;
+}
+
 .header .header_left a {
   display: block;
   width: 0.586667rem;
@@ -34,4 +42,58 @@ body, ul, li, p, form, input, a, img {
 
 .header .header_right a {
   color: #fff;
+}
+
+.footer {
+  height: 1.2rem;
+  border-top: 1px solid #94d7bd;
+  background: #4dc496;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.footer ul li {
+  float: left;
+  width: 24%;
+  text-align: center;
+}
+
+.footer ul li a {
+  display: inline-block;
+  text-align: center;
+}
+
+.footer ul li a .oct_ico {
+  display: block;
+  width: 0.666667rem;
+  height: 0.666667rem;
+  margin-top: 0.08rem;
+  vertical-align: middle;
+  background: url(../img/lable_abnner/pic_icon_pd_04.png) no-repeat;
+}
+
+.footer ul li a .oct_ico1 {
+  background-position: 0 -3.333333rem;
+}
+
+.footer ul li a .oct_ico2 {
+  background-position: -0.666667rem -3.333333rem;
+}
+
+.footer ul li a .oct_ico3 {
+  background-position: -2.0rem -3.333333rem;
+}
+
+.footer ul li a .oct_ico4 {
+  background-position: -2.666667rem -3.333333rem;
+}
+
+.footer ul li a span {
+  display: block;
+  color: #fff;
+  font-size: 0.32rem;
+  line-height: 0.426667rem;
 }
