@@ -22,7 +22,7 @@
 	display:flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	border-bottom: 0.013333rem solid black;
+	border-bottom: 0.013333rem solid #e3e3e3;;
 	padding-bottom:0.133333rem;
 	margin:0.266667rem 0.066667rem 0 0.066667rem;
 }
@@ -41,4 +41,29 @@
 	height:1.066667rem;
 	display: block;
 	margin:0 auto;
+}
+
+.hot{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width:100%;
+	height:6.266667rem;
+	padding-top: 0.266667rem;
+}
+
+.img1{
+	width: 6.24rem;
+	height:6.24rem;
+}
+
+.img2{
+	width: 3.706667rem;
+	height:3.093333rem;
+	display: block;
+}
+
+.img3{
+	width: 3.706667rem;
+	height:3.093333rem;
 }
