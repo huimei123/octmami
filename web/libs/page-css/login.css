@@ -1,13 +1,5 @@
 .section {
-  padding-top: 0.1rem;
-}
-
-.section .reg_tips {
-  font-size: 0.4rem;
-  color: #999;
-  padding-left: 0.4rem;
-  padding-bottom: 0.2rem;
-  padding: 0.333333rem 0.4rem;
+  padding-top: 2.08rem;
 }
 
 .section legend {
@@ -19,7 +11,6 @@
   padding: 0 0.48rem;
   height: 1.173333rem;
   line-height: 1.2rem;
-  padding-top: 0.066667rem;
 }
 
 .section legend input {
@@ -34,7 +25,7 @@
   background-color: #fff !important;
 }
 
-.section legend .icon_close {
+.section legend i {
   position: absolute;
   top: 0.3rem;
   right: 0.4rem;
@@ -43,37 +34,6 @@
   height: 0.543333rem;
   background-size: 6.666667rem;
   background: url(../img/lable_abnner/pic_icon.png) -0.48rem -0.72rem no-repeat;
-}
-
-.section legend .regCode {
-  display: inline-block;
-  height: 1.066667rem;
-  width: 1.8rem;
-  text-align: center;
-  border-left: 0.013333rem solid #999;
-  position: absolute;
-  right: 0.433333rem;
-  font-size: 0.8rem;
-  color: #999;
-  font-style: italic;
-}
-
-.section legend .tips {
-  text-align: center;
-  line-height: 1.5rem;
-  position: absolute;
-  top: 6.333333rem;
-  left: 2.0rem;
-  z-index: 100;
-  background: rgba(153, 153, 153, 0.8);
-  width: 4.666667rem;
-  height: 1.5rem;
-  border-radius: 0.4rem;
-  font-size: 0.4rem;
-}
-
-.section legend .usernama_tips {
-  display: none;
 }
 
 .section button {
@@ -85,4 +45,26 @@
   height: 1.2rem;
   border-radius: 0.133333rem;
   margin-left: 0.4rem;
+}
+
+.section .login_auto_login {
+  position: relative;
+  height: 0.533333rem;
+  line-height: 0.533333rem;
+  margin: 0.2rem 0.4rem 0;
+}
+
+.section .login_auto_login a {
+  text-decoration: underline;
+  font-size: 0.32rem;
+  color: #666;
+}
+
+.section .login_auto_login .qRegister {
+  position: absolute;
+}
+
+.section .login_auto_login .getPd {
+  position: absolute;
+  right: 0;
 }

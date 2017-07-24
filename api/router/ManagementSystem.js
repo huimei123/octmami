@@ -30,6 +30,10 @@ exports.management = function(app){
 				response.send({status: false, message:'获取失败', data:[]});
 				console.log('获取失败');
 			}
+<<<<<<< HEAD
+			
+=======
+>>>>>>> 2d219910cfce783531312c9c8dfb1b5f101e47c7
 		});
 	})
 	//删除商品

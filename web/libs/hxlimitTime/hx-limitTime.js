@@ -41,12 +41,12 @@
 			var $litContent = $('<div/>').addClass('limContent').appendTo($('.limitTime'));
 			
 			var html = opt.data.map(function(item){
-				console.log(item);
+				//console.log(item);
 				return`
 					<li class="proLi"><img class="proImg" src = 'libs/img/productImg/${item.productImg[0]}'/><p class='proPrice'>¥:${item.currentPrice}</p><p class='proName'>${item.productDescription}</p></li>
 				`
 			}).join('');
-			console.log(html);
+			//console.log(html);
 			$('<ul/>').addClass('proUl').html(html).appendTo($litContent);
 		})
 	}
