@@ -1,5 +1,12 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
+		// 插入底部
+		$('<div/>').load('./footer.html',function(){
+			$(this).insertAfter('.section');
+		});
+
+
+		// 清空输入框的内容
 		$('.close_btn1').on('click',function(){
 			$('#username').val("");
 						
@@ -15,19 +22,5 @@ require(['config'],function(){
 				console.log(res);
 			}
 		});
-		$('.getPd').on('click',function(){
-			console.log(666);
-			$.ajax({
-				url : "http://10.3.134.228:8888/getPassword",
-				data : {
-					username: '18814133672',
-					passwd: '123123',
-				},
-				type: 'POST',
-				success: function(res){
-					console.log(res);
-				}
-			});
-		})	
 	});
 });

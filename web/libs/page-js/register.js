@@ -1,6 +1,11 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
 
+		// 插入底部
+		$('<div/>').load('./footer.html',function(){
+			$(this).insertAfter('.section');
+		});
+
 		//判断注册条件
 		var username = document.querySelector('#username');
 		var passwd = document.querySelector('#passwd');
@@ -30,6 +35,7 @@ require(['config'],function(){
 			$('#passwd').val("");		
 			
 		});
+		
 		$.ajax({
 			url : 'http://10.3.134.228:8888/regitster',
 			type: 'POST',
