@@ -5,13 +5,12 @@ require.config({
 		hxLimitTime : '../hxLimitTime/hx-limitTime',
 		common : '../common/common',
 		hxchoice : '../hxchoice/hxchoice',
-		bootstrap : '../bootstrap/bootstrap.min.js',
+		bootstrap : '../bootstrap/bootstrap.min',
 	},
 	shim : {
 		swiper : ['jquery'],
 		hxLimitTime : ['jquery'],
 		hxchoice : ['jquery'],
 		bootstrap : ['jquery'],
-
 	}
 });

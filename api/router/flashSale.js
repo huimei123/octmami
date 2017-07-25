@@ -1,7 +1,7 @@
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var db = require('../dbhelper');
-//限时特惠
+//限时特卖
 exports.flashSale = function(app){
 	app.post('/flashSale',urlencodedParser,function(request, response){
 		//res.send('注册post请求！');

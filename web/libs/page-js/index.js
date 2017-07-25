@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery','swiper','hxLimitTime','hxchoice'],function($){
+	require(['jquery','swiper','hxLimitTime','hxchoice','fontIcon'],function($){
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.foot');
 		});

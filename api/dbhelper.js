@@ -10,9 +10,9 @@ module.exports = {
     add: function(collection, data, callback){
         db.open(function(error, db){
             db.collection(collection, function(error, collection){
-                collection.insert(data, function(){
+                collection.insert(data, function(err, result){
                     if(callback && typeof callback == 'function'){
-                        callback()
+                        callback(result)
                     }
                 })
             })
@@ -45,10 +45,10 @@ module.exports = {
             db.close();
         });
     },
-    update: function(collection, data, callback){
+    update: function(collection, olddata, newdata, callback){
          db.open(function(error, db){
             db.collection(collection, function(error, collection){
-                collection.update(data, function(){
+                collection.updateMany( olddata, newdata,function(){
                     if(callback && typeof callback == 'function'){
                         callback()
                     }
