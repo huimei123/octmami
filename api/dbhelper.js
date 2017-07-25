@@ -51,9 +51,9 @@ module.exports = {
     update: function(collection, olddata, newdata, callback){
         db.open(function(error, db){
             db.collection(collection, function(error, collection){
-                collection.updateMany( olddata, newdata,function(){
+                collection.updateMany( olddata, newdata,function(err, result){
                     if(callback && typeof callback == 'function'){
-                        callback()
+                        callback(result)
                     }
                     db.close();
                 })

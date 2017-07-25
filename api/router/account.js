@@ -25,20 +25,21 @@ exports.account = function(app){
         //请求数据库
         //注册用户
         //先判断是否已注册
-        db.query('users',request.body,function(result){
-           if(result.length>0){
+        console.log(request.body);
+        db.query('users', JSON.stringify(request.body),function(result){
+            if(result.length >0){
                 response.send({status: false, message:'已经注册', data:result});
                 console.log('已经注册');
             }else{ 
             //注册
                 db.add('users', request.body, function(result){
                     //注册成功写入usersDetails
-                   /* db.add('usersDetails', request.body,function(result){
+                    db.add('usersDetails', request.body,function(result){
                         response.send({status: true, message: '注册成功'})
-                        console.log('注册成功');*/
+                        console.log('注册成功');
                     })
-                }
-            
+                })
+            }
         })
     })
     //找回密码
@@ -47,7 +48,7 @@ exports.account = function(app){
         console.log(request.body);
         response.send({status: true, message:'获取密码'});
         db.query('users',{username:request.body.username},function(result){
-           if(result.length>0){
+            if(result.length>0){
                 db.delete('users',request.body);
                 db.add('users', request.body, function(data){
                     response.send({status: true, message: '密码修改成功'})
