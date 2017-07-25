@@ -50,7 +50,7 @@ module.exports = {
     update: function(collection, olddata, newdata, callback){
         db.open(function(error, db){
             db.collection(collection, function(error, collection){
-                collection.updateMany( olddata, newdata,function(err, result){
+                collection.update( olddata, newdata,function(err, result){
                     if(callback && typeof callback == 'function'){
                         callback(result)
                     }
@@ -60,6 +60,19 @@ module.exports = {
             db.close();
         })
     },
+    /*update:function(collection,whereStr,updateStr,callback){
+        db.open(function(err,db){
+            db.collection(collection,function(err,collection){
+                collection.update(whereStr,updateStr,function(err,result){
+                   if(callback && typeof callback=='function'){
+                       callback(result);
+                   }
+
+                })
+            })
+            db.close();
+        })
+    },*/
     sort: function(collection, data, callback){
         db.open(function(err,db){
             db.collection(collection,function(error,collection){

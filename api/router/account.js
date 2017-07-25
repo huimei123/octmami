@@ -6,8 +6,9 @@ exports.account = function(app){
 
     app.post('/login', urlencodedParser, function(request, response){
         //请求数据库
+        console.log(request.body);
         db.query('users',request.body,function(result){
-            if(result.length>0){
+            if(result.length > 0){
                 //登录成功获取用户信息，购物车内容，收藏等
                 //getDetails
                 db.query('usersDetails',request.body,function(result){
@@ -15,7 +16,7 @@ exports.account = function(app){
                     console.log('登录成功');
                 })
             }else{ 
-                response.send({status: true, message:'登录失败', data:result});
+                response.send({status: true, message:'登录失败',data:[]});
                 console.log('登录失败');
             }
         })

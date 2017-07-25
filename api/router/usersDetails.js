@@ -5,11 +5,30 @@ var db = require('../dbhelper');
 exports.usersDetails = function(app){
 	//获取用户信息
 	app.post('/getusersDetails', urlencodedParser, function(request, response){
-		
+		db.query('usersDetails',request.body, function(result){
+			if(result.length>0){
+				response.send({status: true, message:'获取用户信息成功', data:result});
+				console.log('获取用户信息成功');
+			}else{
+				response.send({status: true, message:'获取用户信息失败', data:result});
+				console.log('获取用户信息失败');
+			}
+		})
 	});
-	//更新修改用户信息
+	//更新修改用户信息,购物车，收藏等
 	app.post('/updateusersDetails', urlencodedParser, function(request, response){
-
+		var serchGood = {"_id":new ObjectID(String(request.body._id))};
+		db.query('usersDetails',{username:request.body.username}, function(result){
+			if(result.length>0){
+				db.update('usersDetails',serchGood,null,function(){
+					response.send({status: true, message:'用户信息更改成功', data:result});
+					console.log('用户信息更改成功');
+				});
+			}else{
+				response.send({status: true, message:'用户信息更改失败', data:result});
+				console.log('用户信息更改失败');
+			}
+		})
 	});
 
 }

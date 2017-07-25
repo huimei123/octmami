@@ -19,6 +19,10 @@ require(['config'],function(){
 			$.ajax({
 				url : 'http://10.3.134.228:8888/login',
 				type: 'POST',
+				data:{
+					username:$('#username').val(),
+					passwd:$('#passwd').val()
+				},
 				success: function(res){
 					console.log(res);
 				}
