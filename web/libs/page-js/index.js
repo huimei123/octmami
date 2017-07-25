@@ -1,5 +1,8 @@
 require(['config'],function(){
-	require(['jquery','swiper','hxLimitTime','hxchoice','fontIcon'],function($){
+	require(['jquery','swiper','hxLimitTime','hxchoice'],function($){
+		$('<section/>').addClass('title').load('search.html',function(){
+			$(this).insertBefore('.swiper-container');
+		});
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.foot');
 		});

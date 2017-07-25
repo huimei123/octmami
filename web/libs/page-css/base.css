@@ -32,7 +32,7 @@ body, ul, li, p, form, input, a, img {
 .header .header_search {
   background: #fff;
   vertical-align: middle;
-  width: 6.8rem;
+  width: 6.24rem;
   height: 0.613333rem;
   border: 1px solid #ddd;
   border-radius: 0.32rem;
@@ -46,7 +46,7 @@ body, ul, li, p, form, input, a, img {
 .header .header_search .form .sousuokuang {
   position: absolute;
   top: -0.133333rem;
-  left: 2.53333rem;
+  left: 3rem;
 }
 
 .header .header_search .form .search {
