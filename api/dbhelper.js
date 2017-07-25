@@ -2,7 +2,7 @@
 var  mongodb = require('mongodb');
 //联接 mongodb 服务器
 var  server  = new mongodb.Server('10.3.134.228', 27017);
-//指定要操作哪个数据库 => use  1000phone
+//指定要操作哪个数据库
 var productionDB = 'octmamiDB';
 var  db = new mongodb.Db(productionDB, server);
 
@@ -15,9 +15,9 @@ module.exports = {
                         callback(result)
                     }
                 })
-                db.close();
+                
             })
-            
+            db.close();  
         })
     },
     //删除
@@ -28,10 +28,10 @@ module.exports = {
                     if(callback && typeof callback == 'function'){
                         callback(result);
                     }
-                    db.close();
+                   
                 })
             });
-            
+            db.close();
         });
     },
     //搜索
@@ -42,10 +42,9 @@ module.exports = {
                     if(callback && typeof callback == 'function'){
                         callback(result);
                     }
-                    db.close();
                 })
             });
-            
+            db.close();
         });
     },
     update: function(collection, olddata, newdata, callback){
@@ -55,10 +54,10 @@ module.exports = {
                     if(callback && typeof callback == 'function'){
                         callback(result)
                     }
-                    db.close();
+                    
                 })
             })
-            
+            db.close();
         })
     },
     sort: function(collection, data, callback){
@@ -68,9 +67,10 @@ module.exports = {
                     if(callback && typeof callback =='function' ){
                         callback(result);
                     }
-                    db.close();
+                    
                 })
             })
+            db.close();
         })
     }
 }

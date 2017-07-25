@@ -22,23 +22,23 @@ exports.account = function(app){
     })
 
     app.post('/regitster', urlencodedParser, function(request, response){
-        //请求数据库
-        //注册用户
-        //先判断是否已注册
+       /* 请求数据库
+        注册用户
+        先判断是否已注册*/
         console.log(request.body);
-        db.query('users', JSON.stringify(request.body),function(result){
-            if(result.length >0){
-                response.send({status: false, message:'已经注册', data:result});
+        db.query('users', request.body,function(result){
+            console.log(result);
+            if(result.length > 0){
+                response.send({status: false, message:'已经注册'});
                 console.log('已经注册');
             }else{ 
             //注册
-                db.add('users', request.body, function(result){
-                    //注册成功写入usersDetails
-                    db.add('usersDetails', request.body,function(result){
-                        response.send({status: true, message: '注册成功'})
-                        console.log('注册成功');
-                    })
+                db.add('users',request.body,function(){
+                    db.add('usersDetails',{username:request.body.username});
+                    response.send({status: false, message:'注册成功'});
+                    console.log('注册成功');
                 })
+
             }
         })
     })

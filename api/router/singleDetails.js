@@ -10,7 +10,7 @@ exports.singleDetails=function(app){
 		var serchGood = {"_id":new ObjectID(String(request.body._id))};
 		//console.log(request.body);
 		db.query('timeLimit',serchGood, function(result){
-			console.log(result);
+			//console.log(result);
 			if(result.length>0){
 				response.send({status: true, message:'商品详情获取成功', data:result});
 				console.log('商品详情获取成功');
