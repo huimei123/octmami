@@ -28,12 +28,26 @@ require(['config'],function(){
 					dataType:'json',
 					type:'POST',
 					success:function(res){
-						console.log(res);
+						//console.log(res);
 						if(res.status==true){
 							$('.choice').hxchoice({
 								data: res.data,
 							});
 						}
+						$.ajax({
+							url: 'http://10.3.134.228:8888/flashSale',
+							dataType:'json',
+							type:'POST',
+							success: function(res){
+								console.log(res);
+								if(res.status==true){
+									$('.choiceOther').hxchoice({
+										data: res.data,
+										type:0,
+									});
+								}
+							}
+						});
 					}
 				});
 			}

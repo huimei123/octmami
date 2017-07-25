@@ -34,3 +34,40 @@
 	margin-left: 0.266667rem;
 	color: #ff6600;
 }
+
+#styleOther{
+	width:100%;
+	position:relative;
+}
+
+.imgOther{
+	width:100%;
+}
+.nextTime{
+	position: absolute;
+    opacity: .7;
+    -moz-opacity: .7;
+    filter: alpha(opacity=70);
+    background: #fb661e;
+    right: 0;
+    top: 0.16rem;
+    width: auto;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    z-index: 10;
+    border-radius: 0.293333rem 0 0 0.293333rem;
+    font-size: 0.32rem;
+    color:white;
+}
+
+.clock{
+	display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(../img/pic_icon_pd_01.png?v=6) -5.333333rem -4.0rem no-repeat;
+    background-size: 6.666667rem;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+    margin-left: 0.266667rem;
+    margin-bottom: 0.093333rem;
+}
