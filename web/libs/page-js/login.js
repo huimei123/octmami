@@ -15,6 +15,8 @@ require(['config'],function(){
 			$('#passwd').val("");		
 			
 		});
+
+		//登录
 		$('.login_btn').on('click',function(){
 			$.ajax({
 				url : 'http://10.3.134.228:8888/login',
@@ -25,6 +27,8 @@ require(['config'],function(){
 				},
 				success: function(res){
 					console.log(res);
+					// var data = res.data;
+					// if(res)
 				}
 			});
 		})

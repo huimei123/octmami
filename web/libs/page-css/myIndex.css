@@ -1,0 +1,171 @@
+.menber_infor {
+  width: 100%;
+  height: 2.666667rem;
+  background: url(../img/lable_abnner/member_top_bg.jpg);
+  background-size: cover;
+  border-top: 0.026667rem solid #b5b0a8;
+  padding: 0 0.133333rem;
+}
+
+.menber_infor .menber_infor_content .menber_pic {
+  float: left;
+  height: 1.866667rem;
+  margin: 0.48rem 0.266667rem 0.16rem 0.32rem;
+}
+
+.menber_infor .menber_id {
+  float: left;
+  margin-top: 0.533333rem;
+  margin-left: 0.133333rem;
+  font-size: 0.32rem;
+  color: #fff;
+}
+
+.menber_infor .menber_id .username {
+  display: block;
+}
+
+.menber_infor .menber_id .signIn_btn {
+  color: #fff;
+  display: inline-block;
+  width: 1.173333rem;
+  height: 0.48rem;
+  text-align: center;
+  line-height: 0.48rem;
+  background: #3ec2aa;
+  border-radius: 0.24rem;
+  margin-top: 0.133333rem;
+}
+
+.menber_infor .menber_id .menber_dou {
+  color: #f0b478;
+  text-shadow: 1px 1px #9b6c5a;
+  font-weight: bold;
+}
+
+.menber_infor .menber_id .menber_label .menber_icon img {
+  position: relative;
+  top: 0.133333rem;
+  width: 0.533333rem;
+  height: 0.48rem;
+}
+
+.menber_menu .menber_menu_nav .all_order {
+  padding: 0 0.266667rem;
+  line-height: 1.066667rem;
+  border-bottom: 0.026667rem solid #e5e5e5;
+}
+
+.menber_menu .menber_menu_nav .all_order span {
+  font-size: 0.333333rem;
+}
+
+.menber_menu .meber_order_infor {
+  overflow: hidden;
+  padding-bottom: 0.266667rem;
+  border-bottom: 0.026667rem solid #e5e5e5;
+}
+
+.menber_menu .meber_order_infor li {
+  float: left;
+  width: 2rem;
+  height: 1.493333rem;
+  text-align: center;
+  line-height: 1.493333rem;
+  font-size: 0.346667rem;
+  color: #888888;
+}
+
+.menber_menu .meber_order_infor li .iconfont {
+  margin-left: 0.666667rem;
+  display: block;
+  width: 0.533333rem;
+  height: 0.533333rem;
+}
+
+.menber_menu .member_menu_list ul {
+  overflow: hidden;
+}
+
+.menber_menu .member_menu_list ul li {
+  position: relative;
+  float: left;
+  width: 2.48rem;
+  height: 2.346667rem;
+  text-align: center;
+}
+
+.menber_menu .member_menu_list ul li .oct_ico {
+  position: absolute;
+  top: 0.333333rem;
+  left: 0.666667rem;
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: url(../img/lable_abnner/pic_icon_pd_04.png) no-repeat;
+}
+
+.menber_menu .member_menu_list ul li span {
+  color: #666;
+  font-size: 0.32rem;
+  position: relative;
+  top: 0.633333rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon1 {
+  background-position: 0 -4.32rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon2 {
+  background-position: -0.8rem -4.32rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon3 {
+  background-position: -1.6rem -4.32rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon4 {
+  background-position: -2.4rem -4.32rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon5 {
+  background-position: 0 -5.12rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon6 {
+  background-position: -0.8rem -5.12rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon7 {
+  background-position: -1.6rem -5.12rem;
+}
+
+.menber_menu .member_menu_list ul li .oct_icon8 {
+  background-position: -2.4rem -5.12rem;
+}
+
+.act {
+  width: 100%;
+  height: 1.226667rem;
+  line-height: 1.28rem;
+  position: fixed;
+  bottom: 1.333333rem;
+}
+
+.act a {
+  font-size: 24px;
+  display: block;
+  color: #666;
+  padding-left: 0.4rem;
+  height: 1.226667rem;
+  line-height: 1.226667rem;
+}
+
+.act a i {
+  display: inline-block;
+  position: relative;
+  top: 0.266667rem;
+  width: 0.693333rem;
+  height: 0.693333rem;
+  background: url(../img/lable_abnner/pic_icon_pd_02.png) no-repeat -1.76rem -5.68rem;
+}
