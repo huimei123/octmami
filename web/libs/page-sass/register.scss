@@ -42,7 +42,7 @@
 		.regCode{
 			display: inline-block;
 			height:1.066667rem;
-			width:1.8rem;
+			width:2rem;
 			text-align: center;
 			border-left:0.013333rem solid #999;
 			position:absolute;
@@ -56,10 +56,11 @@
 			line-height: 1.5rem;
 			position:absolute;
 			top:6.333333rem;
-			left: 2.0rem;
+			left: 0.5rem;
 			z-index: 100;
+			color:#FF3333 ;
 			background:rgba(#999, 0.8);
-			width: 4.666667rem;
+			width: 7.966667rem;
 			height: 1.5rem;
 			border-radius:0.4rem;
 			font-size:0.4rem;
@@ -67,7 +68,35 @@
 		.usernama_tips{
 			display: none;
 		}
+		.passwd_tips{
+			display: none;
+		}
+		.yzm_tips{
+			position:absolute;
+			top: 3.106667rem;
+			display: none;
+		}
+		.phone_tips{
+			position:absolute;
+			top: 1.106667rem;
+			display: none;
+		}
 		
+	}
+	.tips{
+		text-align: center;
+		color:#FF3333;
+		line-height: 1.5rem;
+		position:absolute;
+		top:11.333333rem;
+		left: 1rem;
+		z-index: 100;
+		background:rgba(#999, 0.8);
+		width: 7.966667rem;
+		height: 1.5rem;
+		border-radius:0.4rem;
+		font-size:0.4rem;
+		display: none;
 	}
 	button{
 		width: 93%;
@@ -79,4 +108,5 @@
 	    border-radius:0.133333rem;
 	    margin-left:0.4rem;
 	}
+
 }
