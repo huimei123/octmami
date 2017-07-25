@@ -55,16 +55,38 @@ require(['config'],function(){
 				});
 			}
 		});
-		setInterval(function(){
-			console.log($('body').scrollTop());
-			if($('body').scrollTop()>=1000){
-				$('.toTop').show().click(function(){
-					$('body').stop(true).animate({scrollTop:0});
-					$('.toTop').hide();
+		
+
+		/*$('.limitTime').on('click','li',function(e){
+			console.log(this);
+			console.log(e.target);
+		});*/
+		var indexPage = {
+			$toTop : $('.toTop'),
+			$limitTime : $('.limitTime'),
+			init : function(){
+				//返回顶部
+				setInterval(function(){
+					//console.log($('body').scrollTop());
+					if($('body').scrollTop()>=1000){
+						this.$toTop.show().click(function(){
+							$('body').stop(true).animate({scrollTop:0});
+							($(this)).hide();
+						});
+					}else{
+						$('.toTop').hide();
+					}
+				}.bind(this),1500);
+
+				this.$limitTime.on('click','li',function(e){
+					//console.log(this);
+					//console.log(e.target);
+					var id = $(this).data('id');
+					location.href = './goodsinfo.html?_id='+id;
 				});
-			}else{
-				$('.toTop').hide();
-			}
-		},1500);
+			},
+		};
+
+		indexPage.init();
 	});
 });
