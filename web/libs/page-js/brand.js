@@ -1,10 +1,11 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
-		// $('body').load('header.html',function(){
-		// 	console.log($('body'));
-		// 	console.log($('.header'));
-		// 	$('.header').prependTo($(this));
-		// });
+		
+		//²åÈëµ×²¿
+		$('<div/>').load('./footer.html',function(){
+			$(this).insertAfter('.brands_main');
+		});
+
 		var pinyin = ['A','B','C','D','E','F','G']; 
 		var spell = [];
 

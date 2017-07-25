@@ -12,6 +12,5 @@ require.config({
 		hxLimitTime : ['jquery'],
 		hxchoice : ['jquery'],
 		bootstrap : ['jquery'],
-
 	}
 });

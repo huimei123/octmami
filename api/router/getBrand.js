@@ -6,10 +6,10 @@ exports.getBrand = function(app){
 		//注册业务逻辑,
 		db.query('brand',{}, function(result){
 			if(result.length>0){
-				response.send({status: true, message: null, data:result});
-				console.log('获取成功');
+				response.send({status: true, message:"品牌获取成功", data:result});
+				console.log('品牌获取成功');
 			}else{
-				console.log('获取失败');
+				console.log('品牌获取失败');
 			}
 		});
 		

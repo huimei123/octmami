@@ -6,6 +6,7 @@ var management = require('./ManagementSystem');
 var timeLimit = require('./timeLimit');
 var selection = require('./selection');
 var flashSale = require('./flashSale');
+var usersDetails = require('./usersDetails');
 exports.main = function(express){
     var app = express();
 
@@ -39,6 +40,7 @@ exports.main = function(express){
     timeLimit.timeLimit(app);
     selection.selection(app);
     flashSale.flashSale(app);
+    usersDetails.usersDetails(app);
     app.listen(8888);
 
 }

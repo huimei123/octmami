@@ -1,5 +1,8 @@
 require(['config'],function(){
 	require(['jquery','swiper','hxLimitTime','hxchoice'],function($){
+		$('<section/>').addClass('title').load('search.html',function(){
+			$(this).insertBefore('.swiper-container');
+		});
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.foot');
 		});
@@ -28,18 +31,40 @@ require(['config'],function(){
 					dataType:'json',
 					type:'POST',
 					success:function(res){
-						console.log(res);
+						//console.log(res);
 						if(res.status==true){
 							$('.choice').hxchoice({
 								data: res.data,
 							});
 						}
+						$.ajax({
+							url: 'http://10.3.134.228:8888/flashSale',
+							dataType:'json',
+							type:'POST',
+							success: function(res){
+								console.log(res);
+								if(res.status==true){
+									$('.choiceOther').hxchoice({
+										data: res.data,
+										type:0,
+									});
+								}
+							}
+						});
 					}
 				});
 			}
 		});
-
-		
-		
+		setInterval(function(){
+			console.log($('body').scrollTop());
+			if($('body').scrollTop()>=1000){
+				$('.toTop').show().click(function(){
+					$('body').stop(true).animate({scrollTop:0});
+					$('.toTop').hide();
+				});
+			}else{
+				$('.toTop').hide();
+			}
+		},1500);
 	});
 });
