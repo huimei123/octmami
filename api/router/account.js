@@ -6,33 +6,39 @@ exports.account = function(app){
 
     app.post('/login', urlencodedParser, function(request, response){
         //请求数据库
-         db.query('users',request.body,function(result){
-           if(result.length>0){
+        db.query('users',request.body,function(result){
+            if(result.length>0){
                 //登录成功获取用户信息，购物车内容，收藏等
-                response.send({status: true, message:'登录成功', data:result});
-                console.log('登录成功');
+                //getDetails
+                db.query('usersDetails',request.body,function(result){
+                    response.send({status: true, message:'登录成功', data:result});
+                    console.log('登录成功');
+                })
             }else{ 
                 response.send({status: true, message:'登录失败', data:result});
                 console.log('登录失败');
             }
         })
-        
     })
 
     app.post('/regitster', urlencodedParser, function(request, response){
-        //请求数据库
-        //注册用户
-        //先判断是否已注册
-        db.query('users',request.body,function(result){
-           if(result.length>0){
-                response.send({status: false, message:'已经注册', data:result});
+       /* 请求数据库
+        注册用户
+        先判断是否已注册*/
+        console.log(request.body);
+        db.query('users', request.body,function(result){
+            console.log(result);
+            if(result.length > 0){
+                response.send({status: false, message:'已经注册'});
                 console.log('已经注册');
             }else{ 
             //注册
-                db.add('users', request.body, function(result){
-                    response.send({status: true, message: '注册成功'})
+                db.add('users',request.body,function(){
+                    db.add('usersDetails',{username:request.body.username});
+                    response.send({status: false, message:'注册成功'});
                     console.log('注册成功');
                 })
+
             }
         })
     })
@@ -42,7 +48,7 @@ exports.account = function(app){
         console.log(request.body);
         response.send({status: true, message:'获取密码'});
         db.query('users',{username:request.body.username},function(result){
-           if(result.length>0){
+            if(result.length>0){
                 db.delete('users',request.body);
                 db.add('users', request.body, function(data){
                     response.send({status: true, message: '密码修改成功'})

@@ -36,6 +36,22 @@
   background: url(../img/lable_abnner/pic_icon.png) -0.8rem -1.12rem no-repeat;
 }
 
+.section .tips {
+  text-align: center;
+  line-height: 1.5rem;
+  position: absolute;
+  top: 8.333333rem;
+  left: 1rem;
+  z-index: 100;
+  color: #FF3333;
+  background: rgba(153, 153, 153, 0.8);
+  width: 7.966667rem;
+  height: 1.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.4rem;
+  display: none;
+}
+
 .section button {
   width: 93%;
   background: #4dc496;

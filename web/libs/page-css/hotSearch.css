@@ -1,0 +1,68 @@
+.header .header_search {
+  margin-left: 0.32rem;
+  width: 7.6rem;
+}
+
+.header .header_search .form .sousuokuang {
+  position: absolute;
+  top: -0.133333rem;
+  left: 0.53333rem;
+}
+
+.header .abolish {
+  color: #fff;
+  position: absolute;
+  right: 0.4rem;
+  top: -0.1rem;
+}
+
+.section {
+  padding-top: 0.266667rem;
+}
+
+.section .hot_search, .section .search_history .search_history_title {
+  color: #c1c1c1;
+  font-size: 0.32rem;
+  line-height: 0.533333rem;
+  margin-left: 0.32rem;
+}
+
+.section .hot_search_list {
+  font-size: 0.32rem;
+  line-height: 0.613333rem;
+  margin-top: 0.213333rem;
+  color: #666;
+  overflow: hidden;
+  margin-left: 0.32rem;
+}
+
+.section .hot_search_list a {
+  float: left;
+  display: inline-block;
+  height: 0.666667rem;
+  line-height: 0.666667rem;
+  text-align: center;
+  border: 0.026667rem solid #c1c1c1;
+  border-radius: 0.213333rem;
+  padding: 0 0.206667rem;
+  margin-bottom: 0.4rem;
+}
+
+.section .search_history .search_history_list {
+  font-size: 0.32rem;
+  line-height: 0.613333rem;
+  margin-top: 0.213333rem;
+  color: #666;
+  overflow: hidden;
+  margin-left: 0.32rem;
+}
+
+.section .search_history .search_history_list a {
+  display: block;
+  height: 0.666667rem;
+  line-height: 0.666667rem;
+  text-align: left;
+  padding: 0 0.206667rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 0.026667rem solid #c1c1c1;
+}

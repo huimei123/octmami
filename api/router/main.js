@@ -6,9 +6,10 @@ var management = require('./ManagementSystem');
 var timeLimit = require('./timeLimit');
 var selection = require('./selection');
 var flashSale = require('./flashSale');
+var usersDetails = require('./usersDetails');
+var singleDetails = require('./singleDetails');
 exports.main = function(express){
     var app = express();
-
     //app.use(express.static(path.join(__dirname, '/')));
     app.use(function (req, res, next) {
 
@@ -39,7 +40,8 @@ exports.main = function(express){
     timeLimit.timeLimit(app);
     selection.selection(app);
     flashSale.flashSale(app);
-    
+    usersDetails.usersDetails(app);
+    singleDetails.singleDetails(app);
     app.listen(8888);
 
 }

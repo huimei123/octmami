@@ -7,48 +7,15 @@ require(['config'],function(){
 			url:"http:10.3.134.228:8888/query",
 			async:true,
 			success:function(res){
-			$.each(res.data, function(idx,goods){
-				//console.log(goods);
-				//对象长度
-				var count=0
-	            for(var key in goods){
-					count++;
-				}
-	            //console.log(count);
-	            //对象转成数组
-				var shop=[];
-				for(var key in goods){
-					shop.push(goods[key]);
-				}
-			    //插入tr,td
-				$('.show_table').append($('<tr/>'));
-				for(var i=0;i<=12;i++){
-					$('.show_table tr').eq(idx+1).append($('<td/>'));
-				}
-				for(var j=0;j<=12;j++){
-				    $('.show_table tr').eq(idx+1).find('td').eq(j+1).text(shop[j+1]); 
-				}
-                  $('.show_table tr').eq(idx+1).find('td').eq(0).html($("<input type='checkbox'>"));
-//                  $('.show_table tr').eq(idx+1).find('td').eq(1).text(goods.id);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(2).text(goods.brand);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(3).text(goods.productName);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(4).text(goods.productDescription);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(5).text(goods.currentPrice);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(6).text(goods.originPrice);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(7).text(goods.productImg);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(8).text(goods.type);
-//                  $('.show_table tr').eq(idx+1).find('td').eq(9).text(goods.size);
-                   $('.show_table tr').eq(idx+1).find('td').eq(11).text(goods.productInformation);
-                    $('.show_table tr').eq(idx+1).find('td').eq(12).html($("<button class='xiu'>修改</button><button class='clear'>删除</button>"));
-                    
-			});	
+			load(res);
 			}
 
 	
-		$.post('http://localhost:8888/query',function(result){
-			console.log(result);
-
-		});
+//		$.post('http://localhost:8888/query',function(result){
+//			console.log(result);
+//
+//		});
+});
 		$.post();
 		//导航二级菜单
 		$('.main_left_second .yunfu').hide();
@@ -62,15 +29,18 @@ require(['config'],function(){
 		});
 		//搜索框搜索商品
 		$('._search_left input').on('keydown',function(event){
+		$('.show_table tr').eq(0).siblings().html('');
+			//回车搜索
 			if(event.keyCode==13){
 				$.post('http:10.3.134.228:8888/query',function(res){
-					$('.show_table tr').eq(0).siblings().html('');
+					
 					$.each(res.data,function(idx,goods){
-						if(goods.productName.indexOf($('._search_left input').val())!=-1){
+						if(goods.productName.indexOf($('._search_left input').val())>0){
 						    var  name=goods.productName;
 						    console.log(name);
-						    
-						    $.post('http:10.3.134.228:8888/query/data',{productName:name});
+						    $.post('http:10.3.134.228:8888/query/data',{productName:name},function(res){
+						    	load(res);
+						    });
 						}
 						
 					})
@@ -89,12 +59,12 @@ require(['config'],function(){
 			
 		});
 		//商品修改
-		var _updata='';
+		
 		var index=0;
 		$('.show_table').on('click','.xiu', function(){
 			_updata=$(this).parent().parent().find('td').eq(1).text();
 			index=$(this).parent().parent().index();
-			for(var i=1;i<11;i++){
+			for(var i=0;i<12;i++){
 				var message= $(this).parent().parent().find('td').eq(i+1).text();
 				$(this).parent().parent().find('td').eq(i+1).html($("<input type='text' />").val(message));
 				
@@ -102,48 +72,39 @@ require(['config'],function(){
 			   
 			});
 		//保存修改信息
-		$('._search_right_table .save').on('click',function(){
-			console.log(index);
-			console.log($('.show_table tr').eq(index).find('td').eq(2).find('input').val());
-			var newdata=$('.show_table tr').eq(index).find('td').eq(2).find('input').val();
-			if(_updata!=''){
-				
-			var updateStr={
-				brand:$('.show_table tr').eq(index).find('td').eq(2).find('input').val(),
-				productName:$('.show_table tr').eq(index).find('td').eq(3).find('input').val(),
-				productDescription:$('.show_table tr').eq(index).find('td').eq(4).find('input').val(),
-				currentPrice:$('.show_table tr').eq(index).find('td').eq(5).find('input').val(),
-				originPrice:$('.show_table tr').eq(index).find('td').eq(6).find('input').val(),
-				productImg:$('.show_table tr').eq(index).find('td').eq(7).find('input').val(),
-				type:$('.show_table tr').eq(index).find('td').eq(8).find('input').val(),
-				size:$('.show_table tr').eq(index).find('td').eq(9).find('input').val(),
-				color:$('.show_table tr').eq(index).find('td').eq(10).find('input').val(),
-				productInformation:$('.show_table tr').eq(index).find('td').eq(2).find('input').val()
-			   
-		    };
-		    console.log(updateStr)
-			$.post('http:10.3.134.228:8888/update',{id:_updata,brand:updateStr},function(){
-				console.log('123')
-				$('.show_table tr').eq(0).siblings().html('');
-				$.post();
-				
-			});
-		}else{
-			alert('你没修改任何商品')
-		}
+		$('._search_right_table .update').on('click',function(){
+			saveData();
 		});
 		//添加商品
 		$('._search_right_table .add').on('click',function(){
 			console.log(123);
 			$('.show_table tr').eq(1).before($('<tr/>'));
-			for(var i=0;i<13;i++){
+			for(var i=0;i<=13;i++){
 				$('.show_table tr').eq(1).append($('<td/>').html("<input type='text'/>"));
 			}
+			$('.show_table tr').eq(1).find('td').eq(0).html("<input type='checkbox' />");
+			$('.show_table tr').eq(1).find('td').eq(13).html($("<button class='xiu'>修改</button><button class='clear'>删除</button>"));
 			
-			$('.show_table tr').eq(1).find('td').eq(0).html(123);
-			
-			
+		});
+		//确认添加商品
+		$('._search_right_table .save').on("click",function(){
+			dataInsert(index);
 		})
+		//数据id升降排序
+		var num=-1;
+		$('.show_table th').eq(1).on('click',function(){
+			console.log(num);
+			num*=-1;
+            _id={id:num};
+           $.post('http:10.3.134.228:8888/sort',{key:'id',num:num},function(res){
+           	console.log('id降序');
+             $('.show_table tr').eq(0).siblings().html('');
+             load(res);
+             return num;
+           });
+		})
+		
+		
 		//时间
 		var newdate=new Date();
 		var year=newdate.getFullYear()+'年';
@@ -164,3 +125,108 @@ require(['config'],function(){
 	})
 	
 })
+//加载页面数据
+function load(res){
+     $.each(res.data, function(idx,goods){
+				//console.log(goods);
+				//对象长度
+				var count=0
+	            for(var key in goods){
+					count++;
+				}
+	            //console.log(count);
+	            //对象转成数组
+				var shop=[];
+				for(var key in goods){
+					shop.push(goods[key]);
+				}
+			    //插入tr,td
+				$('.show_table').append($('<tr/>'));
+				for(var i=0;i<=13;i++){
+					$('.show_table tr').eq(idx+1).append($('<td/>'));
+				}
+				for(var j=0;j<=13;j++){
+				    $('.show_table tr').eq(idx+1).find('td').eq(j+1).text(shop[j+1]); 
+				}
+                  $('.show_table tr').eq(idx+1).find('td').eq(0).html($("<input type='checkbox'>"));
+                  $('.show_table tr').eq(idx+1).find('td').eq(9).text(goods.size);
+                  var arr=[]
+                  for(var key in goods.arguments){
+                  	  arr.push(goods.arguments[key]);
+                  }
+                  //console.log(arr);
+                  $('.show_table tr').eq(idx+1).find('td').eq(11).text(arr);
+                  $('.show_table tr').eq(idx+1).find('td').eq(12).text(goods.productInformation);
+                  $('.show_table tr').eq(idx+1).find('td').eq(13).html($("<button class='xiu'>修改</button><button class='clear'>删除</button>"));
+                    
+			});	      	
+           	
+	
+}
+//获取页面数据并插入
+function dataInsert(index){
+	//颜色字符转数组保存
+	var color=$('.show_table tr').eq(1).find('td').eq(10).find('input').val();
+	var _color=color.split(',');
+	//尺寸
+	var size=$('.show_table tr').eq(1).find('td').eq(9).find('input').val();
+	var _size=size.split(',');
+	//参数
+	var arguments=$('.show_table tr').eq(1).find('td').eq(11).find('input').val();
+	var _arguments=arguments.split(',');
+	
+	
+	var datainsert={
+				id:$('.show_table tr').eq(1).find('td').eq(1).find('input').val(),
+				brand:$('.show_table tr').eq(1).find('td').eq(2).find('input').val(),
+				productName:$('.show_table tr').eq(1).find('td').eq(3).find('input').val(),
+				productDescription:$('.show_table tr').eq(1).find('td').eq(4).find('input').val(),
+				currentPrice:$('.show_table tr').eq(1).find('td').eq(5).find('input').val(),
+				originPrice:$('.show_table tr').eq(1).find('td').eq(6).find('input').val(),
+				productImg:$('.show_table tr').eq(1).find('td').eq(7).find('input').val(),
+				type:$('.show_table tr').eq(1).find('td').eq(8).find('input').val(),
+				size:_size,
+				color:_color,
+				arguments:_arguments,
+				productInformation:$('.show_table tr').eq(1).find('td').eq(12).find('input').val()
+			}
+			console.log(datainsert)
+			$.post('http:10.3.134.228:8888/add',JSON.stringify(datainsert),function(){
+				console.log('成功插入')
+				$('.show_table tr').eq(0).siblings().html('');
+				$.post();
+			});
+	
+}
+//修改指定数据数据
+function saveData(index){
+	var _updata='';
+	console.log(index);
+			console.log($('.show_table tr').eq(index).find('td').eq(2).find('input').val());
+			var newdata=$('.show_table tr').eq(index).find('td').eq(2).find('input').val();
+			if(_updata!=''){
+			var updateStr={
+				brand:$('.show_table tr').eq(index).find('td').eq(2).find('input').val(),
+				productName:$('.show_table tr').eq(index).find('td').eq(3).find('input').val(),
+				productDescription:$('.show_table tr').eq(index).find('td').eq(4).find('input').val(),
+				currentPrice:$('.show_table tr').eq(index).find('td').eq(5).find('input').val(),
+				originPrice:$('.show_table tr').eq(index).find('td').eq(6).find('input').val(),
+				productImg:$('.show_table tr').eq(index).find('td').eq(7).find('input').val(),
+				type:$('.show_table tr').eq(index).find('td').eq(8).find('input').val(),
+				size:$('.show_table tr').eq(index).find('td').eq(9).find('input').val(),
+				color:$('.show_table tr').eq(index).find('td').eq(10).find('input').val(),
+				arguments:$('.show_table tr').eq(index).find('td').eq(11).find('input').val(),
+				productInformation:$('.show_table tr').eq(index).find('td').eq(12).find('input').val()
+			   
+		    };
+		    console.log(updateStr)
+			$.post('http:10.3.134.228:8888/update',{id:_updata,brand:updateStr},function(){
+				console.log('123')
+				$('.show_table tr').eq(0).siblings().html('');
+				$.post();
+				
+			});
+		}else{
+			alert('你没修改任何商品')
+		}
+}

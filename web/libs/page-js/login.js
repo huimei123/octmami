@@ -15,12 +15,19 @@ require(['config'],function(){
 			$('#passwd').val("");		
 			
 		});
-		$.ajax({
-			url : 'http://10.3.134.228:8888/login',
-			type: 'POST',
-			success: function(res){
-				console.log(res);
-			}
-		});
+
+		//登录
+		$('.login_btn').on('click',function(){
+			$.ajax({
+				url : 'http://10.3.134.228:8888/login',
+				type: 'POST',
+				success: function(res){
+					console.log(res);
+					// var data = res.data;
+					// if(res)
+				}
+			});
+		})
+		
 	});
 });
