@@ -6,17 +6,19 @@ exports.account = function(app){
 
     app.post('/login', urlencodedParser, function(request, response){
         //请求数据库
-         db.query('users',request.body,function(result){
-           if(result.length>0){
+        db.query('users',request.body,function(result){
+            if(result.length>0){
                 //登录成功获取用户信息，购物车内容，收藏等
-                response.send({status: true, message:'登录成功', data:result});
-                console.log('登录成功');
+                //getDetails
+                db.query('usersDetails',request.body,function(result){
+                    response.send({status: true, message:'登录成功', data:result});
+                    console.log('登录成功');
+                })
             }else{ 
                 response.send({status: true, message:'登录失败', data:result});
                 console.log('登录失败');
             }
         })
-        
     })
 
     app.post('/regitster', urlencodedParser, function(request, response){
@@ -30,10 +32,13 @@ exports.account = function(app){
             }else{ 
             //注册
                 db.add('users', request.body, function(result){
-                    response.send({status: true, message: '注册成功'})
-                    console.log('注册成功');
-                })
-            }
+                    //注册成功写入usersDetails
+                   /* db.add('usersDetails', request.body,function(result){
+                        response.send({status: true, message: '注册成功'})
+                        console.log('注册成功');*/
+                    })
+                }
+            
         })
     })
     //找回密码

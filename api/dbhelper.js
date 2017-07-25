@@ -15,21 +15,23 @@ module.exports = {
                         callback(result)
                     }
                 })
+                db.close();
             })
-            db.close();
+            
         })
     },
     //删除
     delete: function(collection, data, callback){
-          db.open(function(error, db){
+        db.open(function(error, db){
             db.collection(collection, function(error, collection){
                 collection.remove(data,function(err, result){
                     if(callback && typeof callback == 'function'){
                         callback(result);
                     }
+                    db.close();
                 })
             });
-            db.close();
+            
         });
     },
     //搜索
@@ -40,21 +42,35 @@ module.exports = {
                     if(callback && typeof callback == 'function'){
                         callback(result);
                     }
+                    db.close();
                 })
             });
-            db.close();
+            
         });
     },
     update: function(collection, olddata, newdata, callback){
-         db.open(function(error, db){
+        db.open(function(error, db){
             db.collection(collection, function(error, collection){
                 collection.updateMany( olddata, newdata,function(){
                     if(callback && typeof callback == 'function'){
                         callback()
                     }
+                    db.close();
                 })
             })
-            db.close();
+            
+        })
+    },
+    sort: function(collection, data, callback){
+        db.open(function(err,db){
+            db.collection(collection,function(error,collection){
+                collection.find({}).sort(data).toArray(function(error,result){
+                    if(callback && typeof callback =='function' ){
+                        callback(result);
+                    }
+                    db.close();
+                })
+            })
         })
     }
 }

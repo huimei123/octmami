@@ -36,13 +36,13 @@ require(['config'],function(){
 			
 		});
 		
-		$.ajax({
-			url : 'http://10.3.134.228:8888/regitster',
-			type: 'POST',
-			success: function(res){
+		$('.reg_btn').click('click',function(){
+			/*$.post('http://10.3.134.228:8888/regitster',{},function(res){
 				console.log(res);
-			}
-		});
+		});*/
+		})
+		
+		
 
 	});
 });
