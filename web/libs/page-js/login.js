@@ -23,8 +23,6 @@ require(['config'],function(){
 				type: 'POST',
 				success: function(res){
 					console.log(res);
-					// var data = res.data;
-					// if(res)
 				}
 			});
 		})
