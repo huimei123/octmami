@@ -5,7 +5,7 @@ require(['config'],function(){
 		console.log(id);
 		if(id){
 			$.ajax({
-				url:'http://10.3.134.228:8888/singleDetails',
+				url:toggle+'singleDetails',
 				type:'POST',
 				dataType:'json',
 				data:{

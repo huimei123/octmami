@@ -19,7 +19,7 @@ require(['config'],function(){
 		//登录
 		$('.login_btn').on('click',function(){
 			$.ajax({
-				url : 'http://10.3.134.228:8888/login',
+				url : toggle+'login',
 				type: 'POST',
 				data:{
 					username:$('#username').val(),

@@ -10,7 +10,7 @@ require(['config'],function(){
 		var spell = [];
 
 		$.ajax({
-			url: 'http:10.3.134.228:8888/getBrand',
+			url: toggle + 'getBrand',
 			type: 'POST',
 			success: function(res){
 				

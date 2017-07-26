@@ -8,7 +8,7 @@ require(['config'],function(){
 
 		//生成列表页结构
 		$.ajax({
-			url: 'http:10.3.134.228:8888/query' ,
+			url: toggle+'query' ,
 			type: 'POST',
 			success: function(res){
 				
@@ -44,7 +44,7 @@ require(['config'],function(){
 			e.preventDefault();
 			
 			$.ajax({
-				url: 'http:10.3.134.228:8888/sort' ,
+				url: toggle+'sort' ,
 				type:'post',
 				data :{
 					key: 'currentPrice',

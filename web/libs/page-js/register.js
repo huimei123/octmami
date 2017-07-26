@@ -133,7 +133,7 @@ require(['config'],function(){
 			}
 			
 			$.ajax({
-				url: 'http://10.3.134.228:8888/regitster',
+				url: toggle+'regitster',
 				type: 'post',
 				data: {
 					username :　$('#username').val()+"",
