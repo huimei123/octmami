@@ -8,5 +8,10 @@ require(['config'],function(){
 		$('<div/>').load('./footer.html',function(){
 			$(this).insertAfter('.section');
 		});
+
+		// $('.sousuokuang').on('click',function(e){
+		// 	e.preventDefault();
+		// 	console.log($('.search').val());
+		// });
 	});
 });
