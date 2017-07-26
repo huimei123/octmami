@@ -83,34 +83,37 @@ require(['config'],function(){
 		});
 		$('.btn_buy').on('click',function(){
 			
-			goodsArr.forEach(function(item){
+			goodsArr.forEach(function(item,idx){
 				console.log(item);
 				if(obj['_id']==item['_id']){
 					item.qty = item.qty*1+$('.qty').val()*1;
-					console.log(item.qty);
-
+					//console.log(item.qty);
+					//obj['qty'] = goodsArr.push(obj);
+					goodsArr[idx]['qty'] = item.qty;
+				}else{
+					goodsArr.push(obj);
 				}
 				
 			})
 			number = number+$('.qty').val()*1;
-			obj['qty'] = $('.qty').val();
+			
 			$('.foot_car_set span').html(number);
 			//console.log(obj);
-			//goodsArr.push(obj);
+			
 			//console.log(goodsArr);
-			//var stingObj =JSON.stringify(goodsArr); 
+			var stingObj =JSON.stringify(goodsArr); 
 			//console.log(JSON.stringify(goodsArr));
 			//console.log(JSON.parse(stingObj));
-			//var storage = window.localStorage;
-			//storage.setItem('shoppingcar',stingObj);
+			var storage = window.localStorage;
+			storage.setItem('shoppingcar',stingObj);
 			//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 
 		});
 
-		$('.btn_car').onclick(function(){
+		/*$('.btn_car').onclick(function(){
 			console.log(111);
 		})
-
+*/
 
 	});
 });
