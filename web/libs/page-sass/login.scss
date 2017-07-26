@@ -30,6 +30,23 @@
 			background-size :  6.666667rem;
 			background:url(../img/lable_abnner/pic_icon.png) -0.8rem -1.12rem no-repeat;
 		}
+		.tips{
+			text-align: center;
+			line-height: 1.5rem;
+			position:absolute;
+			top:6.333333rem;
+			left: 0.5rem;
+			z-index: 100;
+			color:#FF3333 ;
+			background:rgba(#999, 0.8);
+			width: 7.966667rem;
+			height: 1.5rem;
+			border-radius:0.4rem;
+			font-size:0.4rem;
+		}
+		.usernama_tips{
+			display: none;
+		}
 
 	}
 	.tips{

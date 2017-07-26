@@ -47,6 +47,9 @@
 		.passwd_tips{
 			display: none;
 		}
+		.newpasswd_tips{
+			@extend .passwd_tips;
+		}
 		.usernama_tips{
 			@extend .passwd_tips;
 		}

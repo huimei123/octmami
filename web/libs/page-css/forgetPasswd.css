@@ -51,7 +51,7 @@
   color: #CC0000;
 }
 
-.section legend .passwd_tips, .section legend .usernama_tips {
+.section legend .passwd_tips, .section legend .newpasswd_tips, .section legend .usernama_tips {
   display: none;
 }
 

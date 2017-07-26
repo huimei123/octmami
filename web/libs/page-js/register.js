@@ -43,15 +43,16 @@ require(['config'],function(){
 		
 		$(username).on('blur',function(){
 		
-		var _username = this.value;
-		
-		if(!/^1[34578]\d{9}$/.test(_username)){
-			$('.usernama_tips').show();
-			setTimeout(function(){
-				$('.usernama_tips').hide();
-			},1000);
-				return false;
-			}
+			var _username = this.value;
+			
+			if(!/^1[34578]\d{9}$/.test(_username)){
+				$('.usernama_tips').show();
+				setTimeout(function(){
+					$('.usernama_tips').hide();
+				},1000);
+					return false;
+				}
+
 		});
 		
 		//判读密码 8-20位
@@ -68,7 +69,7 @@ require(['config'],function(){
 			}
 		});
 
-		//判断验证码
+		// 判断验证码
 		$('#yzm').on('blur',function(){
 			var _yzm = this.value;
 			if(_yzm !== letter1){
@@ -80,7 +81,7 @@ require(['config'],function(){
 			}
 		});
 
-		//判断手机验证码
+		// 判断手机验证码
 		$('#phone').on('blur',function(){
 			var _phone = this.value;
 			if(_phone !== letter2){
@@ -142,7 +143,8 @@ require(['config'],function(){
 				success: function(res){
 					console.log(res);
 				}
-			})
+			});
+			location.href = './login.html';
 		});
 		
 		

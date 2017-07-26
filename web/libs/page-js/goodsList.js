@@ -13,12 +13,12 @@ require(['config'],function(){
 			success: function(res){
 				
 				var data = res.data;
-				
+				console.log(data);
 				var html = '';
 				html = data.map(function(item,idx){
 					return `
 						<li class="pd_new_list_detail">
-							<a href="">
+							<a href="./goodsinfo.html?${item._id}">
 								<div class="pd_show_s_img">
 									<img src="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
 								</div>

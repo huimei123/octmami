@@ -51,7 +51,60 @@ require(['config'],function(){
 			}
 		});
 
+		//失去焦点时，判断确认密码是否符合规范
+		$('#newPasswd').on('blur',function(){
 
+			var _passwd2 = this.value;
+			var $passwd1 =  $(passwd).val();
+			console.log(_passwd2);
+			console.log($passwd1);
+
+			if($passwd1 !== _passwd2){
+				$('.newpasswd_tips').show();
+				setTimeout(function(){
+					$('.newpasswd_tips').hide();
+				},1000);
+				return false;
+			}
+
+		});
+
+		//显示注册信息错误提交框
+		function error(){
+			$('.register_tips').show();
+			setTimeout(function(){
+				$('.register_tips').hide();
+			},1000);
+		}
+
+		//提交
+		$('.btn').click('click',function(e){
+			e.preventDefault();
+			var _username = $('#phone').val();
+			var _passwd1 = $('#passwd').val();
+			if(!/^1[34578]\d{9}$/.test(_username)){
+				error();
+				return false;
+
+			}
+			else if(!/^[^\s]{8,20}$/.test(_passwd1)){
+				error();
+				return false;
+			}
+
+			$.ajax({
+				url: toggle+'getPassword',
+				type: 'post',
+				data: {
+					username :　$('#phone').val()+"",
+					passwd : $('#passwd').val()+"",
+				},
+				success: function(res){
+					console.log(res);
+				}
+			});
+			// location.href = './login.html';
+		});
 
 	});
 });
