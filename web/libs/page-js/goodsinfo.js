@@ -1,5 +1,6 @@
 require(['config'],function(){
 	require(['jquery','swiper'],function($){
+
 		//console.log(111);
 		var id = location.search.split('=')[1];
 		var obj = '';
@@ -96,20 +97,20 @@ require(['config'],function(){
 			obj['qty'] = $('.qty').val();
 			$('.foot_car_set span').html(number);
 			//console.log(obj);
-			//goodsArr.push(obj);
+			goodsArr.push(obj);
 			//console.log(goodsArr);
-			//var stingObj =JSON.stringify(goodsArr); 
+			var stingObj =JSON.stringify(goodsArr); 
 			//console.log(JSON.stringify(goodsArr));
 			//console.log(JSON.parse(stingObj));
-			//var storage = window.localStorage;
-			//storage.setItem('shoppingcar',stingObj);
+			var storage = window.localStorage;
+			storage.setItem('shoppingcar',stingObj);
 			//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 
 		});
 
-		$('.btn_car').onclick(function(){
-			console.log(111);
-		})
+		// $('.btn_car').onclick(function(){
+		// 	console.log(111);
+		// })
 
 
 	});

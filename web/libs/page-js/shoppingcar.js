@@ -1,5 +1,11 @@
 require(['config'],function(){
 	require(['jquery'],function($){
+		
+		//插入底部
+		$('<div/>').load('footer.html',function(){
+			$(this).insertAfter('.list');
+		});
+		
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.login_button');
 		});
