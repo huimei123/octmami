@@ -84,7 +84,11 @@ require(['config'],function(){
 		});
 		$('.btn_buy').on('click',function(){
 			
-			goodsArr.forEach(function(item,idx){
+			
+			if(goodsArr.length<=0){
+				goodsArr.push(obj);
+			}else{
+				goodsArr.forEach(function(item,idx){
 				console.log(item);
 				if(obj['_id']==item['_id']){
 					item.qty = item.qty*1+$('.qty').val()*1;
@@ -95,7 +99,9 @@ require(['config'],function(){
 					goodsArr.push(obj);
 				}
 				
-			})
+				})
+			}
+			
 			number = number+$('.qty').val()*1;			
 			$('.foot_car_set span').html(number);
 			//console.log(obj);
