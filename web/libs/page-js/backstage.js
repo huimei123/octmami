@@ -31,22 +31,13 @@ require(['config'],function(){
 			$.post(toggle+'query/data', {type:'下装'});
 		});
 		//搜索框搜索商品
-		$('._search_left input').on('keydown',function(event){
+		$('._search_left input').keydown(function(event){
 			$('.show_table tr').eq(0).siblings().html('');
 			//回车搜索
-			if(event.keyCode==13){
-				$.post(toggle+'query',function(res){
-					
-					$.each(res.data,function(idx,goods){
-						if(goods.productName.indexOf($('._search_left input').val())>0){
-							var  name=goods.productName;
-							console.log(name);
-							$.post(toggle+'query/data',{productName:name},function(res){
-								load(res);
-							});
-						}
-						
-					})
+			if(event.keyCode == 13){
+				$.post(toggle+'query/data',{key:$(".serchInput").val()},function(res){
+					console.log(res);
+					load(res);
 				});
 			}
 		});
