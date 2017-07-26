@@ -74,10 +74,13 @@
 	padding-bottom: 0.346667rem;
     height: 3.84rem;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .proUl{
-	width:17.066667rem;
+	width:13.5rem;
+	display: block;
 	overflow-x:scroll;
 	white-space: nowrap;
 }
