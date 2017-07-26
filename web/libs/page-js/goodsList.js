@@ -5,6 +5,23 @@ require(['config'],function(){
 		// 	$(this).insertAfter('.section');
 		// });
 
+		//获取URL的参数值
+		function　getURLParams(key){
+			let params = location.search.slice(1).split('&');
+			let res = '';
+			params.forEach(function(item){
+				let arr = item.split('=');
+				if(arr[0] == key){
+					res = arr[1];
+				}
+			});
+			return res;
+		}
+
+		var search = decodeURI(getURLParams('search'));
+		console.log(search);
+		$('.header_title').html(search);
+
 
 		//生成列表页结构
 		$.ajax({
