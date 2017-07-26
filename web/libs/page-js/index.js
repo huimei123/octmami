@@ -2,6 +2,12 @@ require(['config'],function(){
 	require(['jquery','swiper','hxLimitTime','hxchoice'],function($){
 		$('<section/>').addClass('title').load('search.html',function(){
 			$(this).insertBefore('.swiper-container');
+			console.log();
+			$('.header_search').on('click',function(){
+					//var id = $(this).data('id');
+					console.log(666);
+					location.href = './hotSearch.html';
+			});
 		});
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.foot');
@@ -61,11 +67,12 @@ require(['config'],function(){
 			console.log(this);
 			console.log(e.target);
 		});*/
+
 		var indexPage = {
 			$toTop : $('.toTop'),
 			$limitTime : $('.limitTime'),
 			$choice: $('.choice'),
-			$search:$('.search'),
+			$search:$('.header_search'),
 			init : function(){
 				//返回顶部
 				setInterval(function(){
@@ -91,10 +98,8 @@ require(['config'],function(){
 					var id = $(this).data('id');
 					location.href = './goodsinfo.html?_id='+id;
 				});
-				this.$search.on('click','li',function(){
-					//var id = $(this).data('id');
-					location.href = './hotSearch.html';
-				});
+				//console.log($('.header_search'));
+				
 			},
 		};
 

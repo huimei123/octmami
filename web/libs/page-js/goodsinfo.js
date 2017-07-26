@@ -2,7 +2,27 @@ require(['config'],function(){
 	require(['jquery','swiper'],function($){
 		//console.log(111);
 		var id = location.search.split('=')[1];
-		console.log(id);
+		var obj = '';
+		var goodsArr =[];
+		//console.log(id);
+		var number = 0;
+		if(localStorage.getItem('shoppingcar')==null){
+			//console.log(111);
+		}else{
+			
+			goodsArr = JSON.parse(localStorage.getItem('shoppingcar'));
+			goodsArr.forEach(function(item){
+				//console.log(item);
+				/*if(obj['_id']==item['_id']){
+					item.qty = item.qty*1+$('.qty').val()*1;
+					console.log(item.qty);
+				}*/
+				number += item.qty*1;
+			})
+			$('.foot_car_set span').html(number);
+			//console.log(goodsArr);
+		}
+		//console.log();
 		if(id){
 			$.ajax({
 				url:toggle+'singleDetails',
@@ -14,6 +34,9 @@ require(['config'],function(){
 				success:function(res){
 					console.log(res);
 					var goodObj = res.data[0];
+					obj = res.data[0];
+					//console.log(obj);
+					//console.log(JSON.parse(obj))
 					carousel(res);
 					$('.info').html(goodObj.productName);
 					$('.price').html(goodObj.currentPrice);
@@ -57,10 +80,37 @@ require(['config'],function(){
 				$('.qty').val(Number($('.qty').val())-1);
 			}
 			
-		})
+		});
 		$('.btn_buy').on('click',function(){
-			$('.foot_car_set span').html($('.qty').val())
+			
+			goodsArr.forEach(function(item){
+				console.log(item);
+				if(obj['_id']==item['_id']){
+					item.qty = item.qty*1+$('.qty').val()*1;
+					console.log(item.qty);
+
+				}
+				
+			})
+			number = number+$('.qty').val()*1;
+			obj['qty'] = $('.qty').val();
+			$('.foot_car_set span').html(number);
+			//console.log(obj);
+			//goodsArr.push(obj);
+			//console.log(goodsArr);
+			//var stingObj =JSON.stringify(goodsArr); 
+			//console.log(JSON.stringify(goodsArr));
+			//console.log(JSON.parse(stingObj));
+			//var storage = window.localStorage;
+			//storage.setItem('shoppingcar',stingObj);
+			//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
+
+		});
+
+		$('.btn_car').onclick(function(){
+			console.log(111);
 		})
+
 
 	});
 });
