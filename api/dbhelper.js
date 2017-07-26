@@ -60,19 +60,6 @@ module.exports = {
             db.close();
         })
     },
-    /*update:function(collection,whereStr,updateStr,callback){
-        db.open(function(err,db){
-            db.collection(collection,function(err,collection){
-                collection.update(whereStr,updateStr,function(err,result){
-                   if(callback && typeof callback=='function'){
-                       callback(result);
-                   }
-
-                })
-            })
-            db.close();
-        })
-    },*/
     sort: function(collection, data, callback){
         db.open(function(err,db){
             db.collection(collection,function(error,collection){
@@ -85,5 +72,18 @@ module.exports = {
             })
             db.close();
         })
+    },
+    lazy:function(collection, _limit, _skip,callback){
+        db.open(function(err,db){
+            db.collection(collection,function(err,collection){
+                collection.find().limit(_limit).skip(_skip).toArray(function(err,result){
+                    if(callback && typeof callback == 'function'){
+                        callback(result);
+                    }
+                })
+            })
+            db.close();
+        })
     }
 }
+

@@ -21,10 +21,26 @@ exports.management = function(app){
 		//res.send('注册post请求！');
 		//注册业务逻辑,
 		//查询字符
-		db.query('products',request.body, function(result){
-			console.log(request.body);
-			if(result.length>0){
-				response.send({status: true, message:'根据条件获取成功', data:result});
+
+		db.query('products',{}, function(result){
+			var str = request.body.key;
+			console.log(str);
+			var newArr = [];
+			//遍历结果放回数组
+			//console.log(result);
+			result.forEach(function(item,idx){
+				//console.log(item);
+				if(item.productName.indexOf(String(str))>=0){
+					newArr.push(result[idx]);
+				}
+				if(item.type.indexOf(str)>=0){
+					newArr.push(result[idx]);
+				}
+			})
+			//console.log(newArr);
+			//console.log(request.body);
+			if(newArr.length>0){
+				response.send({status: true, message:'根据条件获取成功', data:newArr});
 				console.log('根据条件获取成功');
 			}else{
 				response.send({status: false, message:'根据条件获取失败', data:[]});
@@ -40,7 +56,7 @@ exports.management = function(app){
 				response.send({status: true, message: '删除成功', data:result});
 				console.log('删除成功');
 			}else{
-				response.send({status: false, message: '删除成功', data:[]});
+				response.send({status: false, message: '删除失败', data:[]});
 				console.log('删除失败');
 			}
 		});
@@ -83,4 +99,17 @@ exports.management = function(app){
 			}
 		})
 	})
+	app.post('/lazy',urlencodedParser,function(request,response){
+		console.log(request.body);
+	    db.lazy('products',Number(request.body.limit),Number(request.body.skip),function(result){
+	        if(result.length>0){
+	            response.send({staus:true, message:'加载成功',data:result});
+	            console.log("加载成功")
+	        }else{
+	            response.send({staus:true,message:'加载失败'});
+	            console.log("加载失败")
+	        }
+	    })
+	})
+	
 }
