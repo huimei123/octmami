@@ -7,7 +7,7 @@ exports.selection = function(app){
 		//res.send('注册post请求！');
 		//注册业务逻辑,
 		//查询字符
-		db.query('selection',{}, function(result){
+		db.query('products',{}, function(result){
 			if(result.length>0){
 				response.send({status: true, message:'每日精选获取成功', data:result});
 				console.log('每日精选获取成功');

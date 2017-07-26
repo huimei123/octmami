@@ -11,12 +11,12 @@ exports.account = function(app){
             if(result.length > 0){
                 //登录成功获取用户信息，购物车内容，收藏等
                 //getDetails
-                db.query('usersDetails',request.body,function(result){
+                db.query('usersDetails',{username:request.body.username},function(result){
                     response.send({status: true, message:'登录成功', data:result});
                     console.log('登录成功');
                 })
             }else{ 
-                response.send({status: true, message:'登录失败',data:[]});
+                response.send({status: false, message:'登录失败',data:[]});
                 console.log('登录失败');
             }
         })
@@ -27,7 +27,7 @@ exports.account = function(app){
         注册用户
         先判断是否已注册*/
         console.log(request.body);
-        db.query('users', request.body,function(result){
+        db.query('users', {username:request.body.username},function(result){
             console.log(result);
             if(result.length > 0){
                 response.send({status: false, message:'已经注册'});
@@ -36,7 +36,7 @@ exports.account = function(app){
             //注册
                 db.add('users',request.body,function(){
                     db.add('usersDetails',{username:request.body.username});
-                    response.send({status: false, message:'注册成功'});
+                    response.send({status: true, message:'注册成功'});
                     console.log('注册成功');
                 })
 
