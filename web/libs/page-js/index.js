@@ -15,7 +15,7 @@ require(['config'],function(){
   		});
   		//限时特惠请求
 		$.ajax({
-			url:'http://10.3.134.228:8888/timeLimit',
+			url:toggle+'timeLimit',
 			dataType:'json',
 			type:'POST',
 			success:function(res){
@@ -27,7 +27,7 @@ require(['config'],function(){
 				}
 				//每日精选请求
 				$.ajax({
-					url: 'http://10.3.134.228:8888/selection',
+					url: toggle+'selection',
 					dataType:'json',
 					type:'POST',
 					success:function(res){
@@ -38,7 +38,7 @@ require(['config'],function(){
 							});
 						}
 						$.ajax({
-							url: 'http://10.3.134.228:8888/flashSale',
+							url: toggle+'flashSale',
 							dataType:'json',
 							type:'POST',
 							success: function(res){

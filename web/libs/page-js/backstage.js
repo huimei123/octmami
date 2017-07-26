@@ -4,7 +4,7 @@ require(['config'],function(){
 		//打开页面请求加载数据库内容
 		$.ajaxSetup({
 			type:"post",
-			url:"http:10.3.134.228:8888/query",
+			url:toggle + "query",
 			async:true,
 			success:function(res){
 			load(res);
@@ -25,20 +25,20 @@ require(['config'],function(){
 		//导航二级切换商品信息
 		$('.main_left_second .yunfu').eq(0).on('click',function(){
 			$('.show_table tr').eq(0).siblings().html('');
-			$.post('http:10.3.134.228:8888/query/data', {type:'下装'});
+			$.post(toggle+'query/data', {type:'下装'});
 		});
 		//搜索框搜索商品
 		$('._search_left input').on('keydown',function(event){
 		$('.show_table tr').eq(0).siblings().html('');
 			//回车搜索
 			if(event.keyCode==13){
-				$.post('http:10.3.134.228:8888/query',function(res){
+				$.post(toggle+'query',function(res){
 					
 					$.each(res.data,function(idx,goods){
 						if(goods.productName.indexOf($('._search_left input').val())>0){
 						    var  name=goods.productName;
 						    console.log(name);
-						    $.post('http:10.3.134.228:8888/query/data',{productName:name},function(res){
+						    $.post(toggle+'query/data',{productName:name},function(res){
 						    	load(res);
 						    });
 						}
@@ -50,7 +50,7 @@ require(['config'],function(){
 		//商品删除
 		$('.show_table').on('click','.clear', function(){
 			var clear=$(this).parent().parent().find('td').eq(1).text();
-			$.post('http:10.3.134.228:8888/delete',{id:clear},function(){
+			$.post(toggle+'delete',{id:clear},function(){
 				console.log('删除成功')
 				$('.show_table tr').eq(0).siblings().html('');
 				$.post();
@@ -96,7 +96,7 @@ require(['config'],function(){
 			console.log(num);
 			num*=-1;
             _id={id:num};
-           $.post('http:10.3.134.228:8888/sort',{key:'id',num:num},function(res){
+           $.post(toggle+'sort',{key:'id',num:num},function(res){
            	console.log('id降序');
              $('.show_table tr').eq(0).siblings().html('');
              load(res);
@@ -191,7 +191,7 @@ function dataInsert(index){
 				productInformation:$('.show_table tr').eq(1).find('td').eq(12).find('input').val()
 			}
 			console.log(datainsert)
-			$.post('http:10.3.134.228:8888/add',JSON.stringify(datainsert),function(){
+			$.post(toggle+'add',JSON.stringify(datainsert),function(){
 				console.log('成功插入')
 				$('.show_table tr').eq(0).siblings().html('');
 				$.post();
@@ -220,7 +220,7 @@ function saveData(index){
 			   
 		    };
 		    console.log(updateStr)
-			$.post('http:10.3.134.228:8888/update',{id:_updata,brand:updateStr},function(){
+			$.post(toggle+'update',{id:_updata,brand:updateStr},function(){
 				console.log('123')
 				$('.show_table tr').eq(0).siblings().html('');
 				$.post();
