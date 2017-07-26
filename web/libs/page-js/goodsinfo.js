@@ -84,20 +84,27 @@ require(['config'],function(){
 		});
 		$('.btn_buy').on('click',function(){
 			
-			goodsArr.forEach(function(item){
+			
+			if(goodsArr.length<=0){
+				goodsArr.push(obj);
+			}else{
+				goodsArr.forEach(function(item,idx){
 				console.log(item);
 				if(obj['_id']==item['_id']){
 					item.qty = item.qty*1+$('.qty').val()*1;
-					console.log(item.qty);
-
+					//console.log(item.qty);
+					//obj['qty'] = goodsArr.push(obj);
+					goodsArr[idx]['qty'] = item.qty;
+				}else{
+					goodsArr.push(obj);
 				}
 				
-			})
-			number = number+$('.qty').val()*1;
-			obj['qty'] = $('.qty').val();
+				})
+			}
+			
+			number = number+$('.qty').val()*1;			
 			$('.foot_car_set span').html(number);
 			//console.log(obj);
-			goodsArr.push(obj);
 			//console.log(goodsArr);
 			var stingObj =JSON.stringify(goodsArr); 
 			//console.log(JSON.stringify(goodsArr));
@@ -107,11 +114,5 @@ require(['config'],function(){
 			//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 
 		});
-
-		// $('.btn_car').onclick(function(){
-		// 	console.log(111);
-		// })
-
-
 	});
 });
