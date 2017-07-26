@@ -19,6 +19,7 @@ require(['config'],function(){
 //
 //		});
 });
+		
 		$.post();
 		//导航二级菜单
 		$('.main_left_second .yunfu').hide();
