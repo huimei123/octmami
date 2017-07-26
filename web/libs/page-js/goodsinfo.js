@@ -1,5 +1,6 @@
 require(['config'],function(){
 	require(['jquery','swiper'],function($){
+
 		//console.log(111);
 		var id = location.search.split('=')[1];
 		var obj = '';
@@ -95,11 +96,9 @@ require(['config'],function(){
 				}
 				
 			})
-			number = number+$('.qty').val()*1;
-			
+			number = number+$('.qty').val()*1;			
 			$('.foot_car_set span').html(number);
 			//console.log(obj);
-			
 			//console.log(goodsArr);
 			var stingObj =JSON.stringify(goodsArr); 
 			//console.log(JSON.stringify(goodsArr));
@@ -109,11 +108,5 @@ require(['config'],function(){
 			//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 
 		});
-
-		/*$('.btn_car').onclick(function(){
-			console.log(111);
-		})
-*/
-
 	});
 });

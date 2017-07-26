@@ -28,7 +28,10 @@ require(['config'],function(){
 		//导航二级切换商品信息
 		$('.main_left_second .yunfu').eq(0).on('click',function(){
 			$('.show_table tr').eq(0).siblings().html('');
-			$.post(toggle+'query/data', {type:'下装'});
+			$.post(toggle+'query/data',{key:$(".prenant").text()},function(res){
+				console.log(res);
+				load(res);
+			});
 		});
 		//搜索框搜索商品
 		$('._search_left input').keydown(function(event){
