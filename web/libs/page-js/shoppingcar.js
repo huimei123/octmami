@@ -1,0 +1,10 @@
+require(['config'],function(){
+	require(['jquery'],function($){
+		$('<section/>').addClass('footNav').load('footer.html',function(){
+			$(this).insertAfter('.login_button');
+		});
+		$('.btnClick').click(function(){
+			location.href='./index.html';
+		});
+	});
+});

@@ -1,0 +1,264 @@
+.infoHead{
+	width: 100%;
+    height: 1.173333rem;
+    text-align: center;
+    color: #242424;
+    font-size: 1.8rem;
+    line-height: 1.12rem;
+    background: #4dc496;
+    overflow: hidden;
+}
+.info_arrow{
+	position: absolute;
+    left: 0.133333rem;
+    top: -0.266667rem;
+}
+.info_arrow a{
+	display: inline-block;
+    padding: 0 0.533333rem 0 0.266667rem;
+    height: 1.173333rem;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.info_arrow a img{
+	vertical-align: middle;
+}
+.toHomePage{
+    position: absolute;
+    right: 0.133333rem;
+    top: -0.5rem;
+    line-height: 1.173333rem;
+}
+.toHomePage a{
+    display: inline-block;
+    padding: 0 0.266667rem;
+    height: 1.173333rem;
+    color: #fff;
+    font-size: 0.48rem;
+}
+.info{
+    font-size:0.426667rem;
+    color: #fff;
+    margin: 0 2.0rem;
+    height: 1.173333rem;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+}
+.banner{
+    width: 10.0rem;
+    max-height: 10.0rem;
+}
+.swiper-pagination-bullet{
+    width:28px;
+    height:28px;
+}
+.priceAndTime{
+    display: flex;
+    height: 1.226667rem;
+    width: 100%;
+    border-top: 0.026667rem solid #c1c1c1;
+    border-bottom: 0.026667rem solid #c1c1c1;
+}
+.pricebg{
+    flex: 6;
+    line-height: 1.226667rem;
+    padding-left: 0.4rem;
+    background: #ff6600;
+    color: #fff;
+    font-size: 0.533333rem;
+    white-space:nowrap;
+}
+.price{
+    font-size:0.4rem;
+    color: #fff;
+}
+.detailTitle{
+    font-size: 0.426667rem;
+    padding:0.4rem 0.133333rem;
+    color: #666;
+    border-bottom: 0.026667rem solid #c1c1c1;
+    padding-left:0.4rem;
+}
+.pd_Num{
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 0.026667rem solid #c1c1c1;
+}
+.number{
+    display:inline-block;
+    font-size: 0.426667rem;
+    line-height: 1.306667rem;
+    padding-left:0.4rem;
+}
+.qty{
+    width:1.28rem;
+    height:0.853333rem;
+    text-align: center;
+    font-size: 0.426667rem;
+    outline: none;
+    border-radius: 0.106667rem;
+    border: 1px solid #c1c1c1;
+    color: #666;
+    background: #fff;
+}
+.contact{
+    height: 1.066667rem;
+    text-align: center;
+    padding: 0.266667rem 0.4rem;
+    line-height: 1.04rem;
+    border-bottom: 0.026667rem solid #c1c1c1;
+}
+.chat{
+    height: 1.013333rem;
+    display: block;
+    color: #4dc496;
+    font-size: 0.426667rem;
+    border: 0.026667rem solid #c1c1c1;
+    border-radius: 0.106667rem;
+
+}
+.chat i{
+    width: 0.586667rem;
+    height: 0.453333rem;
+    display: inline-block;
+    margin-right: 0.266667rem;
+    vertical-align: text-top;
+    background: url(../img/pic_icon_pd_04.png?v=6) -4.266667rem -1.333333rem no-repeat;
+    background-size: 6.666667rem 12.0rem;
+
+}
+.link_pd_info{
+    height: 1.2rem;
+    text-align: center;
+    background: #eee;
+    line-height: 1.2rem;
+}
+.link_pd_info a{
+    line-height: 0.586667rem;
+    font-size: 0.426667rem;
+    color: #bbbaba;
+    text-align: center;
+    background: #eee;
+    border-top: 0.026667rem solid #d9d9d9;
+    width: 100%;
+    display: inline-block;
+    height: 0.586667rem;
+    vertical-align: middle;
+    margin-bottom: -0.533333rem;
+}
+.link_pd_info a span{
+    position: relative;
+    top: -0.293333rem;
+    background: #eee;
+    display: inline-block;
+    padding: 0 0.053333rem;
+}
+.productInfo{
+    height: 1.733333rem;
+    line-height: 1.733333rem;
+    text-align: center;
+    font-size: 0.533333rem;
+    color: #33cc99;
+    border-top: 0.026667rem solid #ccc;
+    background: #fff;
+}
+.infoNav{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 1.28rem;
+    width: 100%;
+    background: rgba(47, 47, 47, 0.7);
+    z-index: 999;
+}
+.infoNav ul{
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 1.28rem;
+    overflow: hidden;
+    position: relative;
+}
+.pd_footer_icn_md {
+    width: 1.6rem;
+    height: 1.28rem;
+    overflow: hidden;
+    display: table-cell;
+}
+.btn_fav{
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    border-top: 0.026667rem solid #8e8e8e;
+    border-right: 0.026667rem solid #8e8e8e;
+} 
+.btn_fav a{
+    display: inline-block !important;
+    margin: 0.293333rem auto 0;
+    width: 0.746667rem;
+    height: 0.666667rem;
+    background: url(../img/pic_icon_pd_01.png?v=6) -5.066667rem -10.933333rem no-repeat;
+    background-size: 6.666667rem;
+    vertical-align: middle;
+    margin-bottom: 0.533333rem  
+}
+.btn_car{
+    position: absolute;
+    left: 1.6rem;
+    top: 0;
+    text-align: center;
+    border-top: 0.026667rem solid #8e8e8e;
+}
+.foot_car_set{
+    position: relative;
+    width: 1.04rem;
+    height: 1.28rem;
+    margin: 0 auto;
+}
+.foot_car_set span{
+    position: absolute;
+    right: -0.08rem;
+    top: 0.186667rem;
+    min-width: 0.426667rem;
+    height: 0.426667rem;
+    line-height: 0.426667rem;
+    border-radius: 0.213333rem;
+    background: #ff6600;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    font-size: 0.266667rem;
+}
+.foot_car_set a{
+    display: inline-block !important;
+    margin: 0.24rem auto 0;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: url(../img/pic_icon_pd_02.png?v=6) 0 -1.733333rem no-repeat;
+    background-size: 6.666667rem;
+    vertical-align: middle;
+    margin-bottom: 0.533333rem
+    }    
+.btn_buy{
+    display: inline-block;
+    width: 100%;
+    height: 1.28rem;
+    line-height: 1.28rem;
+    color: #fff;
+    background: #ff6600;
+    font-size: 0.48rem;
+    float: left;
+    text-align: center;
+}
+.btn_buybg{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 67%;
+}
