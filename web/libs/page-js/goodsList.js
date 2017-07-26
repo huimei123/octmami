@@ -17,20 +17,20 @@ require(['config'],function(){
 			});
 			return res;
 		}
-
+		//获取URL地址传过来的搜索参数
 		var search = decodeURI(getURLParams('search'));
-		console.log(search);
 		$('.header_title').html(search);
-
 
 		//生成列表页结构
 		$.ajax({
-			url: toggle+'query' ,
+			url: toggle+'query/data' ,
 			type: 'POST',
+			data : {
+				key : search,
+			},
 			success: function(res){
 				
 				var data = res.data;
-				console.log(data);
 				var html = '';
 				html = data.map(function(item,idx){
 					return `

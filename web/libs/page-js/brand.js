@@ -15,7 +15,7 @@ require(['config'],function(){
 			success: function(res){
 				
 				var data = res.data;
-				
+				console.log(data);
 				
 				//获取品牌首字母
 				for(var i = 0 ; i < data.length ; i ++){
@@ -35,7 +35,7 @@ require(['config'],function(){
 							html += `
 								<ul class="new_brands">
 									<li class="brands_list_set">
-										<a class="brands_list" href="./goodsList.html">
+										<a class="brands_list" href="./goodsList.html?search= ${data[j].name}">
 											<span>
 												<img src="./libs/img/brandImg/${data[j].img}" />
 											</span>
