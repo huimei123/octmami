@@ -104,6 +104,34 @@
     border: 1px solid #c1c1c1;
     color: #666;
     background: #fff;
+    cursor: default;
+}
+.disable{
+    background-position: -2.133333rem 0px!important;
+    cursor: default;
+}
+.jian{
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-block;
+    background: url(../img/pic_icon_pd_01.png?v=6) no-repeat;
+    background-size: 6.666667rem;
+    margin: 0.053333rem 0 0 0;
+    border: 0.026667rem solid #c1c1c1;
+    vertical-align: middle;
+    margin-top: 0.266667rem;
+}
+.jia{
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-block;
+    background: url(../img/pic_icon_pd_01.png?v=6) no-repeat;
+    background-size: 6.666667rem;
+    margin: 0.053333rem 0 0 0;
+    border: 0.026667rem solid #c1c1c1;
+    vertical-align: middle;
+    margin-top: 0.266667rem;
+    background-position: -3.2rem 0px;
 }
 .contact{
     height: 1.066667rem;
@@ -261,4 +289,12 @@
     right: 0;
     bottom: 0;
     width: 67%;
+    color: #fff;
+}
+.btn_buybg:hover{
+    color: #fff;
+}
+
+.productInfoMain{
+    padding-bottom: 0.666667rem;
 }

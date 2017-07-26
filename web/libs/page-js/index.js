@@ -31,7 +31,7 @@ require(['config'],function(){
 					dataType:'json',
 					type:'POST',
 					success:function(res){
-						//console.log(res);
+						console.log(res);
 						if(res.status==true){
 							$('.choice').hxchoice({
 								data: res.data,
@@ -64,6 +64,8 @@ require(['config'],function(){
 		var indexPage = {
 			$toTop : $('.toTop'),
 			$limitTime : $('.limitTime'),
+			$choice: $('.choice'),
+			$search:$('.search'),
 			init : function(){
 				//返回顶部
 				setInterval(function(){
@@ -84,9 +86,20 @@ require(['config'],function(){
 					var id = $(this).data('id');
 					location.href = './goodsinfo.html?_id='+id;
 				});
+
+				this.$choice.on('click','li',function(){
+					var id = $(this).data('id');
+					location.href = './goodsinfo.html?_id='+id;
+				});
+				this.$search.on('click','li',function(){
+					//var id = $(this).data('id');
+					location.href = './hotSearch.html';
+				});
 			},
 		};
 
 		indexPage.init();
+
+
 	});
 });
