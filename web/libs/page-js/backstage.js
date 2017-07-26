@@ -174,11 +174,11 @@ function dataInsert(index){
 	//尺寸
 	var size=$('.show_table tr').eq(1).find('td').eq(9).find('input').val();
 	var _size=size.split(',');
+	var productImg = $('.show_table tr').eq(1).find('td').eq(7).find('input').val(),
+	var _productImg = productImg.split(',');
 	//参数
 	var arguments=$('.show_table tr').eq(1).find('td').eq(11).find('input').val();
 	var _arguments=arguments.split(',');
-	
-	
 	var datainsert={
 				id:$('.show_table tr').eq(1).find('td').eq(1).find('input').val(),
 				brand:$('.show_table tr').eq(1).find('td').eq(2).find('input').val(),
@@ -186,7 +186,7 @@ function dataInsert(index){
 				productDescription:$('.show_table tr').eq(1).find('td').eq(4).find('input').val(),
 				currentPrice:$('.show_table tr').eq(1).find('td').eq(5).find('input').val(),
 				originPrice:$('.show_table tr').eq(1).find('td').eq(6).find('input').val(),
-				productImg:$('.show_table tr').eq(1).find('td').eq(7).find('input').val(),
+				productImg:_productImg,
 				type:$('.show_table tr').eq(1).find('td').eq(8).find('input').val(),
 				size:_size,
 				color:_color,
