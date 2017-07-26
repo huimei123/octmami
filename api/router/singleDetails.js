@@ -24,8 +24,17 @@ exports.singleDetails=function(app){
 						console.log('商品详情获取成功');
 						return false;
 					}else{		
-						response.send({status: false, message:'商品详情获取失败', data:[]});
-						console.log('商品详情获取失败');	
+						db.query('selection',serchGood, function(result){
+							//console.log(serchGood);
+							if(result.length>0){
+								response.send({status: true, message:'商品详情获取成功', data:result});
+								console.log('商品详情获取成功');
+								return false;
+							}else{		
+								response.send({status: false, message:'商品详情获取失败', data:[]});
+								console.log('商品详情获取失败');	
+							}
+						})
 					}
 				})
 			}
