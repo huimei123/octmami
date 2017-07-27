@@ -2,7 +2,7 @@ require(['config'],function(){
 	require(['jquery'],function(){
 		var baseurl = 'http://10.3.134.228:8888/';
 		var local = 'http://localhost:8888/';
-		var toggle = baseurl;
+		var toggle = local;
 
 		//打开页面请求加载数据库内容
 		$.ajaxSetup({
@@ -13,12 +13,7 @@ require(['config'],function(){
 				load(res);
 			}
 
-			
-//		$.post('http://localhost:8888/query',function(result){
-//			console.log(result);
-//
-//		});
-});
+           });
 		
 		$.post();
 		//导航二级菜单
@@ -45,6 +40,7 @@ require(['config'],function(){
 				});
 			}
 		});
+		//搜索框为空
 		//商品删除
 		$('.show_table').on('click','.clear', function(){
 			var clear=$(this).parent().parent().find('td').eq(1).text();
@@ -56,38 +52,52 @@ require(['config'],function(){
 			
 			
 		});
+		
+		
 		//商品修改
 		
-		var index=0;
+		var index=1;
+		var _updata='';
+		console.log(index)
 		$('.show_table').on('click','.xiu', function(){
 			_updata=$(this).parent().parent().find('td').eq(1).text();
 			index=$(this).parent().parent().index();
-			for(var i=0;i<12;i++){
+			for(var i=1;i<12;i++){
 				var message= $(this).parent().parent().find('td').eq(i+1).text();
 				$(this).parent().parent().find('td').eq(i+1).html($("<input type='text' />").val(message));
 				
 			}
-			
+			//return index;
 		});
+		
 		//保存修改信息
 		$('._search_right_table .update').on('click',function(){
-			saveData();
+			saveData(index,_updata);
 		});
 		//添加商品
 		$('._search_right_table .add').on('click',function(){
-			console.log(123);
-			$('.show_table tr').eq(1).before($('<tr/>'));
-			for(var i=0;i<=13;i++){
-				$('.show_table tr').eq(1).append($('<td/>').html("<input type='text'/>"));
-			}
-			$('.show_table tr').eq(1).find('td').eq(0).html("<input type='checkbox' />");
-			$('.show_table tr').eq(1).find('td').eq(13).html($("<button class='xiu'>修改</button><button class='clear'>删除</button>"));
-			
+            $('.show_table tr').eq(0).siblings().html('');
+            $('.show_table').append($('<tr/>'));
+            $('.show_table tr').eq(1).append($('<h3/>').text('填写商品属性'));
+            $('.show_table tr').eq(1).append($("<label>id:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>品牌:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>产品名:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>产品描述:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>当前价格:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>原始价格:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>商品图片:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>类别:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>尺码:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>颜色:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>参数:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>商品信息:</label><input class='ipt' type='text'/>"));
+			$('.show_table tr').eq(1).append($("<label>上传图片:</label><input class='ipt' type='file'/>"));
 		});
 		//确认添加商品
 		$('._search_right_table .save').on("click",function(){
-			dataInsert(index);
+			dataInsert();
 		})
+		
 		//数据id升降排序
 		var num=-1;
 		$('.show_table th').eq(1).on('click',function(){
@@ -120,9 +130,7 @@ require(['config'],function(){
 		
 		
 		
-	})
 	
-})
 //加载页面数据
 function load(res){
 	$.each(res.data, function(idx,goods){
@@ -162,63 +170,88 @@ function load(res){
 	
 }
 //获取页面数据并插入
-function dataInsert(index){
+function dataInsert(){
 	//颜色字符转数组保存
-	var color=$('.show_table tr').eq(1).find('td').eq(10).find('input').val();
+	var color=$('.show_table .ipt').eq(9).val();
 	var _color=color.split(',');
-	//尺寸
-	var size=$('.show_table tr').eq(1).find('td').eq(9).find('input').val();
+	//尺寸字符转数组保存
+	var size=$('.show_table .ipt').eq(8).val();
 	var _size=size.split(',');
-	var productImg = $('.show_table tr').eq(1).find('td').eq(7).find('input').val(),
-	_productImg = productImg.split(',');
-	//参数
-	var arg=$('.show_table tr').eq(1).find('td').eq(11).find('input').val();
+	//商品图片字符转数组保存
+	var productImg = $('.show_table .ipt').eq(6).val();
+	var  _productImg = productImg.split(',');
+	//商品信息字符转数组保存
+	var productInformation= $('.show_table .ipt').eq(11).val();
+	var _productInformation = productInformation.split(',');
+	//参数字符转数组保存
+	var arg=$('.show_table .ipt').eq(10).val();
 	var _arguments=arg.split(',');
 	var datainsert={
-		id:$('.show_table tr').eq(1).find('td').eq(1).find('input').val(),
-		brand:$('.show_table tr').eq(1).find('td').eq(2).find('input').val(),
-		productName:$('.show_table tr').eq(1).find('td').eq(3).find('input').val(),
-		productDescription:$('.show_table tr').eq(1).find('td').eq(4).find('input').val(),
-		currentPrice:$('.show_table tr').eq(1).find('td').eq(5).find('input').val(),
-		originPrice:$('.show_table tr').eq(1).find('td').eq(6).find('input').val(),
+		id:$('.show_table .ipt').eq(0).val(),
+		brand:$('.show_table .ipt').eq(1).val(),
+		productName:$('.show_table .ipt').eq(2).val(),
+		productDescription:$('.show_table .ipt').eq(3).val(),
+		currentPrice:$('.show_table .ipt').eq(4).val(),
+		originPrice:$('.show_table .ipt').eq(5).val(),
 		productImg:_productImg,
-		type:$('.show_table tr').eq(1).find('td').eq(8).find('input').val(),
+		type:$('.show_table .ipt').eq(7).val(),
 		size:_size,
 		color:_color,
 		arguments:_arguments,
-		productInformation:$('.show_table tr').eq(1).find('td').eq(12).find('input').val()
+		productInformation:_productInformation
 	}
+	
 	console.log(datainsert)
-	$.post(toggle+'add',JSON.stringify(datainsert),function(){
+	if(datainsert.id==''){
+		alert('id不能为空')
+	}else{
+	$.post(toggle+'add',{key:JSON.stringify(datainsert)},function(){
 		console.log('成功插入')
 		$('.show_table tr').eq(0).siblings().html('');
 		$.post();
 	});
-	
+	}
 }
 //修改指定数据数据
-function saveData(index){
-	var _updata='';
+function saveData(index,_updata){
 	console.log(index);
-	console.log($('.show_table tr').eq(index).find('td').eq(2).find('input').val());
-	var newdata=$('.show_table tr').eq(index).find('td').eq(2).find('input').val();
 	if(_updata!=''){
+	//console.log($('.show_table tr').eq(index).find('td').eq(10).find('input').val())
+	//颜色字符转数组保存
+	var color=$('.show_table tr').eq(index).find('td').eq(10).find('input').val();
+	var _color=color.split(',');
+	//尺寸字符转数组保存
+	var size=$('.show_table tr').eq(index).find('td').eq(9).find('input').val();
+	var _size=size.split(',');
+	//商品图片字符转数组保存
+	var productImg = $('.show_table tr').eq(index).find('td').eq(7).find('input').val();
+	var  _productImg = productImg.split(',');
+	//商品信息字符转数组保存
+	var productInformation= $('.show_table tr').eq(index).find('td').eq(12).find('input').val();
+	var _productInformation = productInformation.split(',');
+	//参数字符转数组保存
+	var arg=$('.show_table tr').eq(index).find('td').eq(11).find('input').val();
+	var _arguments=arg.split(',');
+	var newdata=$('.show_table tr').eq(index).find('td').eq(2).find('input').val();
+	//判断是否点击修改
+	
 		var updateStr={
 			brand:$('.show_table tr').eq(index).find('td').eq(2).find('input').val(),
 			productName:$('.show_table tr').eq(index).find('td').eq(3).find('input').val(),
 			productDescription:$('.show_table tr').eq(index).find('td').eq(4).find('input').val(),
 			currentPrice:$('.show_table tr').eq(index).find('td').eq(5).find('input').val(),
 			originPrice:$('.show_table tr').eq(index).find('td').eq(6).find('input').val(),
-			productImg:$('.show_table tr').eq(index).find('td').eq(7).find('input').val(),
+			productImg:_productImg,
 			type:$('.show_table tr').eq(index).find('td').eq(8).find('input').val(),
-			size:$('.show_table tr').eq(index).find('td').eq(9).find('input').val(),
-			color:$('.show_table tr').eq(index).find('td').eq(10).find('input').val(),
-			arguments:$('.show_table tr').eq(index).find('td').eq(11).find('input').val(),
-			productInformation:$('.show_table tr').eq(index).find('td').eq(12).find('input').val()
+			size:_size,
+			color:_color,
+			arguments:_arguments,
+			productInformation:_productInformation
 			
 		};
 		console.log(updateStr)
-		$.post(toggle+'update',{id:_updata,brand:updateStr},function(){
+		
+		$.post(toggle+'update',{id:_updata,updateStr:JSON.stringify(updateStr)},function(){
 			console.log('123')
 			$('.show_table tr').eq(0).siblings().html('');
 			$.post();
@@ -228,3 +261,12 @@ function saveData(index){
 		alert('你没修改任何商品')
 	}
 }
+
+
+
+
+
+
+});
+	
+});
