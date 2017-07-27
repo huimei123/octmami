@@ -18,6 +18,7 @@ require(['config'],function(){
 		}else{
 			console.log(222);
 			goodsArr = JSON.parse(localStorage.getItem('shoppingcar'));
+			console.log(goodsArr);
 			goodsArr.forEach(function(item){
 			});
 			$('.goodsNull').hide();
@@ -25,7 +26,11 @@ require(['config'],function(){
 			var html = goodsArr.map(function(item){
 				//console.log(item);
 				return`
-					<li class="carList"><img src="./libs/img/productImg/${item.productImg[0]}"/><div>${item.productName}</div><div class="price">¥:${item.currentPrice}</div><li>
+					<li class="carList">
+					<img src="./libs/img/productImg/${item.productImg[0]}"/>
+					<div>${item.productName}</div>
+					<div class="price">¥${item.currentPrice}</div>
+					<li>
 				`
 			}).join("");
 			$('<ui/>').html(html).appendTo($('.list'));
