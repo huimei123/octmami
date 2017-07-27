@@ -40,6 +40,7 @@ require(['config'],function(){
 				});
 			}
 		});
+		//搜索框为空
 		//商品删除
 		$('.show_table').on('click','.clear', function(){
 			var clear=$(this).parent().parent().find('td').eq(1).text();
@@ -51,22 +52,27 @@ require(['config'],function(){
 			
 			
 		});
+		
+		
 		//商品修改
 		
-		var index=0;
+		var index=1;
+		var _updata='';
+		console.log(index)
 		$('.show_table').on('click','.xiu', function(){
 			_updata=$(this).parent().parent().find('td').eq(1).text();
 			index=$(this).parent().parent().index();
-			for(var i=0;i<12;i++){
+			for(var i=1;i<12;i++){
 				var message= $(this).parent().parent().find('td').eq(i+1).text();
 				$(this).parent().parent().find('td').eq(i+1).html($("<input type='text' />").val(message));
 				
 			}
-			
+			//return index;
 		});
+		
 		//保存修改信息
 		$('._search_right_table .update').on('click',function(){
-			saveData();
+			saveData(index,_updata);
 		});
 		//添加商品
 		$('._search_right_table .add').on('click',function(){
@@ -89,8 +95,9 @@ require(['config'],function(){
 		});
 		//确认添加商品
 		$('._search_right_table .save').on("click",function(){
-			dataInsert(index);
+			dataInsert();
 		})
+		
 		//数据id升降排序
 		var num=-1;
 		$('.show_table th').eq(1).on('click',function(){
@@ -163,7 +170,7 @@ function load(res){
 	
 }
 //获取页面数据并插入
-function dataInsert(index){
+function dataInsert(){
 	//颜色字符转数组保存
 	var color=$('.show_table .ipt').eq(9).val();
 	var _color=color.split(',');
@@ -195,36 +202,56 @@ function dataInsert(index){
 	}
 	
 	console.log(datainsert)
+	if(datainsert.id==''){
+		alert('id不能为空')
+	}else{
 	$.post(toggle+'add',{key:JSON.stringify(datainsert)},function(){
 		console.log('成功插入')
 		$('.show_table tr').eq(0).siblings().html('');
 		$.post();
 	});
-	
+	}
 }
 //修改指定数据数据
-function saveData(index){
-	var _updata='';
+function saveData(index,_updata){
 	console.log(index);
-	console.log($('.show_table tr').eq(index).find('td').eq(2).find('input').val());
-	var newdata=$('.show_table tr').eq(index).find('td').eq(2).find('input').val();
 	if(_updata!=''){
+	//console.log($('.show_table tr').eq(index).find('td').eq(10).find('input').val())
+	//颜色字符转数组保存
+	var color=$('.show_table tr').eq(index).find('td').eq(10).find('input').val();
+	var _color=color.split(',');
+	//尺寸字符转数组保存
+	var size=$('.show_table tr').eq(index).find('td').eq(9).find('input').val();
+	var _size=size.split(',');
+	//商品图片字符转数组保存
+	var productImg = $('.show_table tr').eq(index).find('td').eq(7).find('input').val();
+	var  _productImg = productImg.split(',');
+	//商品信息字符转数组保存
+	var productInformation= $('.show_table tr').eq(index).find('td').eq(12).find('input').val();
+	var _productInformation = productInformation.split(',');
+	//参数字符转数组保存
+	var arg=$('.show_table tr').eq(index).find('td').eq(11).find('input').val();
+	var _arguments=arg.split(',');
+	var newdata=$('.show_table tr').eq(index).find('td').eq(2).find('input').val();
+	//判断是否点击修改
+	
 		var updateStr={
 			brand:$('.show_table tr').eq(index).find('td').eq(2).find('input').val(),
 			productName:$('.show_table tr').eq(index).find('td').eq(3).find('input').val(),
 			productDescription:$('.show_table tr').eq(index).find('td').eq(4).find('input').val(),
 			currentPrice:$('.show_table tr').eq(index).find('td').eq(5).find('input').val(),
 			originPrice:$('.show_table tr').eq(index).find('td').eq(6).find('input').val(),
-			productImg:$('.show_table tr').eq(index).find('td').eq(7).find('input').val(),
+			productImg:_productImg,
 			type:$('.show_table tr').eq(index).find('td').eq(8).find('input').val(),
-			size:$('.show_table tr').eq(index).find('td').eq(9).find('input').val(),
-			color:$('.show_table tr').eq(index).find('td').eq(10).find('input').val(),
-			arguments:$('.show_table tr').eq(index).find('td').eq(11).find('input').val(),
-			productInformation:$('.show_table tr').eq(index).find('td').eq(12).find('input').val()
+			size:_size,
+			color:_color,
+			arguments:_arguments,
+			productInformation:_productInformation
 			
 		};
 		console.log(updateStr)
-		$.post(toggle+'update',{id:_updata,brand:updateStr},function(){
+		
+		$.post(toggle+'update',{id:_updata,updateStr:JSON.stringify(updateStr)},function(){
 			console.log('123')
 			$('.show_table tr').eq(0).siblings().html('');
 			$.post();
