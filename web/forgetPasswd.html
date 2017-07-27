@@ -16,7 +16,9 @@
 	<header class="header">
 		<div class="header_left">
 			<a href="">
-				<img src="./libs/img/lable_abnner/pic_btArrow_back_01.png" alt="">
+				<svg class="icon" aria-hidden="true">
+				  <use xlink:href="#icon-mjiantou-copy"></use>
+				</svg>
 			</a>
 		</div>
 		<div class="header_title">
@@ -33,27 +35,33 @@
 		<form method="post" action="http://10.3.134.228:8888/getPassword">
 			<legend>
 				<input type="text" placeholder="绑定手机号" name="username" id="phone">
-				<span class="icon_close">
-					<i class="close_btn1"></i>
-				</span>
+				<svg class="icon close_btn1 icon_close" aria-hidden="true">
+				  <use xlink:href="#icon-shanchu"></use>
+				</svg>
 				<div class="tips usernama_tips">
 					<p class="">手机号码输入不正确</p>
 				</div>
 			</legend>
 			<legend>
-				<input type="password" placeholder="输入手机验证码" name="passwd" id="phoneYzm">
-				<i class="close_btn2"></i>
+				<input type="text" placeholder="输入手机验证码" name="phoneYzm" id="phoneYzm">
+				<svg class="icon close_btn2 icon_close" aria-hidden="true">
+				  <use xlink:href="#icon-shanchu"></use>
+				</svg>
 			</legend>
 			<legend>
 				<input type="password" placeholder="输入新密码" name="passwd" id="passwd">
-				<i class="close_btn3"></i>
+				<svg class="icon close_btn3 icon_close" aria-hidden="true">
+				  <use xlink:href="#icon-shanchu"></use>
+				</svg>
 				<div class="tips passwd_tips">
 					<p class="">密码输入不规范，请输入8-20位的密码</p>
 				</div>
 			</legend>
 			<legend>
 				<input type="password" placeholder="确认新密码" name="passwd" id="newPasswd">
-				<i class="close_btn4"></i>
+				<svg class="icon close_btn4 icon_close" aria-hidden="true">
+				  <use xlink:href="#icon-shanchu"></use>
+				</svg>
 				<div class="tips newpasswd_tips">
 					<p class="">两次密码输入不正确</p>
 				</div>

@@ -67,7 +67,7 @@
 
 .main ._main .main_left {
   float: left;
-  width: 15%;
+  width: 20%;
   height: 100%;
   background: white;
   text-align: center;
@@ -127,7 +127,7 @@
 
 .main ._main .main_right {
   float: left;
-  width: 82%;
+  width: 78%;
   height: 100%;
   background: red;
   margin-left: 10px;

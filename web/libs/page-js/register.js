@@ -18,7 +18,7 @@ require(['config'],function(){
 				letter1 += code[idx];
 				
 			}
-			$('.regCode1').text(letter1);
+			$('.regCode1').css('color',randomColor()).text(letter1);
 		}
 
 		//随机生成手机校验码
@@ -28,7 +28,7 @@ require(['config'],function(){
 				var idx = parseInt(Math.random() * code.length); 
 				letter2 += code[idx];
 			}
-			$('.regCode2').text(letter2);
+			$('.regCode2').css('color',randomColor()).text(letter2);
 		}
 		yzm();
 		phoneLetter();
@@ -52,7 +52,28 @@ require(['config'],function(){
 				},1000);
 					return false;
 				}
-
+			//如果手机号正确，判断手机号是否被注册
+			if(/^1[34578]\d{9}$/.test(_username)){
+				$.ajax({
+					url: toggle+'regitster',
+					type: 'post',
+					data: {
+						username :　$('#username').val()+"",
+					},
+					success: function(res){
+						var  status = res.status;
+						if(status == false){
+							$('.username_tips').show();
+							$('#username').val('');
+							setTimeout(function(){
+								$('.username_tips').hide();
+							},1000);
+							return false;
+						}
+					}
+				});
+			}
+			
 		});
 		
 		//判读密码 8-20位

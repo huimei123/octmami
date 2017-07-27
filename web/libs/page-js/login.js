@@ -28,17 +28,6 @@ require(['config'],function(){
 		//登录
 		$('.login_btn').on('click',function(e){
 			e.preventDefault();
-			// var _username = $('#username').val();
-			// var _passwd1 = $('#passwd').val();
-			// if(!/^1[34578]\d{9}$/.test(_username)){
-			// 	error();
-			// 	return false;
-
-			// }
-			// else if(!/^[^\s]{8,20}$/.test(_passwd1)){
-			// 	error();
-			// 	return false;
-			// }
 
 			$.ajax({
 				url : toggle+'login',

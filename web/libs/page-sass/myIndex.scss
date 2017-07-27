@@ -146,22 +146,16 @@
 	bottom:1.333333rem;
 	a{
 
-		font-size:24px;
+		font-size:0.373333rem;
 		display: block;
-		color:#666;
 		padding-left:0.4rem;
 		height: 1.226667rem;
 		line-height: 1.226667rem;
-		i{
-			
-			display: inline-block;
-			position:relative;
-			top: 0.266667rem;
-			width: 0.693333rem;
-			height: 0.693333rem;
-			background:url(../img/lable_abnner/pic_icon_pd_02.png) no-repeat -1.76rem -5.68rem;
+
+		.icon {
+			margin-right: 0.266667rem;
+			color:#4dc496;
 		}
-		
 		
 	}
 }
