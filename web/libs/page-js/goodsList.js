@@ -32,7 +32,7 @@ require(['config'],function(){
 			//点击切换排序方式
 			console.log(999)
 			//$('.price').addClass('priceActive');
-			$('.priceEm').addClass('priceActive');
+			$('strong').addClass('priceActive');
 			if($('.price').attr('data-tamp') == 1){
 				$('.price').attr('data-tamp',-1);
 				$('.icon-xiangshang').removeClass('priceActive');
