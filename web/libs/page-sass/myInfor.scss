@@ -1,0 +1,110 @@
+.section{
+	.myInfor{
+		ul{
+			li{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding:0 0.4rem;
+				border-bottom: 0.026667rem solid #e2e2e2;
+				line-height: 1.066667rem;
+				height: 1.066667rem;
+				font-size:0.346667rem;
+				color:#999;
+				span{
+					color:#999;
+					
+				}
+				.myinfo_sex{
+					display: inline-block;
+					span{
+						display: inline-block;
+						text-align: center;
+						padding: 0 0.32rem;
+						height: 0.693333rem;
+						line-height: 0.693333rem;
+						color:#999;
+					}
+					.active{
+						
+						border:2px solid #4dc496;
+						border-radius:0.4rem;
+						
+					}
+
+				}
+				.born{
+					position:relative;
+					.year{
+						display: inline-block;
+						input{
+							border:0;
+							outline: none;
+							width: 1.133333rem;
+							font-size:0.346667rem;
+							text-align: right;
+							color:#999;
+						}
+						ul{
+							position: absolute;
+							left: 0.333333rem;
+							top: 0.766667rem;
+							height: 3.666667rem;
+							overflow: auto;
+							display: none;
+							li{
+								border:none;
+								height: 0.766667rem;
+								line-height: 0.766667rem;
+							}
+						}
+					}
+					.month{
+						@extend .year;
+						ul{
+							left: 2.733333rem;
+						}
+					}
+				}
+			}
+			.myInfor_pic{
+				line-height: 2.533333rem;
+				height: 2.533333rem;
+				.my_pic{	
+					font-size:1.066667rem;			
+				}
+			}
+			.adress{
+				display: block;
+				width: 90%;
+			}
+			.myAdress{
+				width: 10%;
+				display: block;
+				position:relative;
+				right: 0;
+				
+			}
+		}
+	}
+	.btn{
+		display: flex;
+	    justify-content: space-around;
+	    padding-top:0.533333rem;
+	    .save_btn{
+			width: 93%;
+			text-align:center;
+		    background: #4dc496;
+		    font-size: 0.42rem;
+		    color: #fff;
+		    line-height:1.2rem;
+		    height: 1.2rem;
+		    border-radius:0.133333rem;
+		    display: flex;
+		    justify-content: space-around;
+		   	border:none;
+		   	letter-spacing:0.2rem;
+		}
+	}
+	
+}
