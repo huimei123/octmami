@@ -201,6 +201,7 @@ footer{
     background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
     background-size: 6.666667rem;
 }
+/* css loading 样式 */
 .loadPage{
 	position:absolute;
 	width: 100%;
@@ -219,13 +220,11 @@ footer{
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 25%;
-    max-width: 25%;
     height: 200px;
     align-items: center;
     justify-content: center;
     position:relative;
     top:44%;
-    left:40%;
 }
 .loader-inner{
 
@@ -321,26 +320,27 @@ footer{
             transform: translateY(0);
     -webkit-transform: scale(0.75);
             transform: scale(0.75); } }
+
 .ball-pulse-rise > div {
-background-color: #fff;
-width: 15px;
-height: 15px;
-border-radius: 100%;
-margin: 2px;
--webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
-display: inline-block;
--webkit-animation-duration: 1s;
-      animation-duration: 1s;
--webkit-animation-timing-function: cubic-bezier(.15, .46, .9, .6);
-      animation-timing-function: cubic-bezier(.15, .46, .9, .6);
--webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
--webkit-animation-delay: 0;
-      animation-delay: 0; }
-.ball-pulse-rise > div:nth-child(2n) {
--webkit-animation-name: ball-pulse-rise-even;
-        animation-name: ball-pulse-rise-even; }
-.ball-pulse-rise > div:nth-child(2n-1) {
--webkit-animation-name: ball-pulse-rise-odd;
-        animation-name: ball-pulse-rise-odd; }
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: inline-block;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(.15, .46, .9, .6);
+          animation-timing-function: cubic-bezier(.15, .46, .9, .6);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0;
+          animation-delay: 0; }
+  .ball-pulse-rise > div:nth-child(2n) {
+    -webkit-animation-name: ball-pulse-rise-even;
+            animation-name: ball-pulse-rise-even; }
+  .ball-pulse-rise > div:nth-child(2n-1) {
+    -webkit-animation-name: ball-pulse-rise-odd;
+            animation-name: ball-pulse-rise-odd; }

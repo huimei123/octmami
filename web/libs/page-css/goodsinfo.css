@@ -116,7 +116,7 @@
 }
 .disable{
     background-position: -2.133333rem 0px!important;
-    cursor: default;
+    pointer-events: none; 
 }
 .jian{
     width: 0.8rem;
@@ -284,7 +284,18 @@
     }    
 .btn_buy{
     display: inline-block;
-    width: 100%;
+    width: 50%;
+    height: 1.28rem;
+    line-height: 1.28rem;
+    color: #fff;
+    background: #ff9400;;
+    font-size: 0.48rem;
+    float: left;
+    text-align: center;
+}
+.buy_now{
+    display: inline-block;
+    width: 50%;
     height: 1.28rem;
     line-height: 1.28rem;
     color: #fff;
@@ -305,5 +316,179 @@
 }
 
 .productInfoMain{
-    padding-bottom: 0.666667rem;
+    padding-bottom: 1.333333rem;
+    width:100%;
+    overflow: hidden;
 }
+.productInfoMain img{
+     width:100%;
+     float: left;
+}
+.arguments{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 0.026667rem solid #8e8e8e;
+}
+.arguments p{
+    width:50%;
+    text-align:left;
+    font-size:0.36rem;
+    display: inline-block;
+    text-indent: 0.4rem;
+    margin: 0.08rem 0 ;
+}
+.toTop{
+    display: none;
+    width: 0.96rem;
+    height: 0.96rem;
+    position: fixed;
+    right: 0.266667rem;
+    bottom: 2.4rem;
+    z-index: 100;
+    background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
+    background-size: 6.666667rem;
+}
+
+/* loading页面 */
+.loadPage{
+    position:absolute;
+    width: 100%;
+    height:100%;
+    background-color:#666;
+    opacity: 0.7;
+    top:0;
+    left: 0;
+    z-index: 10000;
+}
+.loader{
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 25%;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top:44%;
+}
+.loader-inner{
+
+}
+@-webkit-keyframes ball-pulse-rise-even {
+  0% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+
+  25% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px); }
+
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  75% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes ball-pulse-rise-even {
+  0% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+
+  25% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px); }
+
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  75% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes ball-pulse-rise-odd {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  25% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); }
+
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+
+  75% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px); }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75); } }
+
+@keyframes ball-pulse-rise-odd {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  25% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); }
+
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+
+  75% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px); }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75); } }
+.ball-pulse-rise > div {
+background-color: #fff;
+width: 15px;
+height: 15px;
+border-radius: 100%;
+margin: 2px;
+-webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+display: inline-block;
+-webkit-animation-duration: 1s;
+      animation-duration: 1s;
+-webkit-animation-timing-function: cubic-bezier(.15, .46, .9, .6);
+      animation-timing-function: cubic-bezier(.15, .46, .9, .6);
+-webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+-webkit-animation-delay: 0;
+      animation-delay: 0; }
+.ball-pulse-rise > div:nth-child(2n) {
+-webkit-animation-name: ball-pulse-rise-even;
+        animation-name: ball-pulse-rise-even; }
+.ball-pulse-rise > div:nth-child(2n-1) {
+-webkit-animation-name: ball-pulse-rise-odd;
+        animation-name: ball-pulse-rise-odd; }

@@ -1,5 +1,6 @@
 require(['config'],function(){
 	require(['jquery','swiper','hxLimitTime','hxchoice','lazyload'],function($){
+		//状态判断是否加载完页面
 		document.onreadystatechange = state;
 			function state(){
 				console.log(document.readyState);
@@ -7,7 +8,8 @@ require(['config'],function(){
 					$('.loadPage').hide();
 				} 
 			}
-			state();
+		state();
+		//引入header和绑定跳转事件
 		$('<section/>').addClass('title').load('search.html',function(){
 			$(this).insertBefore('.swiper-container');
 			console.log();
@@ -17,9 +19,11 @@ require(['config'],function(){
 					location.href = './hotSearch.html';
 			});
 		});
+		//引入footer
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.foot');
 		});
+		//swiper轮播图
 		var mySwiper = new Swiper('.swiper-container',{
 		    loop: true,
 			autoplay: 3000,
@@ -75,7 +79,7 @@ require(['config'],function(){
 			console.log(this);
 			console.log(e.target);
 		});*/
-
+		//首页对象
 		var indexPage = {
 			$toTop : $('.toTop'),
 			$limitTime : $('.limitTime'),
@@ -109,7 +113,7 @@ require(['config'],function(){
 				//console.log($('.header_search'));
 			},
 		};
-
+		//初始化
 		indexPage.init();
 
 
