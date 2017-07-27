@@ -15,7 +15,6 @@
 }
 .swiper-container{
 	height:3.746667rem;
-
 }
 
 .icon_set{
@@ -53,19 +52,23 @@
 }
 
 .img1{
-	width: 6.24rem;
-	height:6.24rem;
+	width: 6rem;
+	height:6.1rem;
+	margin-left: 0.093333rem;
 }
 
 .img2{
 	width: 3.706667rem;
-	height:3.093333rem;
+	height:3rem;
 	display: block;
+	margin-bottom:0.106667rem;
+	margin-left:0.106667rem;
 }
 
 .img3{
 	width: 3.706667rem;
-	height:3.093333rem;
+	height:3rem;
+	margin-left:0.106667rem;
 }
 
 footer{

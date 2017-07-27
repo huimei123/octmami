@@ -11,7 +11,7 @@
 				var html = opt.data.map(function(item){
 					//console.log(item);
 					return`
-						<li data-id="${item['_id']}"><img class="choiceImg" src="libs/img/productImg/${item.productImg[0]}" alt="" /><div class="fontKey">${item.brand}</div><div class="fontName">${item.productName}</div><div class="fontPri">¥:${item.originPrice}</div></li>
+						<li data-id="${item['_id']}"><img class="choiceImg" src="libs/img/productImg/${item.productImg[0]}" alt="" /><div class="fontKey">${item.brand}</div><div class="fontName">${item.productName}</div><div class="fontPri">¥ ${item.originPrice}</div></li>
 					`
 				}).join('');
 				//console.log(html);
@@ -23,10 +23,10 @@
 					if(parseInt(item.time.split('小时')[0]/24) == 0){
 					var hour = "";
 					}else{
-						var hour = parseInt(item.time.split('小时')[0]/24) +'天';
+						var hour = parseInt(item.time.split('小时')[0]/24) +' 天 ';
 					}
 					return`
-						<li id="styleOther"><img class="imgOther" src="libs/img/productImg/${item.img[0]}" alt="" /><div class="nextTime"><span class="clock"></span>${hour}${item.time.split('小时')[0]%24}时</div></li>
+						<li id="styleOther"><img class="imgOther" src="libs/img/productImg/${item.img[0]}" alt="" /><div class="nextTime"><span class="clock"></span>${hour}${item.time.split('小时')[0]%24} 时</div></li>
 					`
 				}).join('');
 				//console.log(html);

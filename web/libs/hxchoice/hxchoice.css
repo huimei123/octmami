@@ -1,9 +1,10 @@
 
 .choiceTitle{
 	margin:0.133333rem auto;
-	width:8.026667rem;
+	width:9.333333rem;
 }
 .choiceTitle img{
+	width:10.506667rem;
 	margin:0 auto;
 }
 .choiceUl{
@@ -18,20 +19,27 @@
 }
 .choiceImg{
 	width:4.533333rem;
-	margin: 0 auto;
+	margin: 0.106667rem auto;
 	display:block;
 }
 .fontKey{
 	font-size:0.32rem;
 	text-align: center;
+	margin-top:0.133333rem;
+	color: #7e7e7e;
 }
 .fontName{
-	font-size: 0.32rem;
+	font-size: 0.36rem;
 	padding:0 0.066667rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	margin-top: 0.133333rem;
 }
 .fontPri{
-	font-size: 0.426667rem;
-	margin-left: 0.266667rem;
+	font-size: 0.4rem;
+	margin:0.133333rem 0 0.106667rem 0.266667rem;
 	color: #ff6600;
 }
 
@@ -58,6 +66,7 @@
     border-radius: 0.293333rem 0 0 0.293333rem;
     font-size: 0.32rem;
     color:white;
+    padding-right:0.2rem;
 }
 
 .clock{

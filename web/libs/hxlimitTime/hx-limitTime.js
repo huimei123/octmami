@@ -13,9 +13,9 @@
 			$('<span/>').html('限时特惠').appendTo($div);
 			var $limTime = $('<div/>').addClass('limTime').appendTo($div);
 			$('<span/>').addClass('limHour').appendTo($limTime).html('00');
-			$('<span/>').appendTo($limTime).html(':');
+			$('<span/>').appendTo($limTime).html(':').addClass('point');
 			$('<span/>').addClass('limMinu').appendTo($limTime).html('00');
-			$('<span/>').appendTo($limTime).html(':');
+			$('<span/>').appendTo($limTime).html(':').addClass('point');
 			$('<span/>').addClass('limSec').appendTo($limTime).html('00');
 			$('<a/>').addClass('limMore').appendTo($div).html('更多>');
 			var THour = '01';
@@ -43,11 +43,12 @@
 			var html = opt.data.map(function(item){
 				//console.log(item);
 				return`
-					<li class="proLi" data-id="${item['_id']}"><img class="proImg" src = 'libs/img/productImg/${item.productImg[0]}'/><p class='proPrice'>¥:${item.currentPrice}</p><p class='proName'>${item.productDescription}</p></li>
+					<li class="proLi" data-id="${item['_id']}"><img class="proImg" src = 'libs/img/productImg/${item.productImg[0]}'/><p class='proPrice'>¥ ${item.currentPrice}</p><p class='proName'>${item.productDescription}</p></li>
 				`
 			}).join('');
 			//console.log(html);
-			$('<ul/>').addClass('proUl').html(html).appendTo($litContent);
+			$('<ul/>').addClass('proUl').html(html).appendTo($litContent).attr('style',`width:${$('.proLi').outerWidth()*5}px`);
+			console.log($('.proLi').outerWidth());
 		})
 	}
 })(jQuery);

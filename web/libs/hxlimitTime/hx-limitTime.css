@@ -63,33 +63,32 @@
 
 .limMore{
 	color: #a2a2a2;
-    font-size: 0.293333rem;
+    font-size: 0.33rem;
     font-weight: 100;
     float: right;
-    margin-right: 0.186667rem;
+    margin-right: 0.5rem;
 
 }
 
 .limContent{
-	padding-bottom: 0.346667rem;
-    height: 3.84rem;
+	padding-bottom: 0.22rem;
     position: relative;
     overflow: auto;
     overflow-x: auto;
     overflow-y: hidden;
 }
 .proUl{
-	width:13.5rem;
 	display: block;
 	overflow-x:scroll;
-	white-space: nowrap;
+	overflow: hidden;
+	white-space:nowrap;
 }
 .proLi{
 	width:2.693333rem;
 	height:3.786667rem;
 	float: left;
 	border-right: 0.013333rem #e3e3e3 solid;
-	padding:0.066667rem;
+	padding:0.16rem;
 }
 .proImg{
 	width:2.666667rem;
@@ -104,10 +103,15 @@
 }
 .proName{
 	text-align: center;
-	font-size: 0.266667rem;
+	font-size: 0.32rem;
 	clear: left;
 	text-overflow:ellipsis;
 	overflow: hidden;
 	padding:0 0.266667rem;
+	color: #666;
 	
+}
+.point{
+	font-size:0.306667rem; 
+	margin:0.066667rem;
 }
