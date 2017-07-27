@@ -41,6 +41,12 @@ require(['config'],function(){
 			}
 		});
 		//搜索框为空
+		$('.serchInput').on('input',function(){
+			if($(this).val()==''){
+				$('.show_table tr').eq(0).siblings().html('');
+				$.post();
+			}
+		})
 		//商品内部删除
 		$('.show_table').on('click','.clear', function(){
 			var clear=$(this).parent().parent().find('td').eq(1).text();
