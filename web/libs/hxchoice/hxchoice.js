@@ -11,11 +11,12 @@
 				var html = opt.data.map(function(item){
 					//console.log(item);
 					return`
-						<li data-id="${item['_id']}"><img class="choiceImg" src="libs/img/productImg/${item.productImg[0]}" alt="" /><div class="fontKey">${item.brand}</div><div class="fontName">${item.productName}</div><div class="fontPri">¥ ${item.originPrice}</div></li>
+						<li data-id="${item['_id']}"><img class="choiceImg lazy" data-original = "libs/img/productImg/${item.productImg[0]}"  alt="" /><div class="fontKey">${item.brand}</div><div class="fontName">${item.productName}</div><div class="fontPri">¥ ${item.originPrice}.00</div></li>
 					`
 				}).join('');
 				//console.log(html);
 				$('<ul/>').addClass('choiceUl').append(html).appendTo($('.choice'));
+				
 			}else{
 				$('<div/>').addClass('choiceTitle').append('<img  src = "./libs/img/pic_test_sectionFlashTitle_002.png"/>').appendTo($('.choiceOther'));
 				var html = opt.data.map(function(item){
@@ -26,13 +27,16 @@
 						var hour = parseInt(item.time.split('小时')[0]/24) +' 天 ';
 					}
 					return`
-						<li id="styleOther"><img class="imgOther" src="libs/img/productImg/${item.img[0]}" alt="" /><div class="nextTime"><span class="clock"></span>${hour}${item.time.split('小时')[0]%24} 时</div></li>
+						<li id="styleOther"><img class="imgOther lazy" data-original="libs/img/productImg/${item.img[0]}" alt="" /><div class="nextTime"><span class="clock"></span>${hour}${item.time.split('小时')[0]%24} 时</div></li>
 					`
 				}).join('');
 				//console.log(html);
 				$('<ul/>').addClass('choiceUl').append(html).appendTo($('.choiceOther'));
 			}
-			
+			$(function(){
+					console.log(111);
+					$('.lazy').lazyload({effect: "fadeIn"});
+				});
 		});
 	}
 })(jQuery);
