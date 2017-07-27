@@ -37,10 +37,18 @@
   margin-top: 0.133333rem;
 }
 
+.menber_infor .menber_id .dou .jindou {
+  font-size: 0.533333rem;
+}
+
 .menber_infor .menber_id .menber_dou {
   color: #f0b478;
   text-shadow: 1px 1px #9b6c5a;
   font-weight: bold;
+}
+
+.menber_infor .menber_id .menber_label {
+  padding-top: 0.133333rem;
 }
 
 .menber_infor .menber_id .menber_label .menber_icon img {
@@ -50,106 +58,107 @@
   height: 0.48rem;
 }
 
-.menber_menu .menber_menu_nav .all_order {
-  padding: 0 0.266667rem;
-  line-height: 1.066667rem;
+.menber_menu .menber_menu_nav {
+  display: flex;
+  padding: 0 0.4rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.933333rem;
   border-bottom: 0.026667rem solid #e5e5e5;
 }
 
+.menber_menu .menber_menu_nav .all_order {
+  width: 2.666667rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 0.933333rem;
+}
+
+.menber_menu .menber_menu_nav .all_order .dingdan {
+  font-size: 0.48rem;
+  color: #4dc496;
+}
+
 .menber_menu .menber_menu_nav .all_order span {
-  font-size: 0.333333rem;
+  color: #999;
+  font-size: 0.32rem;
+}
+
+.menber_menu .menber_menu_nav .youjiantou {
+  font-size: 0.48rem;
+  color: #999;
 }
 
 .menber_menu .meber_order_infor {
-  overflow: hidden;
-  padding-bottom: 0.266667rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.266667rem;
   border-bottom: 0.026667rem solid #e5e5e5;
 }
 
 .menber_menu .meber_order_infor li {
-  float: left;
-  width: 2rem;
   height: 1.493333rem;
   text-align: center;
-  line-height: 1.493333rem;
-  font-size: 0.346667rem;
+  font-size: 0.32rem;
   color: #888888;
 }
 
-.menber_menu .meber_order_infor li .iconfont {
-  margin-left: 0.666667rem;
-  display: block;
-  width: 0.533333rem;
-  height: 0.533333rem;
+.menber_menu .meber_order_infor li a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menber_menu .meber_order_infor li a .oct_ico {
+  font-size: 0.48rem;
+  width: 100%;
+  color: #999;
+}
+
+.menber_menu .meber_order_infor li a span {
+  width: 100%;
 }
 
 .menber_menu .member_menu_list ul {
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .menber_menu .member_menu_list ul li {
-  position: relative;
-  float: left;
-  width: 2.48rem;
+  width: 25%;
   height: 2.346667rem;
   text-align: center;
 }
 
-.menber_menu .member_menu_list ul li .oct_ico {
-  position: absolute;
-  top: 0.333333rem;
-  left: 0.666667rem;
-  display: block;
-  width: 0.8rem;
-  height: 0.8rem;
-  background: url(../img/lable_abnner/pic_icon_pd_04.png) no-repeat;
-}
-
-.menber_menu .member_menu_list ul li span {
-  color: #666;
+.menber_menu .member_menu_list ul li a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   font-size: 0.32rem;
-  position: relative;
-  top: 0.633333rem;
+  padding-top: 0.533333rem;
 }
 
-.menber_menu .member_menu_list ul li .oct_icon1 {
-  background-position: 0 -4.32rem;
+.menber_menu .member_menu_list ul li a .oct_ico {
+  width: 100%;
+  text-align: center;
+  font-size: 0.666667rem;
 }
 
-.menber_menu .member_menu_list ul li .oct_icon2 {
-  background-position: -0.8rem -4.32rem;
-}
-
-.menber_menu .member_menu_list ul li .oct_icon3 {
-  background-position: -1.6rem -4.32rem;
-}
-
-.menber_menu .member_menu_list ul li .oct_icon4 {
-  background-position: -2.4rem -4.32rem;
-}
-
-.menber_menu .member_menu_list ul li .oct_icon5 {
-  background-position: 0 -5.12rem;
-}
-
-.menber_menu .member_menu_list ul li .oct_icon6 {
-  background-position: -0.8rem -5.12rem;
-}
-
-.menber_menu .member_menu_list ul li .oct_icon7 {
-  background-position: -1.6rem -5.12rem;
-}
-
-.menber_menu .member_menu_list ul li .oct_icon8 {
-  background-position: -2.4rem -5.12rem;
+.menber_menu .member_menu_list ul li a span {
+  width: 100%;
+  padding-top: 0.266667rem;
 }
 
 .act {
   width: 100%;
   height: 1.226667rem;
   line-height: 1.28rem;
-  position: fixed;
-  bottom: 1.333333rem;
 }
 
 .act a {
