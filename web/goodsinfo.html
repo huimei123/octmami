@@ -25,6 +25,7 @@
 	<script src= "./libs/page-js/require.js" data-main="./libs/page-js/goodsinfo"></script>
 </head>
 <body>
+	<!-- 头部 -->
 	<header class="infoHead">
 		<div class="info_arrow">
 			<a href="">
@@ -35,33 +36,55 @@
 		<div class="info"></div>
 		<div class="toHomePage"><a href="./index.html">首页</a></div>
 	</header>
+	<!-- 轮播图 -->
 	<div class="swiper-container">
 	  	<!-- 如果需要分页器 -->
 	  	<div class="swiper-pagination"></div>
 	</div>
+	<!-- 显示价格的 -->
 	<div class="priceAndTime">
-		<div class="pricebg">¥:&nbsp;<span class="price"></span></div>
+		<div class="pricebg">¥&nbsp;<span class="price"></span></div>
 		<div class="time"></div>
 	</div>
+	<!-- 商品名称 -->
 	<div class="detailTitle"></div>
+	<!-- 显示数量的 -->
 	<div class="pd_Num">
 		<div class="number">数量:&nbsp;</div>
 		<a class="jian disable" ></a>
 		<input class="qty" type="" name="" value="1">
 		<a class="jia"></a>
 	</div>
+	<!-- 商品规格&信息 -->
+	<div class="arguments"></div>
+	<!-- 部分静态项 -->
 	<div class="contact"><a  class="chat" href=""><i class="lianxi"></i>联系客服(9:00-20:00)</a></div>
 	<div class="link_pd_info">
 		<a href=""><span>继续拖动,查看图文详情</span></a>
 	</div>
 	<div class="productInfo">产品信息</div>
 	<div class="productInfoMain"></div>
+	<!-- 详情页底部功能 -->
 	<section class="infoNav">
 		<ul>
 			<li class="pd_footer_icn_md btn_fav"><a href=""></a></li>
 			<li class="pd_footer_icn_md btn_car"><div class="foot_car_set"><span>0</span><a href="./shoppingcar.html"></a></div></li>
-			<li class="pd_footer_icn_md btn_buybg"><a class="btn_buy">加入购物车</a></li>
+			<li class="pd_footer_icn_md btn_buybg"><a class="btn_buy">加入购物车</a><a class="buy_now">立即购买</a></li>
 		</ul>
 	</section>
+	<!-- 返回顶部 -->
+	<section class="toTop"></section>
+	<!-- loading -->
+	<div class="loadPage">
+		<div class="loader">
+			<div class="loader-inner ball-pulse-rise">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

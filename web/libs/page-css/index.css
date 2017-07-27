@@ -201,6 +201,10 @@ footer{
     background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
     background-size: 6.666667rem;
 }
+<<<<<<< HEAD
+=======
+/* css loading 样式 */
+>>>>>>> 0ba9a5a66474a5aad3008f6263f9b1a01e7663b7
 .loadPage{
 	position:absolute;
 	width: 100%;
@@ -219,13 +223,19 @@ footer{
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 25%;
+<<<<<<< HEAD
     max-width: 25%;
+=======
+>>>>>>> 0ba9a5a66474a5aad3008f6263f9b1a01e7663b7
     height: 200px;
     align-items: center;
     justify-content: center;
     position:relative;
     top:44%;
+<<<<<<< HEAD
     left:40%;
+=======
+>>>>>>> 0ba9a5a66474a5aad3008f6263f9b1a01e7663b7
 }
 .loader-inner{
 
@@ -321,6 +331,7 @@ footer{
             transform: translateY(0);
     -webkit-transform: scale(0.75);
             transform: scale(0.75); } }
+<<<<<<< HEAD
 .ball-pulse-rise > div {
 background-color: #fff;
 width: 15px;
@@ -344,3 +355,29 @@ display: inline-block;
 .ball-pulse-rise > div:nth-child(2n-1) {
 -webkit-animation-name: ball-pulse-rise-odd;
         animation-name: ball-pulse-rise-odd; }
+=======
+
+.ball-pulse-rise > div {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: inline-block;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(.15, .46, .9, .6);
+          animation-timing-function: cubic-bezier(.15, .46, .9, .6);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0;
+          animation-delay: 0; }
+  .ball-pulse-rise > div:nth-child(2n) {
+    -webkit-animation-name: ball-pulse-rise-even;
+            animation-name: ball-pulse-rise-even; }
+  .ball-pulse-rise > div:nth-child(2n-1) {
+    -webkit-animation-name: ball-pulse-rise-odd;
+            animation-name: ball-pulse-rise-odd; }
+>>>>>>> 0ba9a5a66474a5aad3008f6263f9b1a01e7663b7
