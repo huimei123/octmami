@@ -23,11 +23,12 @@
 }
 .info_arrow a img{
 	vertical-align: middle;
+    width:0.266667rem;
 }
 .toHomePage{
     position: absolute;
     right: 0.133333rem;
-    top: -0.5rem;
+    top: -0.55rem;
     line-height: 1.173333rem;
 }
 .toHomePage a{
@@ -35,7 +36,7 @@
     padding: 0 0.266667rem;
     height: 1.173333rem;
     color: #fff;
-    font-size: 0.48rem;
+    font-size: 0.38rem;
 }
 .info{
     font-size:0.426667rem;
@@ -50,9 +51,16 @@
     width: 10.0rem;
     max-height: 10.0rem;
 }
+.swiper-pagination{
+    margin-bottom: 0.933333rem;
+}
 .swiper-pagination-bullet{
-    width:28px;
-    height:28px;
+    width:0.25rem;
+    height:0.25rem;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin:0 0.133333rem;
+
 }
 .priceAndTime{
     display: flex;

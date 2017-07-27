@@ -1,5 +1,13 @@
 require(['config'],function(){
-	require(['jquery','swiper','hxLimitTime','hxchoice'],function($){
+	require(['jquery','swiper','hxLimitTime','hxchoice','lazyload'],function($){
+		document.onreadystatechange = state;
+			function state(){
+				console.log(document.readyState);
+				if(document.readyState == 'complete'){
+					$('.loadPage').hide();
+				} 
+			}
+			state();
 		$('<section/>').addClass('title').load('search.html',function(){
 			$(this).insertBefore('.swiper-container');
 			console.log();
@@ -99,7 +107,6 @@ require(['config'],function(){
 					location.href = './goodsinfo.html?_id='+id;
 				});
 				//console.log($('.header_search'));
-				
 			},
 		};
 

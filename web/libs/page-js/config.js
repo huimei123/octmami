@@ -6,11 +6,13 @@ require.config({
 		common : '../common/common',
 		hxchoice : '../hxchoice/hxchoice',
 		bootstrap : '../bootstrap/bootstrap.min',
+		lazyload : '../tuupola-jquery_lazyload/jquery.lazyload.min',
 	},
 	shim : {
 		swiper : ['jquery'],
 		hxLimitTime : ['jquery'],
 		hxchoice : ['jquery'],
 		bootstrap : ['jquery'],
+		lazyload : ['jquery'],
 	}
 });
