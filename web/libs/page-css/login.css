@@ -25,15 +25,12 @@
   background-color: #fff !important;
 }
 
-.section legend i {
+.section legend .icon_close {
   position: absolute;
-  top: 0.3rem;
-  right: 0.4rem;
-  display: inline-block;
-  width: 0.543333rem;
-  height: 0.543333rem;
-  background-size: 6.666667rem;
-  background: url(../img/lable_abnner/pic_icon.png) -0.8rem -1.12rem no-repeat;
+  width: 0.8rem;
+  height: 0.8rem;
+  top: 0.133333rem;
+  right: 0.133333rem;
 }
 
 .section legend .tips {

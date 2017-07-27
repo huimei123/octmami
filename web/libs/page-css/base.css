@@ -32,7 +32,7 @@ body, ul, li, p, form, input, a, img {
 .header .header_search {
   background: #fff;
   vertical-align: middle;
-  width: 6.8rem;
+  width: 6rem;
   height: 0.613333rem;
   border: 1px solid #ddd;
   border-radius: 0.32rem;
@@ -40,13 +40,16 @@ body, ul, li, p, form, input, a, img {
 }
 
 .header .header_search .form {
-  width: 7.0rem;
+  position: relative;
+  width: 6.6rem;
 }
 
 .header .header_search .form .sousuokuang {
+  color: #4dc496;
   position: absolute;
-  top: -0.133333rem;
-  left: 2.53333rem;
+  top: -0.333333rem;
+  left: 0.33333rem;
+  font-weight: bold;
 }
 
 .header .header_search .form .search {
@@ -98,7 +101,7 @@ body, ul, li, p, form, input, a, img {
 
 .footer ul li {
   float: left;
-  width: 24%;
+  width: 25%;
   text-align: center;
 }
 
@@ -107,34 +110,18 @@ body, ul, li, p, form, input, a, img {
   text-align: center;
 }
 
-.footer ul li a .oct_ico {
+.footer ul li a .oct_icon {
+  padding-top: 0.08rem;
   display: block;
-  width: 0.666667rem;
-  height: 0.666667rem;
-  margin-top: 0.08rem;
-  vertical-align: middle;
-  background: url(../img/lable_abnner/pic_icon_pd_04.png) no-repeat;
-}
-
-.footer ul li a .oct_ico1 {
-  background-position: 0 -3.333333rem;
-}
-
-.footer ul li a .oct_ico2 {
-  background-position: -0.666667rem -3.333333rem;
-}
-
-.footer ul li a .oct_ico3 {
-  background-position: -2.0rem -3.333333rem;
-}
-
-.footer ul li a .oct_ico4 {
-  background-position: -2.666667rem -3.333333rem;
+  color: #fff;
+  font-size: 0.666667rem;
 }
 
 .footer ul li a span {
   display: block;
   color: #fff;
+  position: relative;
+  top: -0.133333rem;
   font-size: 0.32rem;
-  line-height: 0.426667rem;
+  padding-top: 0.106667rem;
 }
