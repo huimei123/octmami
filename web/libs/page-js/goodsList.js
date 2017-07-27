@@ -22,8 +22,7 @@ require(['config'],function(){
 				key : res,
 			},
 			success: function(res){
-				showGoods(res);	
-							
+				showGoods(res);					
 			}
 		});
 		//按价格排序
@@ -54,7 +53,7 @@ require(['config'],function(){
 					//console.log(res);
 					$('.pdShowList').html('');
 					showGoods(res);	
-				},
+				}
 			});
 		});
 		
@@ -88,4 +87,5 @@ require(['config'],function(){
 			$('.pdShowList').append(html);
 		}
 	});
+
 });
