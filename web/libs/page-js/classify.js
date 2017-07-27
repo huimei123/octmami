@@ -10,5 +10,9 @@ require(['config'],function(){
 			var url = $(this).text()
 			location.href='./goodsList.html?search=' + url;
 		})
+		//引入footer
+		$('<section/>').addClass('footNav').load('footer.html',function(){
+			$(this).insertAfter('.classify-content');
+		});
 	})
 })
