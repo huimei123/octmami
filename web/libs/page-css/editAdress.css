@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+}
+
+.section .adress_input {
+  border-bottom: 2px solid #e2e2e2;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.253333rem;
+  font-size: 0.373333rem;
+}
+
+.section .adress_input input {
+  color: #999;
+  border: 0;
+  outline: none;
+  width: 100%;
+  padding: 0 0.4rem;
+  font-size: 0.4rem;
+  box-sizing: border-box;
+}
+
+.section .adress_input p {
+  width: 100%;
+  height: 1.253333rem;
+  line-height: 1.253333rem;
+  color: #ccc;
+  padding: 0 0.4rem;
+}
+
+.section .adress_input .province, .section .adress_input .city, .section .adress_input .county {
+  width: 4.0rem;
+  height: 5.333333rem;
+  background: #fff;
+  overflow: auto;
+  font-size: 0.506667rem;
+  position: absolute;
+  top: 3.766667rem;
+  left: 0.4rem;
+  display: none;
+}
+
+.section .adress_input .province li, .section .adress_input .city li, .section .adress_input .county li {
+  height: 0.866667rem;
+}
+
+.section .adress_input .city {
+  top: 5.366667rem;
+}
+
+.section .adress_input .county {
+  display: block;
+  top: 6.366667rem;
+}
+
+.section .btn {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.533333rem;
+}
+
+.section .btn .save_btn {
+  width: 93%;
+  text-align: center;
+  background: #4dc496;
+  font-size: 0.42rem;
+  color: #fff;
+  line-height: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.133333rem;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  letter-spacing: 0.2rem;
+}

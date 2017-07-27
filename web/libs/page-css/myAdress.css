@@ -1,0 +1,38 @@
+.section .adress {
+  padding-top: 0.666667rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.section .adress .icon {
+  color: #999;
+  width: 2.586667rem;
+  height: 2.586667rem;
+}
+
+.section .adress p {
+  width: 100%;
+  font-size: 0.373333rem;
+  padding-top: 0.566667rem;
+  text-align: center;
+}
+
+.section .add_adress {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.8rem;
+}
+
+.section .add_adress a {
+  display: block;
+  height: 1.066667rem;
+  line-height: 1.066667rem;
+  padding: 0 0.426667rem;
+  background: #4dc496;
+  color: #fff;
+  border-radius: 0.106667rem;
+  font-size: 0.4rem;
+}
