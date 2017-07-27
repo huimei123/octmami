@@ -41,7 +41,7 @@ require(['config'],function(){
 			}
 		});
 		//搜索框为空
-		//商品删除
+		//商品内部删除
 		$('.show_table').on('click','.clear', function(){
 			var clear=$(this).parent().parent().find('td').eq(1).text();
 			$.post(toggle+'delete',{id:clear},function(){
@@ -53,12 +53,48 @@ require(['config'],function(){
 			
 		});
 		
-		
+		//全选
+		$('.show_table th').eq(0).on('click','input',function(){
+			$('.show_table tr input').prop('checked',$(this).prop('checked'))
+		})
+		//取消全选
+		$('.show_table ').on('click','.select' ,function(){
+			if($(this).prop('checked')==false){
+				console.log(123)
+				$('.show_table .all').prop('checked',false);
+			}
+			var all=true;
+			for(var i=0;i<$('.show_table tr').length-1;i++){
+				if($('.show_table .select').eq(i).prop('checked')==false){
+					console.log(23213)
+					all=false
+				}else if(all==true){
+					$('.show_table .all').prop('checked',true);
+				       }
+			}
+		})
+		//商品外部删除
+		 $('._search_right_table .remove').on('click',function(){
+		 	var arr=[];
+		 	for(var i=0;i<$('.show_table tr').length-1;i++){
+				if($('.show_table .select').eq(i).prop('checked')==true){
+				   arr.push($('.show_table .select').eq(i).parent().parent().find('td').eq(1).text());
+			        
+				}
+			}
+		 	var _arr={_arr:arr};
+		 	$.post(toggle+'deleteNum',{id:JSON.stringify(_arr)},function(){
+				    console.log('删除成功')
+				    $('.show_table tr').eq(0).siblings().html('');
+				    $.post();
+			 });
+		 	
+		 })
 		//商品修改
 		
 		var index=1;
 		var _updata='';
-		console.log(index)
+		
 		$('.show_table').on('click','.xiu', function(){
 			_updata=$(this).parent().parent().find('td').eq(1).text();
 			index=$(this).parent().parent().index();
@@ -154,7 +190,7 @@ function load(res){
 			    for(var j=0;j<=13;j++){
 			    	$('.show_table tr').eq(idx+1).find('td').eq(j+1).text(shop[j+1]); 
 			    }
-			    $('.show_table tr').eq(idx+1).find('td').eq(0).html($("<input type='checkbox'>"));
+			    $('.show_table tr').eq(idx+1).find('td').eq(0).html($("<input type='checkbox' class='select'>"));
 			    $('.show_table tr').eq(idx+1).find('td').eq(9).text(goods.size);
 			    var arr=[]
 			    for(var key in goods.arguments){

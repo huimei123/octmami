@@ -51,7 +51,22 @@ exports.management = function(app){
 	})
 	//删除商品
 	app.post('/delete',urlencodedParser,function(request, response){
-		db.delete('products', request.body, function(result){
+		console.log(request.body);
+		db.delete('products', request.body,function(result){
+			if(result.length>0){
+				response.send({status: true, message: '删除成功', data:result});
+				console.log('删除成功');
+			}else{
+				response.send({status: false, message: '删除失败', data:[]});
+				console.log('删除失败');
+			}
+		});
+	})
+	//删除多个商品
+	app.post('/deleteNum',urlencodedParser,function(request, response){
+		
+		var str=JSON.parse(request.body.id)._arr;
+		db.delete('products',{id:{ $in:str} },function(result){
 			if(result.length>0){
 				response.send({status: true, message: '删除成功', data:result});
 				console.log('删除成功');
