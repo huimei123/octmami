@@ -232,6 +232,12 @@
   overflow: auto;
 }
 
+.main ._main .show .show_table .ipt {
+  display: block;
+  height: 30px;
+  width: 300px;
+}
+
 .main ._main .show .show_table tr {
   width: 100%;
   overflow: hidden;

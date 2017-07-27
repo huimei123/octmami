@@ -65,7 +65,7 @@ exports.management = function(app){
 	app.post('/add',urlencodedParser,function(request, response){
 		//console.log(request.body)
 		console.log(request.body);
-		var str = JSON.parse(request.body.datainsert);
+		var str = JSON.parse(request.body.key);
 		db.add('products',str, function(result){
 			response.send({status: true, message: '添加成功', data:result});
 			console.log('添加成功');
@@ -74,9 +74,9 @@ exports.management = function(app){
 	})
 	//修改商品
 	app.post('/update',urlencodedParser,function(request,response){
-		console.log(request.body);
+		console.log(request.body.updateStr);
 		var str = JSON.parse(request.body.updateStr);
-		console.log("转码",str);
+		//console.log(str);
 	     db.update('products',{id:request.body.id},{$set:str},function(err,result){
 	     	if(request.length>1){
 	     		response.send({status:true,message:'更新成功',data:result})
