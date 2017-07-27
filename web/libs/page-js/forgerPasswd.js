@@ -56,9 +56,7 @@ require(['config'],function(){
 
 			var _passwd2 = this.value;
 			var $passwd1 =  $(passwd).val();
-			console.log(_passwd2);
-			console.log($passwd1);
-
+		
 			if($passwd1 !== _passwd2){
 				$('.newpasswd_tips').show();
 				setTimeout(function(){
@@ -101,9 +99,17 @@ require(['config'],function(){
 				},
 				success: function(res){
 					console.log(res);
+					var status = res.status;
+					if(status == true){
+						$('.forgetpd_tips').show();
+						setTimeout(function(){
+							$('.forgetpd_tips').hide();
+						},1000);
+						// location.href = './login.html';
+					}
 				}
 			});
-			// location.href = './login.html';
+			
 		});
 
 	});

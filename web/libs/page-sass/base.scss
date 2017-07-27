@@ -14,6 +14,7 @@ body,ul,li,p,form,input,a,img{
 	line-height: 1.333333rem;
 	background: #4dc496;
 	.header_logo{
+		padding-left:0.233333rem;
 		line-height: 1.173333rem;
 		.logo{
 			display: inline-block;
@@ -56,7 +57,7 @@ body,ul,li,p,form,input,a,img{
 		}
 	}
 	.header_member{
-		margin-right: 0.133333rem;
+		padding-right:0.433333rem;
 		.header_mIcon{
 			color:#fff;
 			font-size:0.666667rem;
@@ -64,6 +65,7 @@ body,ul,li,p,form,input,a,img{
 		}
 	}
 	.header_left{
+		padding-left:0.433333rem;
 		a{
 			color:#fff;
 		}
@@ -73,7 +75,7 @@ body,ul,li,p,form,input,a,img{
 	}
 	.header_right{
 		font-size:0.4rem;
-		padding-right:0.133333rem;
+		padding-right:0.433333rem;
 		a{
 			color:#fff;
 		}
