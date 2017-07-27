@@ -34,12 +34,17 @@ exports.account = function(app){
                 console.log('已经注册');
             }else{ 
             //注册
-                db.add('users',request.body,function(){
-                    db.add('usersDetails',{username:request.body.username});
-                    response.send({status: true, message:'注册成功'});
-                    console.log('注册成功');
-                })
-
+                if(request.body.passwd){
+                    db.add('users',request.body,function(){
+                        db.add('usersDetails',{username:request.body.username});
+                        response.send({status: true, message:'注册成功'});
+                        console.log('注册成功');
+                    })
+                }else{
+                     response.send({status: true, message:'继续注册'});
+                     console.log('继续注册');
+                }
+                
             }
         })
     })

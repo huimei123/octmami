@@ -1,5 +1,6 @@
 require(['config'],function(){
 	require(['jquery','swiper','hxLimitTime','hxchoice','lazyload'],function($){
+
 		//状态判断是否加载完页面
 		document.onreadystatechange = state;
 			function state(){
@@ -74,11 +75,6 @@ require(['config'],function(){
 			}
 		});
 		
-
-		/*$('.limitTime').on('click','li',function(e){
-			console.log(this);
-			console.log(e.target);
-		});*/
 		//首页对象
 		var indexPage = {
 			$toTop : $('.toTop'),
