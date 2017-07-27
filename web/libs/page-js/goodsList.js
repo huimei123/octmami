@@ -1,9 +1,9 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
 		//插入底部
-		// $('<div/>').load('footer.html',function(){
-		// 	$(this).insertAfter('.section');
-		// });
+		$('<div/>').load('footer.html',function(){
+			$(this).insertAfter('.section');
+		});
 
 		//获取URL的参数值
 		function　getURLParams(key){
