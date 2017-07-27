@@ -21,7 +21,7 @@ module.exports = {
         })
     },
     //删除
-    delete: function(collection, data, callback){
+    delete: function(collection, data,callback){
         db.open(function(error, db){
             db.collection(collection, function(error, collection){
                 collection.remove(data,function(err, result){

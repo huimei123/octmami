@@ -36,7 +36,7 @@
 			$(function(){
 					console.log(111);
 					$('.lazy').lazyload({effect: "fadeIn"});
-				});
+			});
 		});
 	}
 })(jQuery);
