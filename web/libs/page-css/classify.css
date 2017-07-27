@@ -1,8 +1,71 @@
 header {
   display: flex;
-  height: 1.173333rem;
+  padding: 0.266667rem;
+  background-color: #4dc496;
+  color: #fff;
+  justify-content: space-between;
+  font-size: 0.4rem;
+  align-items: center;
+}
+
+header .icon-xiangzuo {
+  font-size: 0.6rem !important;
+}
+
+header h3 {
+  font-size: 0.45rem;
+  font-weight: normal;
+}
+
+header a {
+  color: #fff;
+}
+
+.classify-content {
+  font-size: 0.4rem;
+}
+
+.classify-content a {
+  color: #999;
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.35rem;
+  line-height: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.2rem;
+}
+
+.classify-content i {
+  font-size: 0.9rem;
+  color: #4dc496;
+  margin: 0 0.266667rem;
+}
+
+.classify-content li {
+  display: flex;
+  align-items: center;
+  height: 1.2rem;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.classify-content .classify-title a {
+  color: #333;
+  text-align: left;
+  font-size: 0.4rem;
+  display: flex;
+  justify-content: left;
   width: 100%;
-  background: #4dc496;
-  padding: 0 0.266667rem;
-  font-size: 0.48rem;
+}
+
+.classify-content .right-bar {
+  float: right;
+  width: 2px;
+  height: 0.32rem;
+  margin-top: 3px;
+  background-color: #c1c1c1;
+  vertical-align: middle;
+  font-style: normal;
 }

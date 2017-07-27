@@ -72,3 +72,18 @@
   margin-left: 0.4rem;
   letter-spacing: 0.8rem;
 }
+
+.section .tips {
+  text-align: center;
+  line-height: 1.5rem;
+  position: absolute;
+  left: 0.8rem;
+  z-index: 100;
+  color: #fff;
+  background: rgba(153, 153, 153, 0.8);
+  width: 7.966667rem;
+  height: 1.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.4rem;
+  display: none;
+}
