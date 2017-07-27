@@ -24,13 +24,13 @@
 
 .section legend input {
   float: left;
-  font-size: 0.32rem;
   font-size: 0.44rem;
   border: 0;
   outline: none;
   color: #999 !important;
   height: 1.0rem;
   line-height: 1.0rem;
+  margin-top: 0.04rem;
   background-color: #fff !important;
 }
 
@@ -41,8 +41,6 @@
   display: inline-block;
   width: 0.543333rem;
   height: 0.543333rem;
-  background-size: 6.666667rem;
-  background: url(../img/lable_abnner/pic_icon.png) -0.8rem -1.12rem no-repeat;
 }
 
 .section legend .regCode {
@@ -65,7 +63,7 @@
   top: 6.333333rem;
   left: 0.5rem;
   z-index: 100;
-  color: #FF3333;
+  color: #fff;
   background: rgba(153, 153, 153, 0.8);
   width: 7.966667rem;
   height: 1.5rem;
@@ -74,6 +72,10 @@
 }
 
 .section legend .usernama_tips {
+  display: none;
+}
+
+.section legend .username_tips {
   display: none;
 }
 
@@ -109,13 +111,14 @@
   display: none;
 }
 
-.section button {
+.section .reg_btn {
   width: 93%;
   background: #4dc496;
-  font-size: 0.373333rem;
+  font-size: 0.42rem;
   color: #fff;
   line-height: 1.2rem;
   height: 1.2rem;
   border-radius: 0.133333rem;
   margin-left: 0.4rem;
+  letter-spacing: 0.8rem;
 }

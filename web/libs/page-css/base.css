@@ -8,6 +8,7 @@ body, ul, li, p, form, input, a, img {
   height: 1.173333rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
   font-size: 0.48rem;
   line-height: 1.333333rem;
@@ -36,7 +37,6 @@ body, ul, li, p, form, input, a, img {
   height: 0.613333rem;
   border: 1px solid #ddd;
   border-radius: 0.32rem;
-  margin-top: 0.266667rem;
 }
 
 .header .header_search .form {
@@ -66,14 +66,13 @@ body, ul, li, p, form, input, a, img {
   margin-right: 0.133333rem;
 }
 
-.header .header_left a {
-  display: block;
-  width: 0.586667rem;
-  height: 0.586667rem;
+.header .header_member .header_mIcon {
+  color: #fff;
+  font-size: 0.666667rem;
 }
 
-.header .header_left a img {
-  vertical-align: middle;
+.header .header_left a {
+  color: #fff;
 }
 
 .header .header_title {
@@ -81,6 +80,7 @@ body, ul, li, p, form, input, a, img {
 }
 
 .header .header_right {
+  font-size: 0.4rem;
   padding-right: 0.133333rem;
 }
 

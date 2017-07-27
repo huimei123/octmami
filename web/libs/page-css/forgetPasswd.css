@@ -1,5 +1,6 @@
 .section {
   padding-top: 0.666667rem;
+  position: relative;
 }
 
 .section legend {
@@ -15,53 +16,59 @@
 
 .section legend input {
   float: left;
-  font-size: 0.32rem;
   font-size: 0.44rem;
   border: 0;
   outline: none;
   color: #999 !important;
   height: 1.0rem;
   line-height: 1.0rem;
+  margin-top: 0.04rem;
   background-color: #fff !important;
 }
 
-.section legend i {
+.section legend .icon_close {
   position: absolute;
   top: 0.3rem;
   right: 0.4rem;
   display: inline-block;
   width: 0.543333rem;
   height: 0.543333rem;
-  background-size: 6.666667rem;
-  background: url(../img/lable_abnner/pic_icon.png) -0.8rem -1.12rem no-repeat;
 }
 
 .section legend .tips {
   text-align: center;
   line-height: 1.5rem;
   position: absolute;
-  top: 2.83333rem;
-  left: 1.0rem;
   z-index: 100;
+  color: #fff;
   background: rgba(153, 153, 153, 0.8);
-  width: 7.666667rem;
+  width: 7.966667rem;
   height: 1.5rem;
   border-radius: 0.4rem;
   font-size: 0.4rem;
-  color: #CC0000;
 }
 
 .section legend .passwd_tips, .section legend .newpasswd_tips, .section legend .usernama_tips {
+  top: 2.9rem;
   display: none;
+}
+
+.section legend .newpasswd_tips {
+  top: 1.8rem;
+}
+
+.section legend .usernama_tips {
+  top: 6.8rem;
 }
 
 .section button {
   width: 93%;
   background: #4dc496;
-  font-size: 0.373333rem;
+  font-size: 0.42rem;
   color: #fff;
   line-height: 1.2rem;
   height: 1.2rem;
   border-radius: 0.133333rem;
   margin-left: 0.4rem;
+  letter-spacing: 0.8rem;
 }

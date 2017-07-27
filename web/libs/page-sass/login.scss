@@ -11,38 +11,22 @@
 		line-height: 1.2rem;
 		input{
 			float:left;
-			font-size:0.32rem;
 			font-size:0.44rem;
 			border:0;
 			outline: none;
 			color: #999 !important;
 			height:1.0rem;
 			line-height: 1.0rem;
+			margin-top: 0.04rem;
 			background-color: #fff !important;
 		}
 		.icon_close{
 			position: absolute;
-			width: 0.8rem;
-			height: 0.8rem;
-			top: 0.133333rem;
-			right: 0.133333rem;
-		}
-		.tips{
-			text-align: center;
-			line-height: 1.5rem;
-			position:absolute;
-			top:6.333333rem;
-			left: 0.5rem;
-			z-index: 100;
-			color:#FF3333 ;
-			background:rgba(#999, 0.8);
-			width: 7.966667rem;
-			height: 1.5rem;
-			border-radius:0.4rem;
-			font-size:0.4rem;
-		}
-		.usernama_tips{
-			display: none;
+			top:0.3rem;
+			right: 0.4rem;
+			display: inline-block;
+			width:0.543333rem;
+			height:0.543333rem;
 		}
 
 	}
@@ -53,7 +37,7 @@
 			top:8.333333rem;
 			left: 1rem;
 			z-index: 100;
-			color:#FF3333 ;
+			color:#fff;
 			background:rgba(#999, 0.8);
 			width: 7.966667rem;
 			height: 1.5rem;
@@ -63,13 +47,15 @@
 		}
 	button{
 		width: 93%;
+		text-align:center;
 	    background: #4dc496;
-	    font-size: 0.373333rem;
+	    font-size: 0.42rem;
 	    color: #fff;
 	    line-height:1.2rem;
 	    height: 1.2rem;
 	    border-radius:0.133333rem;
 	   	margin-left: 0.4rem;
+	   	letter-spacing:0.8rem;
 	}
 	.login_auto_login{
 		position:relative;
@@ -78,7 +64,7 @@
 		margin:0.2rem 0.4rem 0;
 		a{
 			text-decoration:underline;
-			font-size:0.32rem;
+			font-size:0.4rem;
 			color:#666;
 		}
 		.qRegister{

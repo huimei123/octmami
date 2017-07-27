@@ -8,6 +8,7 @@ body,ul,li,p,form,input,a,img{
 	height: 1.173333rem;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	text-align: center;
 	font-size: 0.48rem;
 	line-height: 1.333333rem;
@@ -32,7 +33,6 @@ body,ul,li,p,form,input,a,img{
 		height:0.613333rem;
 		border:1px solid #ddd;
 		border-radius: 0.32rem;
-		margin-top: 0.266667rem;
 		.form{
 			position:relative;
 			width: 6.6rem;			
@@ -57,25 +57,22 @@ body,ul,li,p,form,input,a,img{
 	}
 	.header_member{
 		margin-right: 0.133333rem;
+		.header_mIcon{
+			color:#fff;
+			font-size:0.666667rem;
+
+		}
 	}
 	.header_left{
 		a{
-			display: block;
-			width:0.586667rem;
-			height:0.586667rem;
-			img{
-				vertical-align: middle;
-			}
+			color:#fff;
 		}
 	}
 	.header_title{
-		
-		.header_mIcon{
-			color: #fff;
-		}
+		color: #fff;
 	}
 	.header_right{
-		
+		font-size:0.4rem;
 		padding-right:0.133333rem;
 		a{
 			color:#fff;
