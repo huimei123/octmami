@@ -16,6 +16,7 @@ body, ul, li, p, form, input, a, img {
 }
 
 .header .header_logo {
+  padding-left: 0.233333rem;
   line-height: 1.173333rem;
 }
 
@@ -63,12 +64,16 @@ body, ul, li, p, form, input, a, img {
 }
 
 .header .header_member {
-  margin-right: 0.133333rem;
+  padding-right: 0.433333rem;
 }
 
 .header .header_member .header_mIcon {
   color: #fff;
   font-size: 0.666667rem;
+}
+
+.header .header_left {
+  padding-left: 0.433333rem;
 }
 
 .header .header_left a {
@@ -81,7 +86,7 @@ body, ul, li, p, form, input, a, img {
 
 .header .header_right {
   font-size: 0.4rem;
-  padding-right: 0.133333rem;
+  padding-right: 0.433333rem;
 }
 
 .header .header_right a {
