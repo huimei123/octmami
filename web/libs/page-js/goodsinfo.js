@@ -11,13 +11,13 @@ require(['config'],function(){
 		state();
 		//console.log(111);
 		var id = location.search.split('=')[1];
-		var obj = '';
+		var obj = {};
 		var goodsArr =[];
 		var size = '';
 		var sizeNum = 0;
 		var color = '';
 		var colorNum = 0;
-		//console.log(id);
+		console.log(goodsArr);
 		var number = 0;
 		if(localStorage.getItem('shoppingcar')==null){
 			//console.log(111);
@@ -45,7 +45,8 @@ require(['config'],function(){
 				success:function(res){
 					console.log(res);
 					var goodObj = res.data[0];
-					obj = res.data[0];
+					obj['id'] = res.data[0]['_id'];
+					obj['img'] = res.data[0]['productImg'][0];
 					//console.log(obj);
 					//console.log(JSON.parse(obj))
 					carousel(res);
@@ -143,10 +144,18 @@ require(['config'],function(){
 					}			
 				});
 				//放入购物车点击事件
-				this.$btn_buy.on('click',function(){			
+				this.$btn_buy.on('click',function(){
+					//console.log($('.colorType.active').text());	
+					//console.log($('.sizeType.active').text());
+					
 					if(goodsArr.length<=0){
+						obj['size']= $('.sizeType.active').text()+"";
+						obj['color']= $('.colorType.active').text()+"";		
 						obj['qty'] = $('.qty').val()*1;
 						goodsArr.push(obj);
+						//console.log(obj);
+						//console.log(obj.size);
+						//console.log(obj.color);
 					}else{
 						goodsArr.forEach(function(item,idx){
 						console.log(item);
@@ -155,16 +164,26 @@ require(['config'],function(){
 								//console.log(item.qty);
 								//obj['qty'] = goodsArr.push(obj);
 								goodsArr[idx]['qty'] = item.qty;
+								goodsArr[idx]['size'] = obj['size'];
+								goodsArr[idx]['color'] = obj['color'];
+								//console.log(obj);
+								//console.log($('.sizeType.active').text());
+								//console.log($('.colorType.active').text());
 							}else{
 								obj['qty'] = $('.qty').val()*1;
+								obj['size']= $('.sizeType.active').text()+"";
+								obj['color']= $('.colorType.active').text()+"";
+								//console.log(obj);
+								//console.log($('.sizeType.active').text());
+								//console.log($('.colorType.active').text());		
 								goodsArr.push(obj);
 							}						
 						})
 					}					
-					number = number+$('.qty').val()*1;			
+					number = number*1+$('.qty').val()*1;			
 					$('.foot_car_set span').html(number);
 					//console.log(obj);
-					//console.log(goodsArr);
+					console.log(goodsArr);
 					var stingObj =JSON.stringify(goodsArr); 
 					//console.log(JSON.stringify(goodsArr));
 					//console.log(JSON.parse(stingObj));

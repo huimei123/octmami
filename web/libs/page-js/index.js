@@ -1,6 +1,5 @@
 require(['config'],function(){
 	require(['jquery','swiper','hxLimitTime','hxchoice','lazyload'],function($){
-
 		//状态判断是否加载完页面
 		document.onreadystatechange = state;
 			function state(){
