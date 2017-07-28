@@ -58,8 +58,4 @@ if(back!=null){
 	history.back();
 	};
 }
-<<<<<<< HEAD
-=======
 
-
->>>>>>> e7919290d7b5dac4aee1c57ef55792822d24363d
