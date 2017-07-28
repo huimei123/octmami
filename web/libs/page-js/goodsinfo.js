@@ -47,8 +47,12 @@ require(['config'],function(){
 					var goodObj = res.data[0];
 					obj['id'] = res.data[0]['_id'];
 					obj['img'] = res.data[0]['productImg'][0];
+					//console.log(res.data[0]['currentPrice'].indexOf('.00'));
+					obj['price'] = res.data[0]['currentPrice'].indexOf('.00')>=0?res.data[0]['currentPrice']:res.data[0]['currentPrice']+'.00';
+					obj['productName'] = res.data[0]['productName'];
 					//console.log(obj);
 					//console.log(JSON.parse(obj))
+					//console.log(obj['price']);
 					carousel(res);
 					$('.info').html(goodObj.productName);
 					if(goodObj.currentPrice.indexOf('.00')==-1){
@@ -136,7 +140,7 @@ require(['config'],function(){
 				//减少物品事件
 				this.$jian.on('click',function(){
 					if($('.qty').val()==2){
-						console.log(111);
+						//console.log(111);
 						$('.qty').val(Number($('.qty').val())-1);
 						$('.jian').addClass('disable');
 					}else{
@@ -147,8 +151,9 @@ require(['config'],function(){
 				this.$btn_buy.on('click',function(){
 					//console.log($('.colorType.active').text());	
 					//console.log($('.sizeType.active').text());
-					
+					var times = 0;
 					if(goodsArr.length<=0){
+						//console.log(111);
 						obj['size']= $('.sizeType.active').text()+"";
 						obj['color']= $('.colorType.active').text()+"";		
 						obj['qty'] = $('.qty').val()*1;
@@ -157,19 +162,30 @@ require(['config'],function(){
 						//console.log(obj.size);
 						//console.log(obj.color);
 					}else{
+						//console.log(222);
 						goodsArr.forEach(function(item,idx){
-						console.log(item);
-							if(obj['_id']==item['_id']){
+						//console.log(item);
+						//console.log(item['id']);
+						//console.log(obj['id']);
+							if(obj['id']==item['id']){
+								/*if(item.size==obj.size){
+									obj.size == 
+								}*/
 								item.qty = item.qty*1+$('.qty').val()*1;
 								//console.log(item.qty);
 								//obj['qty'] = goodsArr.push(obj);
 								goodsArr[idx]['qty'] = item.qty;
-								goodsArr[idx]['size'] = obj['size'];
-								goodsArr[idx]['color'] = obj['color'];
+								goodsArr[idx]['size'] = $('.sizeType.active').text()+"";
+								goodsArr[idx]['color'] = $('.colorType.active').text()+"";
 								//console.log(obj);
 								//console.log($('.sizeType.active').text());
 								//console.log($('.colorType.active').text());
 							}else{
+								times++;
+							}						
+						})
+						if(times==goodsArr.length){
+								//console.log(333);
 								obj['qty'] = $('.qty').val()*1;
 								obj['size']= $('.sizeType.active').text()+"";
 								obj['color']= $('.colorType.active').text()+"";
@@ -177,8 +193,8 @@ require(['config'],function(){
 								//console.log($('.sizeType.active').text());
 								//console.log($('.colorType.active').text());		
 								goodsArr.push(obj);
-							}						
-						})
+						}
+
 					}					
 					number = number*1+$('.qty').val()*1;			
 					$('.foot_car_set span').html(number);

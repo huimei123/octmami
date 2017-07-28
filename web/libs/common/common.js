@@ -2,7 +2,7 @@ var global = global || {};
 
 global.baseurl = 'http://10.3.134.218:8888/';
 var local = 'http://localhost:8888/';
-var toggle = global.baseurl;
+var toggle = local;
 
 //动态设置viewport的scale
 var iScale = 1;
@@ -51,6 +51,7 @@ var back = document.querySelector('.header_left .icon');
 if(back!=null){
 	back.onclick = function(){
 	history.back();
-};
+	};
 }
+
 
