@@ -1,0 +1,12 @@
+require(['config'],function(){
+	require(['jquery'],function($){
+		//点击返回上一页
+		$('.icon-xiangzuo').click(function(e){
+			history.back();
+		})
+		//加载数据，
+		$.post(toggle+'query/data',{key:"防辐射"},function(res){
+			console.log(res);
+		})
+	})
+})

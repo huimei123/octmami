@@ -1,12 +1,10 @@
 require(['config'],function(){
 	require(['jquery'],function(){
-		var baseurl = 'http://10.3.134.228:8888/';
+		var baseurl = 'http://10.3.134.218:8888/';
 		var local = 'http://localhost:8888/';
-		var toggle = local;
-        
+		var toggle = local;        
         var _limit=6;
         var _skip=0;
-        
 		//打开页面请求加载数据库内容
 		$.ajaxSetup({
 			type:"post",
