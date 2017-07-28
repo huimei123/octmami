@@ -114,6 +114,7 @@ exports.management = function(app){
 			}
 		})
 	})
+	//懒加载
 	app.post('/lazy',urlencodedParser,function(request,response){
 		console.log(request.body);
 	    db.lazy('products',Number(request.body.limit),Number(request.body.skip),function(result){
