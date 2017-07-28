@@ -225,6 +225,24 @@
   float: left;
   margin-top: 8px;
   overflow: auto;
+  position: relative;
+}
+
+.main ._main .show .foot {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  bottom: 20px;
+}
+
+.main ._main .show .foot span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid darkgray;
+  margin: 2px;
+  text-align: center;
+  line-height: 30px;
 }
 
 .main ._main .show .show_table {

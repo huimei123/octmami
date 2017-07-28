@@ -5,11 +5,13 @@
 .section .adress_input {
   border-bottom: 2px solid #e2e2e2;
   display: flex;
+  padding: 0 0.266667rem;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   height: 1.253333rem;
   font-size: 0.373333rem;
+  box-sizing: border-box;
 }
 
 .section .adress_input input {
@@ -17,7 +19,6 @@
   border: 0;
   outline: none;
   width: 100%;
-  padding: 0 0.4rem;
   font-size: 0.4rem;
   box-sizing: border-box;
 }
@@ -26,33 +27,40 @@
   width: 100%;
   height: 1.253333rem;
   line-height: 1.253333rem;
-  color: #ccc;
-  padding: 0 0.4rem;
+  color: #999;
 }
 
 .section .adress_input .province, .section .adress_input .city, .section .adress_input .county {
-  width: 4.0rem;
-  height: 5.333333rem;
-  background: #fff;
+  width: 7rem;
+  height: 13.333333rem;
+  border-radius: 0.3rem;
+  background: rgba(192, 192, 192, 0.8);
   overflow: auto;
   font-size: 0.506667rem;
   position: absolute;
-  top: 3.766667rem;
-  left: 0.4rem;
-  display: none;
+  top: 3.66667rem;
+  left: -7rem;
+  transition: all 1s;
 }
 
 .section .adress_input .province li, .section .adress_input .city li, .section .adress_input .county li {
+  color: #fff;
   height: 0.866667rem;
+  letter-spacing: 0.4rem;
+  padding-left: 0.4rem;
+}
+
+.section .adress_input .province li:hover, .section .adress_input .city li:hover, .section .adress_input .county li:hover {
+  background: #ddd;
 }
 
 .section .adress_input .city {
-  top: 5.366667rem;
+  top: 5rem;
 }
 
 .section .adress_input .county {
-  display: block;
   top: 6.366667rem;
+  display: block;
 }
 
 .section .btn {

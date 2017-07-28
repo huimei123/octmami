@@ -1,20 +1,27 @@
 .section {
-  padding-top: 0.666667rem;
-  position: relative;
+  display: flex;
+  padding: 0 0.4rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.section legend {
-  position: relative;
-  width: 8.2rem;
-  margin: 0 0.4rem 0.533333rem;
+.section form {
+  width: 100%;
+}
+
+.section form legend {
+  width: 100%;
+  margin: 0.366667rem 0;
   border: 0.026667rem solid #b5b5b5;
   border-radius: 0.133333rem;
   padding: 0 0.48rem;
   height: 1.173333rem;
   line-height: 1.2rem;
+  position: relative;
+  box-sizing: border-box;
 }
 
-.section legend input {
+.section form legend input {
   float: left;
   font-size: 0.44rem;
   border: 0;
@@ -26,7 +33,7 @@
   background-color: #fff !important;
 }
 
-.section legend .icon_close {
+.section form legend .icon_close {
   position: absolute;
   top: 0.3rem;
   right: 0.4rem;
@@ -35,7 +42,7 @@
   height: 0.543333rem;
 }
 
-.section legend .tips {
+.section form legend .tips {
   text-align: center;
   line-height: 1.5rem;
   position: absolute;
@@ -48,32 +55,30 @@
   font-size: 0.4rem;
 }
 
-.section legend .passwd_tips, .section legend .newpasswd_tips, .section legend .usernama_tips {
+.section form legend .passwd_tips, .section form legend .newpasswd_tips, .section form legend .usernama_tips {
   top: 2.9rem;
   display: none;
 }
 
-.section legend .newpasswd_tips {
+.section form legend .newpasswd_tips {
   top: 1.8rem;
 }
 
-.section legend .usernama_tips {
+.section form legend .usernama_tips {
   top: 6.8rem;
 }
 
-.section button {
-  width: 93%;
+.section form button {
+  width: 100%;
   background: #4dc496;
   font-size: 0.42rem;
   color: #fff;
   line-height: 1.2rem;
   height: 1.2rem;
   border-radius: 0.133333rem;
-  margin-left: 0.4rem;
-  letter-spacing: 0.8rem;
 }
 
-.section .tips {
+.section form .tips {
   text-align: center;
   line-height: 1.5rem;
   position: absolute;

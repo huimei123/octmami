@@ -14,6 +14,10 @@ require(['config'],function(){
 		$('.header_title').text(res);
 		//console.log(res)
 		var tamp = $('.price').attr('data-tamp',1);
+		//点击返回上一页
+		$('.header_left a').click(function(e){
+			history.back();
+		})
 		//请求匹配的数据
 		$.ajax({
 			url: toggle+'query/data' ,
