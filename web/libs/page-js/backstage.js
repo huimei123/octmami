@@ -2,20 +2,24 @@ require(['config'],function(){
 	require(['jquery'],function(){
 		var baseurl = 'http://10.3.134.218:8888/';
 		var local = 'http://localhost:8888/';
-		var toggle = baseurl;
-
+		var toggle = local;        
+        var _limit=6;
+        var _skip=0;
 		//打开页面请求加载数据库内容
 		$.ajaxSetup({
 			type:"post",
-			url:toggle + "query",
+			url:toggle + "lazy",
+			data:{limit:_limit,skip:_skip},
 			async:true,
 			success:function(res){
-				load(res);
+				var data={}
+				load(res,data);
 			}
 
-           });
-		
+          });
+        
 		$.post();
+		
 		//导航二级菜单
 		$('.main_left_second .yunfu').hide();
 		$('.main_left_second ._yunfu').on('click',function(){
@@ -23,6 +27,7 @@ require(['config'],function(){
 		})
 		//导航二级切换商品信息
 		$('.main_left_second .yunfu').eq(0).on('click',function(){
+			$('.foot').hide();
 			$('.show_table tr').eq(0).siblings().html('');
 			$.post(toggle+'query/data',{key:$(".prenant").text()},function(res){
 				console.log(res);
@@ -31,6 +36,7 @@ require(['config'],function(){
 		});
 		//搜索框搜索商品
 		$('._search_left input').keydown(function(event){
+			$('.foot').hide();
 			$('.show_table tr').eq(0).siblings().html('');
 			//回车搜索
 			if(event.keyCode == 13){
@@ -42,6 +48,7 @@ require(['config'],function(){
 		});
 		//搜索框为空
 		$('.serchInput').on('input',function(){
+			$('.foot').hide();
 			if($(this).val()==''){
 				$('.show_table tr').eq(0).siblings().html('');
 				$.post();
@@ -118,6 +125,7 @@ require(['config'],function(){
 		});
 		//添加商品
 		$('._search_right_table .add').on('click',function(){
+			$('.foot').hide();
             $('.show_table tr').eq(0).siblings().html('');
             $('.show_table').append($('<tr/>'));
             $('.show_table tr').eq(1).append($('<h3/>').text('填写商品属性'));
@@ -143,18 +151,27 @@ require(['config'],function(){
 		//数据id升降排序
 		var num=-1;
 		$('.show_table th').eq(1).on('click',function(){
+			$('.foot').hide();
 			console.log(num);
 			num*=-1;
 			_id={id:num};
 			$.post(toggle+'sort',{key:'id',num:num},function(res){
-				console.log('id降序');
 				$('.show_table tr').eq(0).siblings().html('');
-				load(res);
+				console.log('id降序');
+				load(res)
 				return num;
 			});
 		})
 		
-		
+		//点击切换分页
+		$('.foot').on('click','span',function(){
+			_skip=$(this).index()*_limit;
+			 	console.log(_skip)
+			 	$.post(toggle+'lazy',{limit:_limit,skip:_skip},function(res){
+			 		$('.show_table tr').eq(0).siblings().html('');
+				    load(res);
+			 	})
+			 });
 		//时间
 		var newdate=new Date();
 		var year=newdate.getFullYear()+'年';
@@ -174,11 +191,13 @@ require(['config'],function(){
 		
 	
 //加载页面数据
-function load(res){
+function load(res,data){
+	var _count=0;//商品初始量
 	$.each(res.data, function(idx,goods){
+		console.log(123)
 				//console.log(goods);
 				//对象长度
-				var count=0
+				var count=0;
 				for(var key in goods){
 					count++;
 				}
@@ -207,7 +226,24 @@ function load(res){
                   $('.show_table tr').eq(idx+1).find('td').eq(12).text(goods.productInformation);
                   $('.show_table tr').eq(idx+1).find('td').eq(13).html($("<button class='xiu'>修改</button><button class='clear'>删除</button>"));
                   
-              });	      	
+              });
+              
+              //生成分页
+              $.post(toggle+'query',data,function(res){
+				    $.each(res.data,function(idx,goods){
+				    	_count++;
+				    })
+				   // console.log(_count)
+				    var _num=Math.ceil(_count/_limit)//份页数
+              //console.log(123);
+              $('.show .foot').html('');
+           
+              for(var i=0;i<_num;i++){
+              	 $('.show .foot').append($('<span>').text(i));
+              }
+			 });
+			 
+              
 	
 	
 }
