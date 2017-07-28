@@ -1,10 +1,13 @@
 .menber_infor{
 	width:100%;
+	display:flex;
+	padding:0 0.4rem;
+	justify-content:space-between;
+	align-items:center;
 	height:2.666667rem;
 	background:url(../img/lable_abnner/member_top_bg.jpg);
 	background-size: cover;
 	border-top: 0.026667rem solid #b5b0a8;
-	padding:0 0.133333rem;
 	.menber_infor_content{
 		.menber_pic{
 			float:left;
@@ -146,10 +149,12 @@
 
 .act{
 	width:100%;
+	display:flex;
+	padding:0 0.4rem;
+	justify-content:space-between;
+	align-items:center;
 	height:1.226667rem;
 	line-height:1.28rem;
-	// position:absolute;
-	// bottom:1.333333rem;
 	a{
 
 		font-size:0.373333rem;
