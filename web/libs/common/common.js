@@ -1,8 +1,8 @@
 var global = global || {};
 
-global.baseurl = 'http://10.3.134.218:8888/';
+global.baseurl = 'http://192.168.23.1:8888/';
 var local = 'http://localhost:8888/';
-var toggle = global.baseurl;
+var toggle =global.baseurl ;
 
 //动态设置viewport的scale
 var iScale = 1;
