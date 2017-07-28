@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1500701057227'); /* IE9*/
-  src: url('iconfont.eot?t=1500701057227#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1500701057227') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1500701057227') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1500701057227#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1501224841960'); /* IE9*/
+  src: url('iconfont.eot?t=1501224841960#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1501224841960') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1501224841960') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1501224841960#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -49,7 +49,5 @@
 
 .icon-combinedshape:before { content: "\e604"; }
 
-.icon-geren-copy:before { content: "\e600"; }
-
-.icon-sousuokuang:before { content: "\e625"; }
+.icon-icon07:before { content: "\e78c"; }
 

@@ -1,0 +1,11 @@
+//html{font-size: 62.5%;}
+.advise{
+    width: 100%;display: flex;flex-direction: column;
+    .txt{font-size:0.45rem;border: none; width: 94%;height:3rem;margin: 0 auto; border: 1px solid darkgray;margin-top:0.5rem ;border-radius: 0.2rem;overflow-y: auto;text-indent:0.69666rem;line-height:0.913333rem ;}
+    .btn{border: none; width: 90%;height: 1rem;margin:  0 auto;margin-top:0.333rem;font-size: 0.45rem;border-radius: 0.2rem;background: #4DC496;color:white;}
+    .table{width: 100%;margin-top: 0.17rem;
+     li{font-size: 0.3rem;margin-top: 0.2533rem;color: darkgrey;margin-left:5%; 
+     :nth-child(1){letter-spacing: 0.04rem;}}
+    }
+    .tan{width:60%;height: 1.2rem;background: black;opacity: 0.4;margin: 0 auto;margin-top: 0.5rem;display:none;color: white;border-radius: 0.2rem;font-size:0.39rem;text-align: center;line-height:1.2rem;}
+}
