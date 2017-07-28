@@ -1,5 +1,7 @@
 require(['config'],function(){
-	require(['jquery'],function($){
+	require(['jquery','common','textual'],function($){
+		//文本省略
+		$clamp($('p')[0], {clamp: 2});
 		//点击返回上一页
 		$('.icon-xiangzuo').click(function(e){
 			history.back();
@@ -41,7 +43,7 @@ require(['config'],function(){
 			$(this).insertAfter('.radiation-content');
 		});
 		//加载数据，
-		$.post(toggle+'query/data',{key:"防辐射"},function(res){
+		$.post(toggle+'query/data',{key:"新"},function(res){
 			console.log(res);
 			radiation(res);
 		})
