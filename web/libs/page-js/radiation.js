@@ -1,7 +1,6 @@
 require(['config'],function(){
-	require(['jquery','common','textual'],function($){
-		//文本省略
-		$clamp($('p')[0], {clamp: 2});
+	require(['jquery','common'],function($){
+		
 		//点击返回上一页
 		$('.icon-xiangzuo').click(function(e){
 			history.back();
@@ -73,7 +72,7 @@ require(['config'],function(){
 					<li data-id="${item._id}">
 						<div><img src="./libs/img/productImg/${item.productImg[0]}"/></div>
 						<p><span class="freeSend">包邮</span></p>
-						<p>${item.productName}</p>
+						<p class="textProduct">${item.productName}</p>
 						<p class="pricestyle"><span class="rad-price">￥${item.currentPrice}</span><span>￥${item.originPrice}</span></p>
 					</li>
 				`; 		

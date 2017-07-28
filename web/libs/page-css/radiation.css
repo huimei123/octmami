@@ -94,3 +94,10 @@
   background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
   background-size: 6.666667rem;
 }
+
+.textProduct {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
