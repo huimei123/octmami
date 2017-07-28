@@ -1,0 +1,70 @@
+.section{
+	position:relative;
+	.adress_input{
+		border-bottom: 2px solid #e2e2e2;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		height: 1.253333rem;
+		font-size:0.373333rem;
+		input{
+			color:#999;
+			border:0;
+			outline:none;
+			width: 100%;
+			padding:0 0.4rem;
+			font-size:0.4rem;
+			box-sizing: border-box;
+		}
+		p{
+			width: 100%;
+			height: 1.253333rem;
+			line-height: 1.253333rem;
+			color:#ccc;
+			padding:0 0.4rem;
+		}
+		.province{
+			width: 4.0rem;
+			height: 5.333333rem;
+			background:#fff;
+			overflow: auto;
+			font-size:0.506667rem;
+			position:absolute;
+			top: 3.766667rem;
+			left:0.4rem;
+			display: none;
+			li{
+				height:0.866667rem;
+			}
+		}
+		.city{
+			@extend .province;
+			top:  5.366667rem;
+		}
+		.county{
+			@extend .province;
+			// display: block;
+			top: 6.366667rem;
+		}
+	}
+	.btn{
+		display: flex;
+	    justify-content: space-around;
+	    padding-top:0.533333rem;
+	    .save_btn{
+			width: 93%;
+			text-align:center;
+		    background: #4dc496;
+		    font-size: 0.42rem;
+		    color: #fff;
+		    line-height:1.2rem;
+		    height: 1.2rem;
+		    border-radius:0.133333rem;
+		    display: flex;
+		    justify-content: space-around;
+		   	border:none;
+		   	letter-spacing:0.2rem;
+		}
+	}
+}

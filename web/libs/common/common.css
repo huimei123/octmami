@@ -26,6 +26,7 @@ a > img { vertical-align: bottom; }
 .position-absolute { position: absolute; }
 .position-relative { position: relative; }
 .overflow-hidden { overflow: hidden; }
+button{ border:none; outline: none; }
 
 /*iconfont样式*/
 .icon {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	 <title>十月商城</title>
+	<title>十月商城</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <!--禁止浏览器缩放-->
 	    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no">
@@ -20,11 +20,11 @@
         <link rel="shortcut icon" href="./libs/img/favicon.ico"  />
         <link rel="stylesheet" href="./libs/common/common.css">
         <link rel="stylesheet" href="./libs/swiper/swiper-3.4.2.min.css">
-        <link rel="stylesheet" type="text/css" href="./libs/page-css/myAdress.css">       
+        <link rel="stylesheet" type="text/css" href="./libs/page-css/editAdress.css">       
         <link rel="stylesheet" href="./libs/page-css/base.css">
         <link rel="shortcut icon" href="./libs/img/lable_abnner/favicon.ico"  />
         <script src="./libs/common/common.js"></script>
-        <script src="./libs/page-js/require.js" data-main="./libs/page-js/myAdress"></script>
+        <script src="./libs/page-js/require.js" data-main="./libs/page-js/editAdress"></script>
 </head>
 <body>
 	<header class="header">
@@ -36,26 +36,53 @@
 			</a>
 		</div>
 		<div class="header_title">
-			收货地址
+			编辑收货地址
 		</div>
 		<div class="header_right">
-			<a href="">首页</a>
+			<a href="./index.html">首页</a>
 		</div>
-		
 	</header>
 	<section class="section">
-		<div class="adress">
-			<svg class="icon" aria-hidden="true">
-			  <use xlink:href="#icon-dizhi"></use>
-			</svg>
-			<p>您还没添加地址</p>
+	
+		<div class="adress_input">
+			<input type="text" placeholder="收件人姓名">
 		</div>
-		<div class="add_adress">
-			<a href="./editAdress.html">
-				+添加收货地址
-			</a>
+		<div class="adress_input">
+			<input type="text" placeholder="手机号码">
+		</div>
+		<div class="adress_input">
+			<p class="select_pro">请选择省份</p>
+			<ul class="province">
+				
+			</ul>
+		</div>
+		<div class="adress_input">
+			<p class="select_city">所在城市</p>
+			<ul class="city">
+			</ul>
+		</div>
+		<div class="adress_input">
+			<p class="select_county">所在区县</p>
+			<ul class="county">
+				<li>aaaaa</li>
+				<li>aaaa</li>
+			</ul>
+		</div>
+		<div class="adress_input">
+			<input type="text" placeholder="详细地址">
+		</div>
+		<div class="adress_input">
+			<input type="text" placeholder="邮政编码">
+		</div>
+		<div class="adress_input">
+			<p>设为默认地址</p>
+		</div>
+
+		<div class="btn">
+			<button class="save_btn">
+				保存修改
+			</button>
 		</div>
 	</section>
-
 </body>
 </html>
