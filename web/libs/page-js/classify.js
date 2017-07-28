@@ -14,5 +14,9 @@ require(['config'],function(){
 		$('<section/>').addClass('footNav').load('footer.html',function(){
 			$(this).insertAfter('.classify-content');
 		});
+		//点击返回上一页
+		$('.icon-xiangzuo').click(function(e){
+			history.back();
+		})
 	})
 })
