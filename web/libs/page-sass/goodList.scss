@@ -29,3 +29,14 @@ header{
 	.pd_show_list_name{position:absolute;top:0;left:0;line-height:0.48rem}
 }
 .pdShow{padding-bottom:1.066667rem}
+.toTop{
+	display: none;
+	width: 0.96rem;
+    height: 0.96rem;
+    position: fixed;
+    right: 0.266667rem;
+    bottom: 2.4rem;
+    z-index: 100;
+    background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
+    background-size: 6.666667rem;
+}
