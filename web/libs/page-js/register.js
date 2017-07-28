@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery','common'],function($){
+	require(['jquery'],function($){
 
 		// 插入底部
 		$('<div/>').load('./footer.html',function(){
