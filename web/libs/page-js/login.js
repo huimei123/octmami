@@ -1,8 +1,13 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
+
+		
+
 		// 插入底部
 		$('<div/>').load('./footer.html',function(){
 			$(this).insertAfter('.section');
+			
+
 		});
 
 
@@ -29,6 +34,7 @@ require(['config'],function(){
 		$('.login_btn').on('click',function(e){
 			e.preventDefault();
 
+
 			$.ajax({
 				url : toggle+'login',
 				type: 'POST',
@@ -43,6 +49,8 @@ require(['config'],function(){
 					var data = res.data;
 					if(status == true){
 						location.href = './myIndex.html?id=' + data[0]._id + '&username=' + data[0].username;
+						localStorage.username = $('#username').val();
+						localStorage.passwd = $('#passwd').val();
 					}
 					else{
 						error();
