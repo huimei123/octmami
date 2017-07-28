@@ -23,12 +23,26 @@
 			height: 1.253333rem;
 			line-height: 1.253333rem;
 			color:#999;
+
 		}
+		.adress_icon{
+			.tabs{
+				font-size: 0.8rem;
+				display: none;
+			}
+
+			.active{
+				display: block;
+				color:#4dc496;
+			}
+		}
+		
 		.province{
 			width: 7rem;
 		    height: 13.333333rem;
 		    border-radius: 0.3rem;
-		    background: rgba(192, 192, 192, 0.8);
+		    // background: rgba(192, 192, 192, 0.8);
+		    background: #fff;
 		    overflow: auto;
 		    font-size: 0.506667rem;
 		    position: absolute;
@@ -37,13 +51,13 @@
 		    transition: all 1s;
 			
 			li{
-				color:#fff;
+				
 				height:0.866667rem;
 				letter-spacing: 0.4rem;
 				padding-left:0.4rem;
 			}
 			li:hover{
-				background:#ddd;
+				background:#AFEEEE;
 			}
 		}
 		.city{

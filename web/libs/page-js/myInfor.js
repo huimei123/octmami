@@ -10,6 +10,18 @@ require(['config'],function(){
 		// 	this.classList.toggle('active');
 		// }
 
+		// 信息对象
+		var myInforPage = {
+			$sex : $('.sex'),
+			init : function(){
+				// 切换性别
+				this.$sex.on('click',function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				});
+			},
+		}
+		myInforPage.init();
+
 		//生成出生年份
 		var now = new Date();
 		var year = now.getFullYear();
@@ -56,6 +68,7 @@ require(['config'],function(){
 			$('.select_month').show();
 			
 		});
+		
 		//把选择的年份写进输入框
 		$('.select_month')[0].addEventListener('click',function(e){
 			e = e || window.event;

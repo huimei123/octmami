@@ -1,4 +1,4 @@
-.section .adress {
+.section .baby {
   padding-top: 0.666667rem;
   display: flex;
   justify-content: space-around;
@@ -6,28 +6,27 @@
   flex-wrap: wrap;
 }
 
-.section .adress .icon {
+.section .baby .icon {
   color: #999;
   width: 2.586667rem;
   height: 2.586667rem;
-  background: #ddd;
 }
 
-.section .adress p {
+.section .baby p {
   width: 100%;
   font-size: 0.373333rem;
   padding-top: 0.566667rem;
   text-align: center;
 }
 
-.section .add_adress {
+.section .add_baby {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 0.8rem;
 }
 
-.section .add_adress a {
+.section .add_baby a {
   display: block;
   height: 1.066667rem;
   line-height: 1.066667rem;

@@ -145,6 +145,17 @@ require(['config'],function(){
 			}
 		});
 
+		//选择默认地址
+		var eidtAdressPage = {
+			$tabs : $('.tabs'),
+			init : function(){
+				this.$tabs.on('click',function(){
+					console.log(666);
+					$(this).addClass('active').siblings().removeClass('active');
+				});
+			},
+		}
+		eidtAdressPage.init();
 	});
 
 
