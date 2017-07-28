@@ -2,32 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>防辐射服</title>
-	 <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no">
+	<title>热销榜</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no">
     <!--禁止浏览器缩放-->
     <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type" />
     <link rel="stylesheet" href="./libs/common/common.css">
     <link rel="stylesheet" href="./libs/page-css/classify.css">
     <link rel="stylesheet" href="./libs/page-font/classify/iconfont.css">
     <link rel="stylesheet" href="./libs/page-css/base.css">
-    <link rel="stylesheet" href="./libs/page-css/radiation.css">
+    <link rel="stylesheet" type="text/css" href="./libs/page-css/goodList.css"/>
     <script src="./libs/common/common.js"></script>
-    <script src="./libs/page-js/require.js" data-main="./libs/page-js/radiation"></script>
-</head>
+    <script src="./libs/page-js/require.js" data-main="./libs/page-js/hotSale"></script>
 </head>
 <body>
 	<header>
         <p><span class="iconfont icon-xiangzuo"><span/></p>
-        <h3>新款推荐</h3>
-        <p></p>
+        <h3>热销榜</h3>
+       <a href="./index.html">首页</a>
     </header>
-    <div class="radiation-lable">
-    	<span>新款推荐</span>
-    	<span>银纤维防辐射服</span>
-    	<span>金属丝防辐射服</span>
-    </div>
-    <div class="radiation-content"></div>
-    <!-- 返回顶部 -->
+    <div class="pdShow">
+		<ul class="pdShowList"></ul>
+		<ul class="updShowList"></ul>
+	</div>
+	<!-- 返回顶部 -->
 	<section class="toTop"></section>
 </body>
 </html>
