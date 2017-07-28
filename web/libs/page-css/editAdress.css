@@ -32,11 +32,14 @@
 
 .section .adress_input .adress_icon .tabs {
   font-size: 0.8rem;
-  display: none;
 }
 
 .section .adress_input .adress_icon .active {
   display: block;
+}
+
+.section .adress_input .adress_icon .tabs1 {
+  display: none;
   color: #4dc496;
 }
 
@@ -55,7 +58,7 @@
 
 .section .adress_input .province li, .section .adress_input .city li, .section .adress_input .county li {
   height: 0.866667rem;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.1rem;
   padding-left: 0.4rem;
 }
 

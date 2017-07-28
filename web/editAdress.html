@@ -23,8 +23,8 @@
         <link rel="stylesheet" type="text/css" href="./libs/page-css/editAdress.css">       
         <link rel="stylesheet" href="./libs/page-css/base.css">
         <link rel="shortcut icon" href="./libs/img/lable_abnner/favicon.ico"  />
-        <script src="./libs/common/common.js"></script>
         <script src="./libs/page-js/require.js" data-main="./libs/page-js/editAdress"></script>
+        <script src="./libs/common/common.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -45,10 +45,10 @@
 	<section class="section">
 	
 		<div class="adress_input">
-			<input type="text" placeholder="收件人姓名">
+			<input type="text" placeholder="收件人姓名" class="receiver">
 		</div>
 		<div class="adress_input">
-			<input type="text" placeholder="手机号码">
+			<input type="text" placeholder="手机号码" class="phone">
 		</div>
 		<div class="adress_input">
 			<p class="select_pro">请选择省份</p>
@@ -69,22 +69,25 @@
 		</div>
 		<div class="adress_input">
 			<p class="select_county">所在区县</p>
+			<svg class="icon" aria-hidden="true">
+			  <use xlink:href="#icon-mjiantou"></use>
+			</svg>
 			<ul class="county">
 			</ul>
 		</div>
 		<div class="adress_input">
-			<input type="text" placeholder="详细地址">
+			<input type="text" placeholder="详细地址" class="addressDetail">
 		</div>
 		<div class="adress_input">
-			<input type="text" placeholder="邮政编码">
+			<input type="text" placeholder="邮政编码" class="postcode">
 		</div>
 		<div class="adress_input">
 			<p>设为默认地址</p>
 			<div class="adress_icon">
-				<svg class="icon tabs" aria-hidden="true" style="display: block;">
+				<svg class="icon tabs" aria-hidden="true">
 				  <use xlink:href="#icon-anniu1"></use>
 				</svg>
-				<svg class="icon tabs active" aria-hidden="true">
+				<svg class="icon tabs tabs1" aria-hidden="true">
 				  <use xlink:href="#icon-anniu2"></use>
 				</svg>
 			</div>

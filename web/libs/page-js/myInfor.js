@@ -21,7 +21,7 @@ require(['config'],function(){
 			},
 		}
 		myInforPage.init();
-
+		$('.nickName').html(localStorage.username);
 		//生成出生年份
 		var now = new Date();
 		var year = now.getFullYear();
@@ -35,7 +35,8 @@ require(['config'],function(){
 
 		
 		//选择年份
-		$('.icon1').on('click',function(){
+		$('#b_year').on('click',function(e){
+			e.stopPropagation();
 			$('.select_year').show();
 			
 		});
@@ -64,7 +65,8 @@ require(['config'],function(){
 
 		
 		//选择年份
-		$('.icon2').on('click',function(){
+		$('#b_month').on('click',function(e){
+			e.stopPropagation();
 			$('.select_month').show();
 			
 		});
@@ -78,9 +80,15 @@ require(['config'],function(){
 				console.log($('#b_month').val().length);
 			}
 			if($('#b_month').val().length > 0){
-				console.log(666);
+				
 				$('.select_month').hide();
 			}
 		});
+
+		$(document).on('click',function(){
+			console.log(666)
+			$('.select_year').hide();
+			$('.select_month').hide();
+		})
 	});
 });

@@ -28,11 +28,12 @@
 		.adress_icon{
 			.tabs{
 				font-size: 0.8rem;
-				display: none;
 			}
-
 			.active{
 				display: block;
+			}
+			.tabs1{
+				display:none;
 				color:#4dc496;
 			}
 		}
@@ -53,7 +54,7 @@
 			li{
 				
 				height:0.866667rem;
-				letter-spacing: 0.4rem;
+				letter-spacing: 0.1rem;
 				padding-left:0.4rem;
 			}
 			li:hover{
