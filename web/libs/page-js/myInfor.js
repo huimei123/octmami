@@ -21,9 +21,10 @@ require(['config'],function(){
 				});
 				//保存个人信息,把个人信息保存在localstorage里
 				this.$saveBtn.on('click',function(){
-					console.log(localStorage.id);
+					
 					var id = localStorage.id;
 					var username = localStorage.username;
+					console.log(localStorage.username);
 					// var infor = {
 					// 	id : id,
 					// 	nickname : $('.nickName').val(),
@@ -43,6 +44,7 @@ require(['config'],function(){
 						data : {
 							data:JSON.stringify({
 								id : id,
+								username : username,
 								nickname : 'qqqq',
 								gender : '女',
 								born : { 'year' : '1999', 'month' :'3'},
