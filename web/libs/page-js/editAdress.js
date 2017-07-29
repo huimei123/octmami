@@ -89,6 +89,12 @@ require(['config'],function(){
 			}
 		});
 
+		$(document).on('click',function(){
+			$('.province').hide();
+			$('.city').hide();
+		})
+
+
 		//选择区县
 		$('.select_county').on('click',function(){
 			var countyIdx ; 
@@ -97,9 +103,9 @@ require(['config'],function(){
 				url : '../api/region.json',
 				dataType :　'json',
 				success : function(res){
-					console.log(res);
+					
 					var data = res.regions;
-					console.log(data);
+					
 					//匹配当前的省份，找到省份的索引值，找到该索引值的第二层regions
 					for(var i = 0 ; i < data.length; i ++){
 						if(data[i].name == $('.select_pro').text()){
@@ -145,6 +151,36 @@ require(['config'],function(){
 			}
 		});
 
+		$(document).on('click',function(){
+			$('.province').hide();
+			$('.city').hide();
+			$('.county').hide();
+		})
+
+		//选择默认地址
+		var eidtAdressPage = {
+			$tabs : $('.tabs'),
+			$saveBtn : $('.save_btn'),
+			init : function(){
+				this.$tabs.on('click',function(){
+					console.log(666);
+					$(this).hide().siblings().show();
+				});
+				//把地址写进localStorage
+				this.$saveBtn.on('click',function(){
+					localStorage.receiver = $('.receiver').val();
+					localStorage.phone = $('.phone').val();
+					localStorage.province = $('.select_pro').text();
+					localStorage.city = $('.select_city').text();
+					localStorage.county = $('.select_county').text();
+					localStorage.addressDetail = $('.addressDetail').val();
+					localStorage.postcode = $('.postcode').val();
+				});
+			},
+			
+
+		}
+		eidtAdressPage.init();
 	});
 
 
