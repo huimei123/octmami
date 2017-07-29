@@ -18,12 +18,11 @@ exports.usersDetails = function(app){
 	});
 	//更新修改用户信息,购物车，收藏等
 	app.post('/updateusersDetails', urlencodedParser, function(request, response){
-		
-		var str = JSON.parse(request.body.data)
-		console.log('修改个人信息',str)
-		var serchGood = {"_id":new ObjectID(String(str.id))};
-		console.log(serchGood);
-		db.query('usersDetails',serchGood, function(result){
+
+		console.log('修改个人信息',request.body);
+		var serchGood = {"_id":new ObjectID(String(request.body._id))};
+		db.query('usersDetails',{username:request.body.username}, function(result){
+
 			if(result.length>0){
 				db.update('usersDetails',serchGood,str,function(err, result){
 					if(!err){
