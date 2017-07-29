@@ -23,6 +23,7 @@
 }
 .head_arrow a img{
 	vertical-align: middle;
+    width:0.25rem;
     }
 .pagetitle{
     overflow: hidden;
