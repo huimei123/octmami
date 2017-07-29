@@ -46,14 +46,14 @@ require(['config'],function(){
 				success: function(res){
 					console.log(res);
 					var status = res.status;
-					console.log(res.data[0]._id);
+					
 					var data = res.data;
 					if(status == true){
 						localStorage.id = res.data[0]._id;
-						clearInterval(timer);
-						location.href = './myIndex.html?id=' + data[0]._id + '&username=' + data[0].username;
 						localStorage.username = $('#username').val();
 						localStorage.passwd = $('#passwd').val();
+						clearInterval(timer);
+						location.href = './myIndex.html?id=' + data[0]._id + '&username=' + data[0].username;
 					}
 					else{
 						error();

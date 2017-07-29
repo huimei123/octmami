@@ -1,14 +1,7 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
-		//切换性别
-		
-
-		// $('.girl')[0].onclick = function(){
-		// 	this.classList.toggle('active');
-		// }
-		// $('.boy')[0].onclick = function(){
-		// 	this.classList.toggle('active');
-		// }
+	
+	
 
 		// 信息对象
 		var myInforPage = {
@@ -23,19 +16,22 @@ require(['config'],function(){
 				this.$saveBtn.on('click',function(){
 					
 					var id = localStorage.id;
+					console.log(id);
 					var username = localStorage.username;
-					console.log(localStorage.username);
-					// var infor = {
-					// 	id : id,
-					// 	nickname : $('.nickName').val(),
-					// 	gender : $('.active').text(),
-					// 	born : { 'year' : '1999', 'month' :'3'},
-					// };
-					// // 先用JSON.stringify()方法将json对象转换成字符串形式
-					// infor = JSON.stringify(infor);
-					// localStorage.setItem('myInfor',infor);
+					//个人信息对象
+					var infor = {
+						id : id,
+						username : username,
+						nickname : $('.nickName').val(),
+						gender : $('.active').text(),
+						born : { 'year' : '1999', 'month' :'3'},
+					};
+					// 先用JSON.stringify()方法将json对象转换成字符串形式
+					infor = JSON.stringify(infor);
+					localStorage.setItem('myInfor',infor);
 
-					// infor = JSON.parse(localStorage.getItem('myInfor'));
+					infor = JSON.parse(localStorage.getItem('myInfor'));
+					console.log(infor.born.year);
 
 					$.ajax({
 
@@ -43,11 +39,11 @@ require(['config'],function(){
 						type : 'post',						
 						data : {
 							data:JSON.stringify({
-								id : id,
-								username : username,
-								nickname : 'qqqq',
-								gender : '女',
-								born : { 'year' : '1999', 'month' :'3'},
+								id : infor.id,
+								username : infor.username,
+								nickname : infor.nickname,
+								gender : infor.gender,
+								born : { 'year' : infor.born.year, 'month' :infor.born.month},
 							}),
 						},
 						success : function(res){

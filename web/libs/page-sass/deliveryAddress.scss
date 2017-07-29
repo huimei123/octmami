@@ -1,0 +1,37 @@
+
+.section{
+	.address{
+		width: 100%;
+		border-bottom: 0.026667rem solid #e2e2e2;
+		display:flex;
+		height: 1.76rem;
+		padding:0 0.533333rem;
+		
+		.address_infor{
+			width: 80%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			font-size:0.32rem;
+			color:#666;
+			.user_phone{
+				width: 80%;
+				display: flex;
+				.user{
+					width: 40%;
+				}
+				.phone{
+					width: 60%;
+				}
+			}
+			.deliver{
+				width: 80%;
+			}
+		}
+		.operate{
+			.icon{
+				font-size:0.533333rem;
+			}
+		}
+	}
+}

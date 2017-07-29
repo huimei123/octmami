@@ -134,6 +134,11 @@ require(['config'],function(){
 		//注册用户
 		$('.reg_btn').click('click',function(e){
 			e.preventDefault();
+			//显示loading
+			var timer = setInterval(function(){
+				$('.loadPage').show();
+			},200);
+
 			var _username = $('#username').val();
 			var _passwd1 = $('#passwd').val();
 			var _yzm = $('#yzm').val();
@@ -162,10 +167,15 @@ require(['config'],function(){
 					passwd : $('#passwd').val()+"",
 				},
 				success: function(res){
-					console.log(res);
+					console.log(res)
+					var status = res.status;
+					if(status == true){
+						clearInterval(timer);
+						location.href = './login.html';
+					}
 				}
 			});
-			location.href = './login.html';
+			
 		});
 		
 		
