@@ -1,14 +1,7 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
-		//切换性别
-		
-
-		// $('.girl')[0].onclick = function(){
-		// 	this.classList.toggle('active');
-		// }
-		// $('.boy')[0].onclick = function(){
-		// 	this.classList.toggle('active');
-		// }
+	
+	
 
 		// 信息对象
 		var myInforPage = {
