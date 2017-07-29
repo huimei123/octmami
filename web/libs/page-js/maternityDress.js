@@ -42,7 +42,7 @@ require(['config'],function(){
 			$(this).insertAfter('.radiation-content');
 		});
 		//加载数据，
-		$.post(toggle+'query/data',{key:"新款"},function(res){
+		$.post(toggle+'query/data',{key:"时尚上衣"},function(res){
 			console.log(res);
 			radiation(res);
 		})

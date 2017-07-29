@@ -1,4 +1,4 @@
-.section .myInfor ul li {
+.section .babyInfor ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,25 +10,19 @@
   color: #999;
 }
 
-.section .myInfor ul li span {
+.section .babyInfor ul li span {
   color: #999;
 }
 
-.section .myInfor ul li .nickName {
-  height: 90%;
-  color: #999;
-  text-align: center;
-  width: 3rem;
-  outline: none;
-  border: 0;
-  font-size: 0.373333rem;
+.section .babyInfor ul li .boby_pic {
+  font-size: 1rem;
 }
 
-.section .myInfor ul li .myinfo_sex {
+.section .babyInfor ul li .babyinfo_sex {
   display: inline-block;
 }
 
-.section .myInfor ul li .myinfo_sex span {
+.section .babyInfor ul li .babyinfo_sex span {
   display: inline-block;
   text-align: center;
   padding: 0 0.32rem;
@@ -37,20 +31,20 @@
   color: #999;
 }
 
-.section .myInfor ul li .myinfo_sex .active {
+.section .babyInfor ul li .babyinfo_sex .active {
   border: 2px solid #4dc496;
   border-radius: 0.4rem;
 }
 
-.section .myInfor ul li .born {
+.section .babyInfor ul li .born {
   position: relative;
 }
 
-.section .myInfor ul li .born .year, .section .myInfor ul li .born .month {
+.section .babyInfor ul li .born .year, .section .babyInfor ul li .born .month {
   display: inline-block;
 }
 
-.section .myInfor ul li .born .year input, .section .myInfor ul li .born .month input {
+.section .babyInfor ul li .born .year input, .section .babyInfor ul li .born .month input {
   border: 0;
   outline: none;
   width: 1.133333rem;
@@ -59,7 +53,7 @@
   color: #999;
 }
 
-.section .myInfor ul li .born .year ul, .section .myInfor ul li .born .month ul {
+.section .babyInfor ul li .born .year ul, .section .babyInfor ul li .born .month ul {
   position: absolute;
   left: 0.333333rem;
   top: 0.766667rem;
@@ -69,35 +63,35 @@
   background: #fff;
 }
 
-.section .myInfor ul li .born .year ul li, .section .myInfor ul li .born .month ul li {
+.section .babyInfor ul li .born .year ul li, .section .babyInfor ul li .born .month ul li {
   border: none;
   height: 0.766667rem;
   line-height: 0.766667rem;
 }
 
-.section .myInfor ul li .born .month ul {
+.section .babyInfor ul li .born .month ul {
   left: 2.733333rem;
 }
 
-.section .myInfor ul .myInfor_pic {
+.section .babyInfor ul .babyInfor_pic {
   line-height: 2.533333rem;
   height: 2.533333rem;
 }
 
-.section .myInfor ul .myInfor_pic .my_pic {
+.section .babyInfor ul .babyInfor_pic .baby_pic {
   font-size: 1.066667rem;
 }
 
-.section .myInfor ul .adress {
+.section .babyInfor ul .adress {
   display: block;
   width: 90%;
 }
 
-.section .myInfor ul .myAdress {
+.section .babyInfor ul .babyAdress {
   width: 10%;
   display: block;
   position: relative;
-  right: -0.613333rem;
+  right: -78px;
 }
 
 .section .btn {

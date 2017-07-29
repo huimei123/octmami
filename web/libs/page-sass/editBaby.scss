@@ -1,5 +1,5 @@
 .section{
-	.myInfor{
+	.babyInfor{
 		ul{
 			li{
 				display: flex;
@@ -15,16 +15,10 @@
 					color:#999;
 					
 				}
-				.nickName{
-					height: 90%;
-					color:#999;
-					text-align: center;
-					width: 3rem;
-					outline: none;
-					border: 0;
-					font-size:0.373333rem;
+				.boby_pic{
+					font-size: 1rem;
 				}
-				.myinfo_sex{
+				.babyinfo_sex{
 					display: inline-block;
 					span{
 						display: inline-block;
@@ -77,10 +71,10 @@
 					}
 				}
 			}
-			.myInfor_pic{
+			.babyInfor_pic{
 				line-height: 2.533333rem;
 				height: 2.533333rem;
-				.my_pic{	
+				.baby_pic{	
 					font-size:1.066667rem;			
 				}
 			}
@@ -88,11 +82,11 @@
 				display: block;
 				width: 90%;
 			}
-			.myAdress{
+			.babyAdress{
 				width: 10%;
 				display: block;
 				position:relative;
-				right: -0.613333rem;
+				right:-78px;
 				
 			}
 		}

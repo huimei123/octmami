@@ -42,7 +42,7 @@ require(['config'],function(){
 			$(this).insertAfter('.radiation-content');
 		});
 		//加载数据，
-		$.post(toggle+'query/data',{key:"新款"},function(res){
+		$.post(toggle+'query/data',{key:"银耳焕彩"},function(res){
 			console.log(res);
 			radiation(res);
 		})
@@ -53,7 +53,7 @@ require(['config'],function(){
 			//切换高亮
 			$(this).addClass('active');
 			$('header h3').text($(this).text());
-			$.post(toggle+'query/data',{key:$(this).text().slice(0,1)},function(res){
+			$.post(toggle+'query/data',{key:$(this).text().slice(0,2)},function(res){
 				$('.radiation-content').html('');
 				console.log(res);
 				radiation(res);

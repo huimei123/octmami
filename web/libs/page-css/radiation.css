@@ -37,10 +37,11 @@
 .radiation-content li img {
   width: 100%;
   display: block;
+  height: au;
 }
 
 .radiation-content li p {
-  font-size: 0.34rem;
+  font-size: 0.33rem;
   line-height: 0.6rem;
   color: #000;
   overflow: hidden;
@@ -83,6 +84,14 @@
   margin-left: 0.133333rem;
 }
 
+.radiation-content .textProduct {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 0.42rem;
+}
+
 .toTop {
   display: none;
   width: 0.96rem;
@@ -95,9 +104,8 @@
   background-size: 6.666667rem;
 }
 
-.textProduct {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+.sustain {
+  font-size: 30px;
+  color: #666;
+  margin: 0.4rem;
 }

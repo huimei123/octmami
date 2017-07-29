@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	 <title>十月商城</title>
+	<title>十月商城</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <!--禁止浏览器缩放-->
 	    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no">
@@ -17,15 +17,14 @@
 	    <meta name="apple-mobile-web-app-capable" content="yes" />
 	    <!--屏幕顶部条的颜色-->
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="shortcut icon" href="./libs/img/favicon.ico"  />
+	    <link rel="shortcut icon" href="./libs/img/favicon.ico"  />
         <link rel="stylesheet" href="./libs/common/common.css">
         <link rel="stylesheet" href="./libs/swiper/swiper-3.4.2.min.css">
-        <link rel="stylesheet" type="text/css" href="./libs/page-css/myInfor.css">       
+        <link rel="stylesheet" type="text/css" href="./libs/page-css/editBaby.css">
         <link rel="stylesheet" href="./libs/page-css/base.css">
         <link rel="shortcut icon" href="./libs/img/lable_abnner/favicon.ico"  />
         <script src="./libs/common/common.js"></script>
-        <script src="./libs/page-js/require.js" data-main="./libs/page-js/myInfor"></script>
-
+        <script src="./libs/page-js/require.js" data-main="./libs/page-js/editBaby"></script>
 </head>
 <body>
 	<!-- 顶部 -->
@@ -48,25 +47,24 @@
 	
 	<!-- 信息部分 -->
 	<section class="section">
-		<div class="myInfor">
+		<div class="babyInfor">
 			<ul>
-				<li class="myInfor_pic">
-					<span>我的头像</span>
-					<div class="my_pic">
+				<li class="babyInfor_pic">
+					<span>宝宝头像</span>
+					<div class="boby_pic">
 						<svg class="icon" aria-hidden="true">
-						  <use xlink:href="#icon-touxiangnvhai"></use>
+						  <use xlink:href="#icon-baobaoxinxi"></use>
 						</svg>
 					</div>
 				</li>
 				<li>
 					<span>我的昵称</span>
-					<input type="text" class="nickName" value="">
-					
+					<span class="nickName"></span>
 				</li>
 				<li>
 					<span>性别</span>
 
-					<div class="myinfo_sex">
+					<div class="babyinfo_sex">
 						<span class="sex active" data-sex="0">女</span>
 						<span class="sex" data-sex="1">男</span>
 					</div>
@@ -92,19 +90,6 @@
 						
 					</div>
 				</li>
-				<li>
-					<a href="./myAdress.html" class="adress">
-						<span>收货地址管理</span>
-						
-					</a>
-					<a href="./myAdress.html" class="myAdress">
-						<svg class="icon" aria-hidden="true">
-						  <use xlink:href="#icon-mjiantou"></use>
-						</svg>
-					</a>
-					
-					
-				</li>
 			</ul>
 		</div>
 		
@@ -114,6 +99,5 @@
 			</button>
 		</div>
 	</section>
-	
 </body>
 </html>

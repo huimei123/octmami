@@ -1,6 +1,5 @@
 require(['config'],function(){
-	require(['jquery','common','textual','lazy'],function($){
-		
+	require(['jquery','common','lazy'],function($){	
 		//插入底部
 		$('<div/>').load('footer.html',function(){
 			$(this).insertAfter('.section');
@@ -60,7 +59,7 @@ require(['config'],function(){
 			success: function(res){
 				showGoods(res);
 				$("img").lazyload({ 
-                 placeholder : "./libs/img/yanchi.gif",
+                 placeholder : "./libs/img/lazy2.gif",
                  effect: "fadeIn"
            });  
 			}
@@ -103,8 +102,6 @@ require(['config'],function(){
 			});
 		});
 		
-		//文本省略
-		$clamp($('p')[0], {clamp: 2});
 		//封装生成列表页结构
 		function showGoods(res){
 			var data = res.data;
@@ -114,7 +111,7 @@ require(['config'],function(){
 					<li class="pd_new_list_detail">
 						<a href="./goodsinfo.html?id=${item._id}">
 							<div class="pd_show_s_img">
-								<img class='lazy' src="./libs/img/yanchi.gif"  data-original="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
+								<img class='lazy' src="./libs/img/lazy2.gif"  data-original="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
 							</div>
 							<div class="pd_new_list_info">
 								<p class="pd_show_list_name">
