@@ -6,7 +6,11 @@ var global = global || {};
 global.baseurl = 'http://192.168.23.1:8888/';
 var local = 'http://localhost:8888/';
 var yeyeye = 'http://10.3.134.228:8888/';
+<<<<<<< HEAD
 var toggle = local;
+=======
+var toggle = yeyeye;
+>>>>>>> 71c96c076ac379393084e9d36e7be1a183efd674
 
 
 //动态设置viewport的scale
