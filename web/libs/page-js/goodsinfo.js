@@ -131,6 +131,7 @@ require(['config'],function(){
 			$toTop: $('.toTop'),
 			$sizeBg:$('.sizeBg'),
 			$colorBg:$('.colorBg'),
+			$info_arrow:$('.info_arrow'),
 			init : function(){
 				//添加物品事件
 				this.$jia.on('click',function(){
@@ -151,6 +152,8 @@ require(['config'],function(){
 				this.$btn_buy.on('click',function(){
 					//console.log($('.colorType.active').text());	
 					//console.log($('.sizeType.active').text());
+					$('.tips').show().animate({opacity:1}).animate({opacity:0});
+					//console.log($('body').scrollTop()*1+0.45*$('body').height());
 					var times = 0;
 					if(goodsArr.length<=0){
 						//console.log(111);
@@ -239,6 +242,9 @@ require(['config'],function(){
 						$('.toTop').hide();
 					}
 				}.bind(this),1500);
+				this.$info_arrow.on('click',function(){
+					history.back();
+				});
 			}			
 		}		
 	});

@@ -10,22 +10,19 @@ require(['config'],function(){
 			$(this).insertAfter('.login_button');
 		});
 		var goodsArr =[];
+		var event;
+		//var clickType;
 		$('.btnClick').click(function(){
 			location.href='./index.html';
 		});
-		if(localStorage.getItem('shoppingcar')==null){
-			//console.log(111);
 			$('.footNav').show();
-		}else{
-			//console.log(222);
 			goodsArr = JSON.parse(localStorage.getItem('shoppingcar'));
 			console.log(goodsArr);
-			goodsArr.forEach(function(item){
-			});
-			$('.footNav').hide();
-			$('.goodsNull').hide();
-			//console.log(goodsArr);
-			var html = goodsArr.map(function(item){
+			if(goodsArr==null){
+				$('.footNav').hide();
+			}else{
+				$('.goodsNull').hide();
+				var html = goodsArr.map(function(item){
 				//console.log(item);
 				return`
 					<li class="carList" data-id="${item.id}">
@@ -39,10 +36,10 @@ require(['config'],function(){
 					<div class="delete"></div>
 					</li>
 				`
-			}).join("");
-			$('<ui/>').html(html).appendTo($('.list'));
-
-		}
+				}).join("");
+				$('<ui/>').html(html).appendTo($('.list'));
+			}
+			//console.log(goodsArr);
 		var pageShoppingCar ={
 			$jia : $('.jia'),
 			$jian : $('.jian'),
@@ -153,8 +150,24 @@ require(['config'],function(){
 				}.bind(this));
 
 				this.$delete.on('click',function(e){
+					$('.tips').show();
+					event = e;
+						
+				}.bind(this));
+				$('.head_arrow').on('click',function(){
+					history.back();
+				})
+
+				$('.btn_cancle').on('click',function(){
+					clickType = false;
+					$('.tips').hide();
+				})
+
+				$('.btn_sure').on('click',function(){
+					clickType = true;
+					$('.tips').hide();
 					var total=0;
-					var index = $(e.target).parent().index();
+					var index = $(event.target).parent().index();
 					$('.carList').eq(index).remove();
 					goodsArr.splice(index,1);
 					console.log(goodsArr);
@@ -163,22 +176,28 @@ require(['config'],function(){
 							total +=item.qty*1*(item.price.replace('.00',""));
 						}						
 					});
-					this.$pageSpan.text(total+'.00');
+					$('.total_price span').text(total+'.00');
+					var stingObj =JSON.stringify(goodsArr); 
+					//console.log(JSON.stringify(goodsArr));
+					//console.log(JSON.parse(stingObj));
+					var storage = window.localStorage;
+					storage.setItem('shoppingcar',stingObj);
 					if(goodsArr.length==0){
 						$('.foot').hide();
-						$('ul').hide();
+						$('ul').show();
 						//$('.footNav').show();
 						$('.goodsNull').show();
 						$('<section/>').addClass('footNav').load('footer.html',function(){
 							$(this).insertAfter('.login_button');
 						});
+						storage.removeItem('shoppingcar');
 					}else{
 						$('.foot').show();
 						$('ul').show();
 						$('.footNav').hide();
 						$('.goodsNull').hide();
 					}
-				}.bind(this));
+				})
 			}
 		}
 		pageShoppingCar.init()
