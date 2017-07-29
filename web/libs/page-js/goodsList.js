@@ -94,10 +94,10 @@ require(['config'],function(){
 					//console.log(res);
 					$('.pdShowList').html('');
 					showGoods(res);
-					
-					
-					
-					
+					$("img").lazyload({ 
+		                placeholder : "./libs/img/lazy2.gif",
+		                effect: "fadeIn"
+           			}); 
 				}
 			});
 		});
