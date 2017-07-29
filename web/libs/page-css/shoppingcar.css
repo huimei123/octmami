@@ -152,6 +152,7 @@ padding:0 0.133333rem;
 width:0.35rem;
 text-align: center;
 border-radius: 0.106667rem 0 0 0.106667rem;
+height:0.645rem;
 }
 .jia{
 font-size: 0.5rem;
@@ -160,6 +161,7 @@ border: 0.013333rem black solid;
 padding:0 0.133333rem;
 text-align: center;
 border-radius: 0 0.106667rem 0.106667rem 0;
+height:0.645rem;
 }
 .delete{
     position: absolute;
@@ -210,6 +212,7 @@ border-radius: 0 0.106667rem 0.106667rem 0;
     padding-right: 0.133333rem;
     line-height: 1.333333rem;
     margin-left: 0.266667rem;
+    position: relative;
 }
 .btn_balance{
     height: 0.933333rem;
@@ -223,6 +226,21 @@ border-radius: 0 0.106667rem 0.106667rem 0;
     font-size: 0.4rem;
     border-radius: 0.16rem;
     margin-bottom: 0.266667rem;
+}
+.select_all{
+    width: 0.293333rem;
+    height: 0.293333rem;
+    border: 0.026667rem solid #cbcbcb;
+    border-radius: 0.16rem;
+    position: absolute;
+    left: 4%;
+    top: 30%;
+    margin: -0.16rem 0 0 -0.16rem;
+    text-align: center;
+    line-height: 0.28rem;
+}
+.total_price{
+    
 }
 
 
