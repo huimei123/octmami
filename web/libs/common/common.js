@@ -7,7 +7,7 @@ global.baseurl = 'http://192.168.23.1:8888/';
 var local = 'http://localhost:8888/';
 var yeyeye = 'http://10.3.134.228:8888/';
 
-var toggle = local;
+var toggle = yeyeye;
 
 
 

@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery','common'],function($){
+	require(['jquery'],function($){
 		//选择省份
 		$('.select_pro').on('click',function(){
 			console.log(66);
@@ -168,13 +168,22 @@ require(['config'],function(){
 				});
 				//把地址写进localStorage
 				this.$saveBtn.on('click',function(){
-					localStorage.receiver = $('.receiver').val();
-					localStorage.phone = $('.phone').val();
-					localStorage.province = $('.select_pro').text();
-					localStorage.city = $('.select_city').text();
-					localStorage.county = $('.select_county').text();
-					localStorage.addressDetail = $('.addressDetail').val();
-					localStorage.postcode = $('.postcode').val();
+					var id = localStorage.id;
+					var address = {
+						id : id,
+						receiver :　$('.receiver').val(),
+						phone : $('.phone').val(),
+						province : $('.select_pro').text(),
+						city : $('.select_city').text(),
+						county : $('.select_county').text(),
+						addressDetail : $('.addressDetail').val(),
+						postcode : $('.postcode').val(),
+					};
+					// 先用JSON.stringify()方法将json对象转换成字符串形式
+					address = JSON.stringify(address);
+					localStorage.setItem('myAdress',address);
+					infor = JSON.parse(localStorage.getItem('myAdress'));
+					
 				});
 			},
 			
