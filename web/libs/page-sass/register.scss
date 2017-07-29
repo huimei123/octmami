@@ -113,3 +113,19 @@
 	}
 
 }
+
+.loadPage{
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content : center;
+	z-index: 100;
+	display:none;
+	.loader{
+		width:100%;
+		height:100%;
+		margin:auto;
+		display: flex;
+		justify-content: center;
+	}
+}
