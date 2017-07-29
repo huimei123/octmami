@@ -183,7 +183,7 @@ require(['config'],function(){
 					address = JSON.stringify(address);
 					localStorage.setItem('myAdress',address);
 					infor = JSON.parse(localStorage.getItem('myAdress'));
-					
+					// location.href = './deliveryAddress.html';
 				});
 			},
 			

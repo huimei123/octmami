@@ -94,8 +94,9 @@ require(['config'],function(){
 				url: toggle+'getPassword',
 				type: 'post',
 				data: {
-					username :　$('#phone').val()+"",
-					passwd : $('#passwd').val()+"",
+						username :　$('#phone').val() + '',
+						passwd : $('#passwd').val() + '',
+					
 				},
 				success: function(res){
 					console.log(res);
