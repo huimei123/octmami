@@ -59,7 +59,7 @@ require(['config'],function(){
 			success: function(res){
 				showGoods(res);
 				$("img").lazyload({ 
-                 placeholder : "./libs/img/lazy2.gif",
+                 placeholder : "./libs/img/loading-gear.gif",
                  effect: "fadeIn"
            });  
 			}
@@ -95,7 +95,7 @@ require(['config'],function(){
 					$('.pdShowList').html('');
 					showGoods(res);
 					$("img").lazyload({ 
-		                placeholder : "./libs/img/lazy2.gif",
+		                placeholder : "./libs/img/loading-gear.gif",
 		                effect: "fadeIn"
            			}); 
 				}
@@ -111,7 +111,7 @@ require(['config'],function(){
 					<li class="pd_new_list_detail">
 						<a href="./goodsinfo.html?id=${item._id}">
 							<div class="pd_show_s_img">
-								<img class='lazy' src="./libs/img/lazy2.gif"  data-original="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
+								<img class='lazy' src="./libs/img/loading-gear.gif"  data-original="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
 							</div>
 							<div class="pd_new_list_info">
 								<p class="pd_show_list_name">

@@ -10,8 +10,8 @@ exports.account = function(app){
         db.query('users',request.body,function(result){
             if(result.length > 0){
                 //登录成功获取用户信息，购物车内容，收藏等
-                //getDetails
                 db.query('usersDetails',{username:request.body.username},function(result){
+                    console.log(result);
                     response.send({status: true, message:'登录成功', data:result});
                     console.log('登录成功');
                 })
@@ -52,11 +52,10 @@ exports.account = function(app){
     app.post('/getPassword',urlencodedParser,function(request, response){
         //搜索用户，找到用户，把之前的密码删除，添加新的，查找userName
         console.log(request.body);
-        response.send({status: true, message:'获取密码'});
+        //response.send({status: true, message:'获取密码'});
         db.query('users',{username:request.body.username},function(result){
             if(result.length>0){
-                db.delete('users',request.body);
-                db.add('users', request.body, function(data){
+                db.update('users',{username:request.body.username},request.body, function(data){
                     response.send({status: true, message: '密码修改成功'})
                     console.log('密码修改成功');
                 })
