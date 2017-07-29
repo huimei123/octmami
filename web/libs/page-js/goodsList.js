@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery','common','textual'],function($){
+	require(['jquery','common'],function($){
 		
 		//插入底部
 		$('<div/>').load('footer.html',function(){
@@ -94,8 +94,7 @@ require(['config'],function(){
 				}
 			});
 		});
-		//文本省略
-		$clamp($('p')[0], {clamp: 2});
+		
 		//封装生成列表页结构
 		function showGoods(res){
 			var data = res.data;
