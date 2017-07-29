@@ -52,7 +52,7 @@ module.exports = {
             db.collection(collection, function(error, collection){
                 collection.update( olddata, newdata,function(err, result){
                     if(callback && typeof callback == 'function'){
-                        callback(result)
+                        callback(err, result)
                     }
                     
                 })
