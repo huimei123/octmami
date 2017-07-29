@@ -46,10 +46,12 @@ require(['config'],function(){
 		//console.log(res)
 		var tamp = $('.price').attr('data-tamp',1);
 		//点击返回上一页
-		$('.header_left a').click(function(e){
+		$('.icon-xiangzuo').click(function(e){
 			history.back();
 		})
 		//请求匹配的数据
+		var data = res.data;
+		html = '';
 		$.ajax({
 			url: toggle+'query/data' ,
 			type: 'POST',
@@ -57,11 +59,12 @@ require(['config'],function(){
 				key : res,
 			},
 			success: function(res){
-				showGoods(res);
-				$("img").lazyload({ 
-                 placeholder : "./libs/img/loading-gear.gif",
-                 effect: "fadeIn"
-           });  
+			showGoods(res);
+			$("img").lazyload({ 
+            	placeholder : "./libs/img/loading-gear.gif",
+             	effect: "fadeIn"
+            })
+	            
 			}
 		});
 		
@@ -106,7 +109,13 @@ require(['config'],function(){
 		function showGoods(res){
 			var data = res.data;
 			html = '';
-			html = data.map(function(item,idx){
+			console.log(res);
+			if(data.length == 0){
+				var $createLi = $('<li/>');
+				str = '<span class="sustain">敬请期待</span>';
+				$createLi.html(str).appendTo($('.pdShow'));
+			}else{
+				html = data.map(function(item,idx){
 				return `
 					<li class="pd_new_list_detail">
 						<a href="./goodsinfo.html?id=${item._id}">
@@ -131,7 +140,7 @@ require(['config'],function(){
 				
 			}).join('');
 			$('.pdShowList').append(html);
-			
+			}
 		}
 	});
 

@@ -23,7 +23,7 @@ exports.usersDetails = function(app){
 		var serchGood = {"_id":new ObjectID(String(str.id))};
 		db.query('usersDetails',serchGood, function(result){
 			if(result.length>0){
-				db.update('usersDetails',serchGood,str,function(err, result){
+				db.update('usersDetails',serchGood,{$set:str},function(err, result){
 					if(!err){
 						db.query('usersDetails',serchGood, function(result){
 							response.send({status: true, message:'用户信息更改成功', data:result});
