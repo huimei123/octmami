@@ -165,6 +165,7 @@ require(['config'],function(){
 		
 		//点击切换分页
 		$('.foot').on('click','span',function(){
+			
 			_skip=$(this).index()*_limit;
 			 	console.log(_skip)
 			 	$.post(toggle+'lazy',{limit:_limit,skip:_skip},function(res){

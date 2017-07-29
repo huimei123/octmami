@@ -2,6 +2,9 @@ require(['config'],function(){
 	require(['jquery','common'],function($){
 		//点击回滚到顶部
 		//大于某个值显示top图标
+		$('.icon-xiangzuo')[0].ontouchstart=function(){
+			history.back();
+		}
 		var scrolLen;
 		$(window).scroll(function(){
 			scrolLen = $(this).scrollTop();

@@ -14,6 +14,16 @@
   color: #999;
 }
 
+.section .myInfor ul li .nickName {
+  height: 90%;
+  color: #999;
+  text-align: center;
+  width: 3rem;
+  outline: none;
+  border: 0;
+  font-size: 0.373333rem;
+}
+
 .section .myInfor ul li .myinfo_sex {
   display: inline-block;
 }

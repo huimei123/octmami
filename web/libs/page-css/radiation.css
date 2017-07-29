@@ -37,10 +37,11 @@
 .radiation-content li img {
   width: 100%;
   display: block;
+  height: au;
 }
 
 .radiation-content li p {
-  font-size: 0.34rem;
+  font-size: 0.33rem;
   line-height: 0.6rem;
   color: #000;
   overflow: hidden;
@@ -83,6 +84,14 @@
   margin-left: 0.133333rem;
 }
 
+.radiation-content .textProduct {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 0.42rem;
+}
+
 .toTop {
   display: none;
   width: 0.96rem;
@@ -93,4 +102,10 @@
   z-index: 100;
   background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
   background-size: 6.666667rem;
+}
+
+.sustain {
+  font-size: 30px;
+  color: #666;
+  margin: 0.4rem;
 }

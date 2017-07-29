@@ -13,15 +13,50 @@ require(['config'],function(){
 		// 信息对象
 		var myInforPage = {
 			$sex : $('.sex'),
+			$saveBtn : $('.save_btn'),
 			init : function(){
 				// 切换性别
 				this.$sex.on('click',function(){
 					$(this).addClass('active').siblings().removeClass('active');
 				});
+				//保存个人信息,把个人信息保存在localstorage里
+				this.$saveBtn.on('click',function(){
+					console.log(localStorage.id);
+					var id = localStorage.id;
+					var username = localStorage.username;
+					// var infor = {
+					// 	id : id,
+					// 	nickname : $('.nickName').val(),
+					// 	gender : $('.active').text(),
+					// 	born : { 'year' : '1999', 'month' :'3'},
+					// };
+					// // 先用JSON.stringify()方法将json对象转换成字符串形式
+					// infor = JSON.stringify(infor);
+					// localStorage.setItem('myInfor',infor);
+
+					// infor = JSON.parse(localStorage.getItem('myInfor'));
+
+					$.ajax({
+
+						url :  toggle+'updateusersDetails',
+						type : 'post',						
+						data : {
+							data:JSON.stringify({
+								id : id,
+								nickname : 'qqqq',
+								gender : '女',
+								born : { 'year' : '1999', 'month' :'3'},
+							}),
+						},
+						success : function(res){
+							console.log(res);
+						}
+					});
+				});
 			},
 		}
 		myInforPage.init();
-		$('.nickName').html(localStorage.username);
+		$('.nickName').attr('value',localStorage.username);
 		//生成出生年份
 		var now = new Date();
 		var year = now.getFullYear();
