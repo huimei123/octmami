@@ -200,6 +200,7 @@ font-style: normal;
     background: #fff;
     text-align: right;
     line-height: 1.466667rem;
+    border-top: #4dc496 0.026667rem solid;
 }
 .total{
     display: inline-block;
