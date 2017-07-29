@@ -90,6 +90,7 @@ require(['config'],function(){
 				url: toggle+'sort' ,
 				type:'post',
 				data :{
+					val:$('.header_title').text(),
 					key: 'currentPrice',
 					num:$('.price').attr('data-tamp'),
 				},
