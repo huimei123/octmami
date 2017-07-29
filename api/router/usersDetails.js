@@ -25,6 +25,7 @@ exports.usersDetails = function(app){
 
 			if(result.length>0){
 				db.update('usersDetails',serchGood,str,function(err, result){
+					console.log(err);
 					if(!err){
 						db.query('usersDetails',serchGood, function(result){
 							response.send({status: true, message:'用户信息更改成功', data:result});
