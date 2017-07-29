@@ -153,6 +153,7 @@ width:0.35rem;
 text-align: center;
 border-radius: 0.106667rem 0 0 0.106667rem;
 height:0.645rem;
+font-style: normal;
 }
 .jia{
 font-size: 0.5rem;
@@ -162,6 +163,7 @@ padding:0 0.133333rem;
 text-align: center;
 border-radius: 0 0.106667rem 0.106667rem 0;
 height:0.645rem;
+font-style: normal;
 }
 .delete{
     position: absolute;
@@ -176,7 +178,7 @@ height:0.645rem;
 .select{
     width: 0.293333rem;
     height: 0.293333rem;
-    border: 0.026667rem solid #cbcbcb;
+    border: 0.026667rem solid #4EEE94;
     border-radius: 0.16rem;
     position: absolute;
     left: 4%;
@@ -186,10 +188,10 @@ height:0.645rem;
     line-height: 0.28rem;
 }
 .act{
-    border-color: #ffa486;
-    background-color: #ffa486;
+    border-color: #43CD80;
+    background-color: #43CD80;
 }
-.footer{
+.foot{
     position: fixed;
     bottom: 0px;
     left: 0px;
@@ -233,14 +235,17 @@ height:0.645rem;
     border: 0.026667rem solid #cbcbcb;
     border-radius: 0.16rem;
     position: absolute;
-    left: 4%;
     top: 30%;
-    margin: -0.16rem 0 0 -0.16rem;
     text-align: center;
     line-height: 0.28rem;
 }
 .total_price{
-    
+    font-size: 0.3rem;
+}
+.total_price span{
+    font-size: 0.4rem;
+    color: #ff6600;
+    font-weight: bold;
 }
 
 
