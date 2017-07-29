@@ -20,12 +20,10 @@ exports.usersDetails = function(app){
 	app.post('/updateusersDetails', urlencodedParser, function(request, response){
 		//console.log('修改个人信息',request.body);
 		var str = JSON.parse(request.body.data);
-		console.log(str.id);
 		var serchGood = {"_id":new ObjectID(String(str.id))};
 		db.query('usersDetails',serchGood, function(result){
 			if(result.length>0){
 				db.update('usersDetails',serchGood,str,function(err, result){
-					console.log(result);
 					if(!err){
 						db.query('usersDetails',serchGood, function(result){
 							response.send({status: true, message:'用户信息更改成功', data:result});
