@@ -1,0 +1,116 @@
+.section .babyInfor ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.4rem;
+  border-bottom: 0.026667rem solid #e2e2e2;
+  line-height: 1.066667rem;
+  height: 1.066667rem;
+  font-size: 0.346667rem;
+  color: #999;
+}
+
+.section .babyInfor ul li span {
+  color: #999;
+}
+
+.section .babyInfor ul li .boby_pic {
+  font-size: 1rem;
+}
+
+.section .babyInfor ul li .babyinfo_sex {
+  display: inline-block;
+}
+
+.section .babyInfor ul li .babyinfo_sex span {
+  display: inline-block;
+  text-align: center;
+  padding: 0 0.32rem;
+  height: 0.693333rem;
+  line-height: 0.693333rem;
+  color: #999;
+}
+
+.section .babyInfor ul li .babyinfo_sex .active {
+  border: 2px solid #4dc496;
+  border-radius: 0.4rem;
+}
+
+.section .babyInfor ul li .born {
+  position: relative;
+}
+
+.section .babyInfor ul li .born .year, .section .babyInfor ul li .born .month {
+  display: inline-block;
+}
+
+.section .babyInfor ul li .born .year input, .section .babyInfor ul li .born .month input {
+  border: 0;
+  outline: none;
+  width: 1.133333rem;
+  font-size: 0.346667rem;
+  text-align: right;
+  color: #999;
+}
+
+.section .babyInfor ul li .born .year ul, .section .babyInfor ul li .born .month ul {
+  position: absolute;
+  left: 0.333333rem;
+  top: 0.766667rem;
+  height: 3.666667rem;
+  overflow: auto;
+  display: none;
+  background: #fff;
+}
+
+.section .babyInfor ul li .born .year ul li, .section .babyInfor ul li .born .month ul li {
+  border: none;
+  height: 0.766667rem;
+  line-height: 0.766667rem;
+}
+
+.section .babyInfor ul li .born .month ul {
+  left: 2.733333rem;
+}
+
+.section .babyInfor ul .babyInfor_pic {
+  line-height: 2.533333rem;
+  height: 2.533333rem;
+}
+
+.section .babyInfor ul .babyInfor_pic .baby_pic {
+  font-size: 1.066667rem;
+}
+
+.section .babyInfor ul .adress {
+  display: block;
+  width: 90%;
+}
+
+.section .babyInfor ul .babyAdress {
+  width: 10%;
+  display: block;
+  position: relative;
+  right: -78px;
+}
+
+.section .btn {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.533333rem;
+}
+
+.section .btn .save_btn {
+  width: 93%;
+  text-align: center;
+  background: #4dc496;
+  font-size: 0.42rem;
+  color: #fff;
+  line-height: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.133333rem;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  letter-spacing: 0.2rem;
+}

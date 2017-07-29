@@ -1,6 +1,5 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
-
 		
 
 		// 插入底部
@@ -33,10 +32,12 @@ require(['config'],function(){
 		//登录
 		$('.login_btn').on('click',function(e){
 			e.preventDefault();
-
+			var timer = setInterval(function(){
+				$('.loadPage').show();
+			},200);
 
 			$.ajax({
-				url : toggle+'login',
+				url : toggle+'updateusersDetails',
 				type: 'POST',
 				data:{
 					username:$('#username').val(),
@@ -48,7 +49,9 @@ require(['config'],function(){
 					console.log(status);
 					var data = res.data;
 					if(status == true){
-						location.href = './myIndex.html?id=' + data[0]._id + '&username=' + data[0].username;
+						
+						clearInterval(timer);
+						// location.href = './myIndex.html?id=' + data[0]._id + '&username=' + data[0].username;
 						localStorage.username = $('#username').val();
 						localStorage.passwd = $('#passwd').val();
 					}
