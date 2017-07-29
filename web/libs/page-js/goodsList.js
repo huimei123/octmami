@@ -1,6 +1,5 @@
 require(['config'],function(){
-	require(['jquery','common'],function($){
-		
+	require(['jquery','common'],function($){	
 		//插入底部
 		$('<div/>').load('footer.html',function(){
 			$(this).insertAfter('.section');
@@ -38,7 +37,6 @@ require(['config'],function(){
 			},20);
 			e.preventDefault();
 		})
-
 		//获取URL的参数值
 		let params = location.search.slice(1).split('=');
 		let res = decodeURI(params[1]);
@@ -59,9 +57,14 @@ require(['config'],function(){
 				key : res,
 			},
 			success: function(res){
-				showGoods(res);					
+				showGoods(res);
+				$("img").lazyload({ 
+                 placeholder : "./libs/img/yanchi.gif",
+                 effect: "fadeIn"
+           });  
 			}
 		});
+		
 		//按价格排序
 		$('.price').on('click',function(e){
 			e.preventDefault();
@@ -90,7 +93,11 @@ require(['config'],function(){
 				success : function(res){
 					//console.log(res);
 					$('.pdShowList').html('');
-					showGoods(res);	
+					showGoods(res);
+					
+					
+					
+					
 				}
 			});
 		});
@@ -104,7 +111,7 @@ require(['config'],function(){
 					<li class="pd_new_list_detail">
 						<a href="./goodsinfo.html?id=${item._id}">
 							<div class="pd_show_s_img">
-								<img src="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
+								<img class='lazy' src="./libs/img/yanchi.gif"  data-original="./libs/img/productImg/${data[idx].productImg[0]}" alt="" />
 							</div>
 							<div class="pd_new_list_info">
 								<p class="pd_show_list_name">
@@ -121,8 +128,10 @@ require(['config'],function(){
 						</a>
 					</li>
 				`;
+				
 			}).join('');
 			$('.pdShowList').append(html);
+			
 		}
 	});
 
