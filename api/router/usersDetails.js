@@ -20,6 +20,7 @@ exports.usersDetails = function(app){
 	app.post('/updateusersDetails', urlencodedParser, function(request, response){
 		//console.log('修改个人信息',request.body);
 		var str = JSON.parse(request.body.data);
+		//console.log('_id',str.id);
 		var serchGood = {"_id":new ObjectID(String(str.id))};
 		db.query('usersDetails',serchGood, function(result){
 			if(result.length>0){
