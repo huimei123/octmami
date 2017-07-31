@@ -1,0 +1,85 @@
+.header_right .icon {
+  font-size: 0.633333rem;
+  color: #fff;
+  position: relative;
+  top: 0.08rem;
+}
+
+.section .addAddress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 2.08rem;
+  border-bottom: 0.026667rem solid #d8d8d8;
+}
+
+.section .addAddress .icon {
+  padding: 0 0.4rem;
+  font-size: 0.633333rem;
+}
+
+.section .addAddress .R {
+  width: 70%;
+}
+
+.section .addAddress .R .receiver_infor {
+  padding: 5px 0;
+  font-size: 0.346667rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section .addAddress .R .reAddress {
+  padding: 5px 0;
+  font-size: 0.346667rem;
+}
+
+.section .distribution_bar {
+  border-bottom: 0.026667rem solid #d8d8d8;
+}
+
+.section .distribution_bar ul {
+  height: 1.066667rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.533333rem;
+  font-size: 0.346667rem;
+}
+
+.section .distribution_bar ul .current_distr_method {
+  color: #999;
+}
+
+.section .order_pro_con {
+  display: flex;
+  height: 1.386667rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0.433333rem;
+  font-size: 0.346667rem;
+}
+
+.section .order_pro_con .order_pro_text {
+  color: #000;
+}
+
+.section .feedback_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.533333rem;
+  border-bottom: 0.026667rem solid #d8d8d8;
+}
+
+.section .feedback_main textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.373333rem;
+  height: 1.28rem;
+  color: #999;
+  border-radius: 0.14rem;
+  border: 0.026667rem solid #ccc;
+  margin-bottom: 0.8rem;
+}

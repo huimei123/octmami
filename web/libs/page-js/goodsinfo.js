@@ -211,9 +211,17 @@ require(['config'],function(){
 					//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 				});
 				//立即购买事件
-				this.$buy_now.on('click',function(){
-					console.log(111);
-				})
+				// this.$buy_now.on('click',function(){
+				// 	// console.log(111);
+					
+				// 	$.ajax({
+				// 		url :  toggle+'updateusersDetails',
+				// 		type : 'post',						
+				// 		data : {
+
+				// 		},
+				// 	});
+				// });
 				//尺寸点击事件
 				this.$sizeBg.on('click','i',function(e){
 					//console.log($(e.target).index());

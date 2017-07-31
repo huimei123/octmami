@@ -176,6 +176,7 @@ require(['config'],function(){
 				//把地址写进localStorage
 				this.$saveBtn.on('click',function(){
 					var id = localStorage.id;
+					var addressArr = [];
 					var address = {
 						id : id,
 						receiver :　$('.receiver').val(),
@@ -192,7 +193,7 @@ require(['config'],function(){
 					address = JSON.parse(localStorage.getItem('myAdress'));
 					var Addaddress = JSON.parse(localStorage.myAdress);
 					var infor = JSON.parse(localStorage.myInfor);
-					
+					addressArr.push(infor);
 					$.ajax({
 						url : toggle +  'updateusersDetails',
 						type : 'post',
