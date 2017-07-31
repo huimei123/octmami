@@ -40,7 +40,7 @@ require(['config'],function(){
 				<div class="select "></div>
 				<img class="btn_img" src="./libs/img/productImg/${item.img}"/>
 				<div class="productName">${item.productName}</div>
-				<div class="attr"><span style="display:${item.size==""?"none":"block"}">尺寸:${item.size}</span>&nbsp;&nbsp;&nbsp;<span style="display:${item.size==""?"none":"block"}">颜色:${item.color}</span></div>
+				<div class="attr"><span style="display:${item.size==""?"none":""}">尺寸:${item.size}</span>&nbsp;&nbsp;&nbsp;<span style="display:${item.color==""?"none":""}">颜色:${item.color}</span></div>
 				<div class="price">¥${item.price}</div>
 				<div class="baoyou">包邮</div>
 				<div class="cal"><i class="jian">-</i><input type="text" value='${item.qty}'/><i class="jia">+</i></div>
