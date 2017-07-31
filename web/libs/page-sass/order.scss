@@ -58,8 +58,22 @@
 		align-items:center;
 		padding:0.8rem 0.433333rem;
 		font-size:0.346667rem;
+		.order_pro_pic{
+			padding-right:0.133333rem;
+			width: 15%;
+			// height: 90%;
+		}
 		.order_pro_text{
+			width: 50%;
 			color:#000;
+		}
+		.order_pro_digital{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: right;
+			.price{
+				width: 100%;
+			}
 		}
 
 	}
@@ -81,6 +95,62 @@
 			border:0.026667rem solid #ccc;
 			margin-bottom:0.8rem;
 
+		}
+	}
+	.order_pro_zeng{
+		display: flex;
+		padding:0.533333rem;
+		color:#999;
+		font-size:0.32rem;
+		border-bottom:2px solid #d8d8d8;
+		.icon{
+			font-size:0.4rem;
+		}
+		.baoyou{
+			color:#9474e1;
+			border:0.026667rem solid #9474e1;
+			border-radius: 0.16rem;
+			line-height: 0.453333rem;
+			font-size:0.32rem;
+			padding: 0 0.106667rem;
+			margin:0 0.266667rem;
+		}
+	}
+	.order_status_info{
+		display: flex;
+		justify-content: space-between;
+		align-items:center;
+		flex-wrap: wrap;
+		padding: 0.533333rem;
+		font-size:0.346667rem;
+		border-bottom: 0.026667rem solid #d8d8d8;
+		p{
+			width: 100%;
+			display: flex;
+			padding:0.106667rem 0;
+			justify-content: space-between;
+		}
+	}
+	.sum{
+		font-size:0.346667rem;
+		display: flex;
+		align-items:center;
+		padding:0.266667rem 0;
+		padding-left:4.666667rem;
+		.price{
+			color:#ff6600;
+			font-weight: 900;
+			font-size:0.4rem;
+		}
+		.submit{
+			display: block;
+			height: 0.933333rem;
+			line-height:0.933333rem;
+			color:#fff;
+			padding:0 0.8rem;
+			border-radius:0.16rem;
+			background:#4dc496;
+			margin-left: 0.533333rem;
 		}
 	}
 }

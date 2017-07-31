@@ -228,7 +228,7 @@ require(['config'],function(){
 					location.href='./order.html';
 
 				})
->>>>>>> 634c7677651c28a0a8f57235a2d977444947a46f
+
 				//尺寸点击事件
 				this.$sizeBg.on('click','i',function(e){
 					//console.log($(e.target).index());
