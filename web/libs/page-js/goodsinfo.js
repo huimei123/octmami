@@ -202,7 +202,7 @@ require(['config'],function(){
 					number = number*1+$('.qty').val()*1;			
 					$('.foot_car_set span').html(number);
 					//console.log(obj);
-					console.log(goodsArr);
+					//console.log(goodsArr);
 					var stingObj =JSON.stringify(goodsArr); 
 					//console.log(JSON.stringify(goodsArr));
 					//console.log(JSON.parse(stingObj));
@@ -211,17 +211,24 @@ require(['config'],function(){
 					//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 				});
 				//立即购买事件
-				// this.$buy_now.on('click',function(){
-				// 	// console.log(111);
-					
-				// 	$.ajax({
-				// 		url :  toggle+'updateusersDetails',
-				// 		type : 'post',						
-				// 		data : {
 
-				// 		},
-				// 	});
-				// });
+				this.$buy_now.on('click',function(){
+					//console.log(111);
+					obj['qty'] = $('.qty').val()*1;
+					obj['size']= $('.sizeType.active').text()+"";
+					obj['color']= $('.colorType.active').text()+"";
+					//console.log(obj);
+					var stingObj =JSON.stringify(obj); 
+					//console.log(JSON.stringify(goodsArr));
+					//console.log(JSON.parse(stingObj));
+					var storage = window.localStorage;
+					//console.log(stingObj);
+					//console.log(JSON.parse(stingObj));
+					storage.setItem('buyNow',stingObj);
+					location.href='./order.html';
+
+				})
+>>>>>>> 634c7677651c28a0a8f57235a2d977444947a46f
 				//尺寸点击事件
 				this.$sizeBg.on('click','i',function(e){
 					//console.log($(e.target).index());

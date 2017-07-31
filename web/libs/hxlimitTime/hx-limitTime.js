@@ -18,26 +18,24 @@
 			$('<span/>').appendTo($limTime).html(':').addClass('point');
 			$('<span/>').addClass('limSec').appendTo($limTime).html('00');
 			$('<a/>').addClass('limMore').appendTo($div).html('更多>');
-			var THour = '01';
-			var TMinu = '40';
-			var TSec = '60'; 
-			setInterval(function(){
-				TSec--;
-				if(TSec < 10 && TSec != 0){
-					TSec = '0'+TSec;
-				}else if(TSec == 0){
-					TMinu--;
-					TSec = '60';
-				}
-				$('.limSec').html(`${TSec}`);
-				if(TMinu < 10 && TMinu != 0){
-					TMinu ='0'+TMinu;
-				}else if(TMinu == 0){
-					THour--;
-				}
-				$('.limMinu').html(`${TMinu}`);
-				$('.limHour').html(`${THour}`);
-			},1000);
+			//var endTime = '2017-8-1 15:00:00';
+			//var end = Date.parse(endTime);
+			var now = Date.now();
+			var end = Number(now)+3734000;
+			
+			//console.log(now);
+			calTime();
+			setInterval(calTime,1000);
+			function calTime (){
+				var now = Date.now();
+				var offsetTime = Math.floor((end-now)/1000);
+				var secound = offsetTime%60>=10?offsetTime%60:"0"+offsetTime%60;
+				var minute = Math.floor((offsetTime/60)%60)>=10?Math.floor((offsetTime/60)%60):"0"+Math.floor((offsetTime/60)%60);
+				var hour = Math.floor((offsetTime)/60/60%24)>=10?Math.floor((offsetTime)/60/60%24):"0"+Math.floor((offsetTime)/60/60%24);
+				$('.limSec').html(`${secound}`);
+				$('.limMinu').html(`${minute}`);
+				$('.limHour').html(`${hour}`);
+			}
 			var $litContent = $('<div/>').addClass('limContent').appendTo($('.limitTime'));
 			
 			var html = opt.data.map(function(item){
