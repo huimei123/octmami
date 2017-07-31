@@ -262,14 +262,14 @@ font-style: normal;
 }
 .tipbg{
     width:60%;
-    height: 16%;
+    height: 15%;
     background-color: black;
     opacity:1;
     display:inline-block;
     vertical-align: middle;
     position:fixed;
     top: 35%;
-    left: 20%;
+    left: 20%;padding-bottom:0.666667rem;
 }
 .del_title{
     font-size:0.45rem;
