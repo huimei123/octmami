@@ -24,14 +24,16 @@
 	<script src= "./libs/page-js/require.js" data-main="./libs/page-js/shoppingcar"></script>
 </head>
 <body>
+	<!-- 头部 -->
 	<header class="shopHead">
 		<div class="head_arrow">
-			<a href="">
+			<a>
 				<img class="" src="libs/img/lable_abnner/pic_btArrow_back_01.png" alt="">
 			</a>
 		</div>
 		<div class="pagetitle">购物车</div>
 	</header>
+	<!-- 没有商品时显示 -->
 	<section class="goodsNull">
 		<div class="emptycar">
 			<div class="empty_icon"></div>
@@ -41,10 +43,31 @@
 			<input type="button" class="btnClick" value="回首页逛逛">
 		</div>
 	</section>
+	<!-- 商品显示位置 -->
 	<section class="list"></section>
+	<!-- 计算总价 -->
 	<footer class="foot">
 		<div class="total"><div class="select_all"></div><p class="total_price">合计:¥<span>0.00</span></p></div>
 		<div class="balanceBg"><div class="btn_balance">结算</div></div>
 	</footer>
+	<!-- 确认是否删除 -->
+	<div class="tips">
+		<div class="tipbg">
+			<p class="del_title">是否删除该商品</p>
+			<span class="btn_sure">确定</span><span class="btn_cancle">取消</span>
+		</div>
+	</div>
+	<!-- loading -->
+	<div class="loadPage">
+		<div class="loader">
+			<div class="loader-inner ball-pulse-rise">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -378,6 +378,19 @@
     background: url(../img/pic_icon_pd_02.png?v=6) -5.68rem 0 no-repeat;
     background-size: 6.666667rem;
 }
+.tips{
+  width:100%;
+  height: 0.666667rem;
+  line-height: 0.666667rem;
+  text-align: center;
+  color: white;
+  background-color: #666;
+  font-size: 0.35rem;
+  position: fixed;
+  top:45%;
+  z-index:888;
+  display: none;
+}
 
 /* loading页面 */
 .loadPage{
