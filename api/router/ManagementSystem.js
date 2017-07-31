@@ -106,7 +106,20 @@ exports.management = function(app){
 		console.log(request.body);
 		db.sort('products',{[request.body.key]:Number(request.body.num)}, function(result){
 			if(result.length>0){
-				response.send({status: true, message: '排序成功', data:result});
+				//获取相应的商品	
+				var sortArr = [];
+				//遍历结果放回数组
+				//console.log(result);
+				var str = request.body.val;
+				result.forEach(function(item,idx){		
+					if(item.productName.indexOf(String(str))>=0){
+						sortArr.push(result[idx]);
+					}
+					if(item.type.indexOf(str)>=0){
+						sortArr.push(result[idx]);
+					}
+				})
+				response.send({status: true, message: '排序成功', data:sortArr});
 				console.log('排序成功');
 			}else{
 				response.send({status: true, message: '排序失败', data:[]});

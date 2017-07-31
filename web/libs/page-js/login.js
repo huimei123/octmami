@@ -51,7 +51,6 @@ require(['config'],function(){
 					if(status == true){
 						localStorage.id = res.data[0]._id;
 						localStorage.username = $('#username').val();
-						localStorage.passwd = $('#passwd').val();
 						clearInterval(timer);
 						location.href = './myIndex.html?id=' + data[0]._id + '&username=' + data[0].username;
 					}

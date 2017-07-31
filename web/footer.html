@@ -38,7 +38,7 @@
 		// 判断是否登录过，如果登录过，自动跳转到个人中心
 		var my = document.querySelector('.footer .my');
 		my.onclick = function(e){
-			if(localStorage.username && localStorage.passwd){
+			if(localStorage.username){
 				e.preventDefault();
 				location.href = './myIndex.html';
 			}
