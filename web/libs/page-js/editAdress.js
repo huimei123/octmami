@@ -1,5 +1,12 @@
 require(['config'],function(){
 	require(['jquery'],function($){
+		var back = document.querySelector('.header_left .icon');
+		if(back!=null){
+			back.onclick = function(){
+			history.back();
+			};
+		}
+
 		//选择省份
 		$('.select_pro').on('click',function(){
 			console.log(66);
@@ -169,6 +176,7 @@ require(['config'],function(){
 				//把地址写进localStorage
 				this.$saveBtn.on('click',function(){
 					var id = localStorage.id;
+					var addressArr = [];
 					var address = {
 						id : id,
 						receiver :　$('.receiver').val(),
@@ -182,8 +190,33 @@ require(['config'],function(){
 					// 先用JSON.stringify()方法将json对象转换成字符串形式
 					address = JSON.stringify(address);
 					localStorage.setItem('myAdress',address);
-					infor = JSON.parse(localStorage.getItem('myAdress'));
-					// location.href = './deliveryAddress.html';
+					address = JSON.parse(localStorage.getItem('myAdress'));
+					var Addaddress = JSON.parse(localStorage.myAdress);
+					var infor = JSON.parse(localStorage.myInfor);
+					addressArr.push(infor);
+					$.ajax({
+						url : toggle +  'updateusersDetails',
+						type : 'post',
+						data : {
+							data:JSON.stringify({
+								id: infor.id,
+								receiver : Addaddress.receiver,
+								phone : Addaddress.phone,
+								province : Addaddress.province,
+								city : Addaddress.city,
+								county : Addaddress.county,
+								addressDetail : Addaddress.deliveryAddress,
+								postcode : Addaddress.postcode,
+							}),							
+						},
+						success : function(res){
+							console.log(res);
+							if(res.status == true){
+								location.href = './deliveryAddress.html';
+							}
+						}
+					});
+
 				});
 			},
 			

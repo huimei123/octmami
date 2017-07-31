@@ -1,8 +1,23 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
-	
-	
+		
+		console.log(localStorage.myInfor);
+		var newInfor = JSON.parse(localStorage.myInfor);
+		var born = newInfor.born;
 
+		console.log(newInfor.gender);
+		//修改个人信息
+		$('.nickName').attr('value',newInfor.nickname);
+		$('.gender').addClass('active').removeClass('active');
+		$('#b_year').attr('value',born.year);
+		$('#b_month').attr('value',born.month);
+		console.log($('.sex').text());
+		if(newInfor.gender == '男'){
+			$('.sex').eq(1).addClass('active');
+		}else{
+			$('.sex').eq(0).addClass('active');
+		}
+				
 		// 信息对象
 		var myInforPage = {
 			$sex : $('.sex'),
@@ -14,24 +29,22 @@ require(['config'],function(){
 				});
 				//保存个人信息,把个人信息保存在localstorage里
 				this.$saveBtn.on('click',function(){
-					
 					var id = localStorage.id;
-					console.log(id);
 					var username = localStorage.username;
+					console.log($('#b_year').val());
 					//个人信息对象
 					var infor = {
 						id : id,
 						username : username,
 						nickname : $('.nickName').val(),
 						gender : $('.active').text(),
-						born : { 'year' : '1999', 'month' :'3'},
+						born : { 'year' : $('#b_year').val(), 'month' :$('#b_month').val()},
 					};
 					// 先用JSON.stringify()方法将json对象转换成字符串形式
 					infor = JSON.stringify(infor);
 					localStorage.setItem('myInfor',infor);
 
 					infor = JSON.parse(localStorage.getItem('myInfor'));
-					console.log(infor.born.year);
 
 					$.ajax({
 
@@ -47,14 +60,32 @@ require(['config'],function(){
 							}),
 						},
 						success : function(res){
-							console.log(res);
+							
+							// data = res.data;
+							// born = data[0].born;
+							// //新的个人信息对象
+							// var newInfor = {
+							// 	id : id,
+							// 	username : username,
+							// 	nickname : data.nickname,
+							// 	gender : data.gender,
+							// 	born : { 'year' : born.year, 'month' :born.month},
+							// };
+							// // 先用JSON.stringify()方法将json对象转换成字符串形式
+							// newInfor = JSON.stringify(newInfor);
+							// localStorage.setItem('myNewInfor',newInfor);
+
+							// newInfor = JSON.parse(localStorage.getItem('myNewInfor'));
+
+							
 						}
 					});
 				});
 			},
 		}
 		myInforPage.init();
-		$('.nickName').attr('value',localStorage.username);
+		
+		
 		//生成出生年份
 		var now = new Date();
 		var year = now.getFullYear();
@@ -119,9 +150,11 @@ require(['config'],function(){
 		});
 
 		$(document).on('click',function(){
-			console.log(666)
+		
 			$('.select_year').hide();
 			$('.select_month').hide();
-		})
+		});
+
+
 	});
 });
