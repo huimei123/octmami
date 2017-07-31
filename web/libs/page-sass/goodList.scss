@@ -42,3 +42,31 @@ header{padding:0 0.2rem;
 }
 .sustain{font-size:30px;color:#666;margin:0.4rem;}
 .icon-xiangzuo{font-size:0.6rem !important;color:#fff;}
+.rightSearch{width:90%;height:100%;background:rgba(0,0,0,.6);position:fixed;right:-9rem;top:0;
+	z-index:1000;color:#EDEDEA;font-size:0.4rem;display:none;
+	a{color:#EDEDEA;}
+	.rightSearch-title{display:flex;justify-content:space-between;padding:0 0.26rem;height:1.18rem;
+		border-bottom:0.02rem solid #EDEDEA;align-items:center;
+		.titleTitle{font-size:0.5rem;}
+		.confirm_btn{display:block;background:#4DC496;padding:0.133333rem 0.3rem;border-radius:0.066667rem}
+	}
+	.rightSearch-content{
+		p{padding:0 0.266667rem;line-height:0.8rem;margin:0 0.266667rem;border-bottom:0.02rem solid #EDEDEA;padding:0;}
+		.rightSearch-brand{
+			a{display:block;}
+			.choseBrand{margin:0 0.2rem;
+				p{border:0;line-height:0.8rem;display:flex;
+					span{display:inline-block;width:0.8rem;text-align:center}
+				}
+			}
+		}
+		.rightSearch-price{
+			p{border-bottom:0.02rem solid #EDEDEA}
+			.chosePrice{padding:0 0.4rem;}
+			a{display:inline-block;line-height:0.8rem;width:36%;margin-left:0.933333rem;}
+		}
+		.brandshow,.priceshow{display:flex;justify-content:space-between;}
+	}
+}
+.pdScreening{color:#4DC496}
+

@@ -21,7 +21,9 @@ exports.management = function(app){
 		//res.send('注册post请求！');
 		//注册业务逻辑,
 		//查询字符
-
+		search(request,response);
+	})
+	function search(request,response){
 		db.query('products',{}, function(result){
 			var str = request.body.key;
 			console.log(str);
@@ -46,9 +48,8 @@ exports.management = function(app){
 				response.send({status: false, message:'根据条件获取失败', data:[]});
 				console.log('根据条件获取失败');
 			}
-
 		})
-	})
+	}
 	//删除商品
 	app.post('/delete',urlencodedParser,function(request, response){
 		console.log(request.body);
@@ -128,7 +129,7 @@ exports.management = function(app){
 		})
 	})
 	//懒加载
-	app.post('/lazy',urlencodedParser,function(request,response){
+	app.post('/lazy', urlencodedParser, function(request, response){
 		console.log(request.body);
 	    db.lazy('products',Number(request.body.limit),Number(request.body.skip),function(result){
 	        if(result.length>0){
@@ -139,6 +140,91 @@ exports.management = function(app){
 	            console.log("加载失败")
 	        }
 	    })
+	})
+	//筛选
+	app.post('/filtrate', urlencodedParser, function(request, response){
+		console.log(request.body);
+		var filterBrand = request.body.brand;
+		var filterPrice = request.body.price;
+		var brandArr = [];
+		
+		//判断信息为全部的
+		if(filterBrand == '全部' || filterBrand == ''){
+			db.query('products',{}, function(result){
+				classPrice(result);
+			})	
+		}else{
+			db.query('products',{}, function(result){
+				var str = request.body.brand;
+				console.log(str);
+				var newArr = [];
+				//遍历结果放回数组
+				//console.log(result);
+				result.forEach(function(item,idx){
+					//console.log(item);
+					if(item.productName.indexOf(String(str))>=0){
+						newArr.push(result[idx]);
+					}
+					if(item.type.indexOf(str)>=0){
+						newArr.push(result[idx]);
+					}
+				})
+				//console.log(newArr);
+				//console.log(request.body);
+				if(newArr.length>0){
+					classPrice(newArr);
+					console.log('筛选成功');
+				}else{
+					response.send({staus:false, message:'筛选失败',data:lastArr});
+					console.log('筛选失败');
+				}
+			})
+		}
+		//封装价格各种情况
+		function classPrice(result){
+			var lastprice = price(filterPrice);
+			console.log(lastprice);
+			var lastArr = [];
+			//判断价格是否为全部
+			if(!lastprice){
+				response.send({staus:true, message:'筛选成功',data:result});
+				console.log('价格全部')
+			}else{
+				console.log('价格')
+				result.forEach(function(item, idx){
+					//console.log(item);
+					if(item.currentPrice > lastprice[0] && item.currentPrice<lastprice[1]){
+						lastArr.push(item);
+					}
+					
+				})
+				console.log(lastArr.length);
+				if(!lastArr.length==0){
+					response.send({staus:true, message:'筛选成功',data:lastArr});
+				}else{
+					response.send({staus:false, message:'筛选失败',data:[]});
+				}	
+					
+			}
+		}
+		//封装判断价格
+		function price(filterPrice){
+			var newArr = [];
+			if(filterPrice == '全部' || filterPrice == ''){
+				return false;
+			}else{
+				var arr = filterPrice.split('-');
+				arr.forEach(function(item){
+					if(item.indexOf('元') >=0 ){
+						newArr.push(item.slice(0,item.length-1));
+					}else{
+						newArr.push(item);
+					}
+				})
+				return newArr;
+			}
+
+		}
 	})
 	
 }
