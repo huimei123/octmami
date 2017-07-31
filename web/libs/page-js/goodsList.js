@@ -4,7 +4,47 @@ require(['config'],function(){
 		$('<div/>').load('footer.html',function(){
 			$(this).insertAfter('.section');
 		});
-
+		//点击出现筛选菜单
+		$('.pdScreening').click(function(e){
+			e.stopPropagation();
+			$('.rightSearch').animate({right:0}).show();
+		})
+		$(document).click(function(e){
+			e.stopPropagation();
+			$('.rightSearch').animate({right:'-9rem'},function(){
+				$('.rightSearch').hide();
+			})	
+		})
+		//阻止事件冒泡关闭右栏
+		$('.rightSearch').click(function(e){
+			e.stopPropagation();
+		})
+		//选择筛选,品牌,价格
+		$('.choseBrand').on('click','a',function(e){
+			e.preventDefault();
+			$('.brand-text').text($(this).text());	
+		})
+		$('.chosePrice').on('click','a',function(e){
+			e.preventDefault();
+			$('.price-text').text($(this).text());
+		})
+		//提交筛选内容
+		$('.confirm_btn').click(function(e){
+			e.preventDefault();
+			$.post(toggle+'filtrate',{brand:$('.brand-text').text(),price:$('.price-text').text()},function(res){
+				$('.pdShowList').html('');
+				showGoods(res);
+				$("img").lazyload({ 
+	                placeholder : "./libs/img/loading-gear.gif",
+	                effect: "fadeIn"
+           		}); 
+			})
+			$('.brand-text').text('');
+			$('.price-text').text('');
+			$('.rightSearch').animate({right:'-9rem'},function(){
+				$('.rightSearch').hide();
+			})
+		})
 		//点击回滚到顶部
 		//大于某个值显示top图标
 		var scrolLen;
@@ -59,12 +99,11 @@ require(['config'],function(){
 				key : res,
 			},
 			success: function(res){
-			showGoods(res);
-			$("img").lazyload({ 
-            	placeholder : "./libs/img/loading-gear.gif",
-             	effect: "fadeIn"
-            })
-	            
+				showGoods(res);
+				$("img").lazyload({ 
+	            	placeholder : "./libs/img/loading-gear.gif",
+	             	effect: "fadeIn"
+	            })  
 			}
 		});
 		
@@ -112,6 +151,7 @@ require(['config'],function(){
 			html = '';
 			console.log(res);
 			if(data.length == 0){
+				$('.pdShow').html('');
 				var $createLi = $('<li/>');
 				str = '<span class="sustain">敬请期待</span>';
 				$createLi.html(str).appendTo($('.pdShow'));
