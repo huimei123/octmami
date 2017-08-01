@@ -1,4 +1,8 @@
-.header_right{
+.header{
+	position:fixed;
+	top:0;
+	z-index:100;
+	.header_right{
 	.icon{
 		font-size:0.633333rem;
 		color:#fff;
@@ -6,7 +10,11 @@
 		top: 0.08rem;
 	}
 }
+}
+
 .section{
+	position:relative;
+	bottom:1.333333rem;
 	.addAddress{
 		display: flex;
 		justify-content: space-between;
@@ -131,28 +139,33 @@
 			justify-content: space-between;
 		}
 	}
-	.sum{
-		font-size:0.346667rem;
-		position:fixed;
-		bottom:0;
-		padding:0.266667rem 0;
-		padding-left:4.666667rem;
-		margin-top: 0.266667rem;
-		border-bottom:0.026667rem solid #d8d8d8;
-		.price{
-			color:#ff6600;
-			font-weight: 900;
-			font-size:0.4rem;
-		}
-		.submit{
-			display: inline-block;
-			height: 0.933333rem;
-			line-height:0.933333rem;
-			color:#fff;
-			padding:0 0.8rem;
-			border-radius:0.16rem;
-			background:#4dc496;
-			margin-left: 0.533333rem;
-		}
+
+}
+.sum{
+	width:100%;
+	font-size:0.346667rem;
+	position:fixed;
+	bottom:0;
+	padding:0.266667rem 0;
+	padding-left:4.366667rem;
+	margin-top: 0.266667rem;
+	z-index: 100;
+	background:#fff;
+	border-top:0.026667rem solid #d8d8d8;
+	.price{
+		color:#ff6600;
+		font-weight: 900;
+		font-size:0.4rem;
+		margin-right: 0.333333rem;
+	}
+	.submit{
+		display: inline-block;
+		height: 0.933333rem;
+		line-height:0.933333rem;
+		color:#fff;
+		padding:0 0.8rem;
+		border-radius:0.16rem;
+		background:#4dc496;
+		
 	}
 }
