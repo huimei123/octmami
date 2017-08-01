@@ -32,9 +32,9 @@ require(['config'],function(){
 
 		// 确认订单对象
 		// var orderPage = {
-		// 	var $address = $('.addAddress');
+			
 		// 	init : function(){
-		// 		// this.$address.
+				
 		// 	}
 
 		// 	// 添加地址

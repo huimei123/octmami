@@ -6,7 +6,7 @@ require(['config'],function(){
 			$(this).insertAfter('.brands_main');
 		});
 
-		var pinyin = ['A','B','C','D','E','F','G']; 
+		var pinyin = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','S','Y','Z']; 
 		var spell = [];
 
 		$.ajax({
