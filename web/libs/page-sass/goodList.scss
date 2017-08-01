@@ -1,8 +1,8 @@
-header{padding:0 0.2rem;
+header{overflow:hidden;
 	.icon{font-size:0.533333rem}
 }
-.section{display:flex;align-items:center;width:100%;line-height:1.5rem;
-	border-bottom:1px solid #e0e0e0;margin-bottom:0.2rem;
+.section{display:flex;align-items:center;width:100%;line-height:1.5rem;overflow:hidden;
+	border-bottom:1px solid #e0e0e0;margin-bottom:0.2rem;overflow:hidden;
 	.price,em{display:inline-block;font-size:0.373333rem;width:25%;text-align:center;
 		line-height:1.2rem;position:relative;}
 	.right-bar{float:right;width: 0.026667rem;height: 0.4rem;margin-top: 0.04rem;
@@ -13,7 +13,7 @@ header{padding:0 0.2rem;
 	em,strong{font-weight:normal;font-style:normal;}
 
 }
-.pd_new_list_detail{
+.pd_new_list_detail{overflow:hidden;
 	 padding:0.266667rem 0.266667rem;border-bottom:1px solid #e0e0e0;margin:0 0.133333rem;
 	a{display:flex;font-size:0.346667rem;color:#333;
 		.pd_show_s_img{width:30%;}
@@ -42,3 +42,31 @@ header{padding:0 0.2rem;
 }
 .sustain{font-size:30px;color:#666;margin:0.4rem;}
 .icon-xiangzuo{font-size:0.6rem !important;color:#fff;}
+.rightSearch{width:90%;height:100%;background:rgba(0,0,0,.6);position:fixed;right:-9rem;top:0;overflow:hidden;
+	z-index:1000;color:#EDEDEA;font-size:0.4rem;display:none;
+	a{color:#EDEDEA;}
+	.rightSearch-title{display:flex;justify-content:space-between;padding:0 0.26rem;height:1.18rem;
+		border-bottom:0.02rem solid #EDEDEA;align-items:center;
+		.titleTitle{font-size:0.5rem;}
+		.confirm_btn{display:block;background:#4DC496;padding:0.133333rem 0.3rem;border-radius:0.066667rem}
+	}
+	.rightSearch-content{
+		p{padding:0 0.266667rem;line-height:0.8rem;margin:0 0.266667rem;border-bottom:0.02rem solid #EDEDEA;padding:0;}
+		.rightSearch-brand{
+			a{display:block;}
+			.choseBrand{margin:0 0.2rem;
+				p{border:0;line-height:0.8rem;display:flex;
+					span{display:inline-block;width:0.8rem;text-align:center}
+				}
+			}
+		}
+		.rightSearch-price{
+			p{border-bottom:0.02rem solid #EDEDEA}
+			.chosePrice{padding:0 0.4rem;}
+			a{display:inline-block;line-height:0.8rem;width:36%;margin-left:0.933333rem;}
+		}
+		.brandshow,.priceshow{display:flex;justify-content:space-between;}
+	}
+}
+.pdScreening{color:#4DC496}
+

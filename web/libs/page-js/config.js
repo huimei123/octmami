@@ -18,9 +18,7 @@ require.config({
 		hxchoice : ['jquery'],
 		bootstrap : ['jquery'],
 		lazyload : ['jquery'],
-
 		lazy : ['jquery'],
-	
 		common: ['jquery']
 
 	}

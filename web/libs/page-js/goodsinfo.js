@@ -212,6 +212,7 @@ require(['config'],function(){
 					//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
 				});
 				//立即购买事件
+
 				this.$buy_now.on('click',function(){
 					//console.log(111);
 					obj['qty'] = $('.qty').val()*1;
@@ -228,6 +229,7 @@ require(['config'],function(){
 					location.href='./order.html';
 
 				})
+
 				//尺寸点击事件
 				this.$sizeBg.on('click','i',function(e){
 					//console.log($(e.target).index());

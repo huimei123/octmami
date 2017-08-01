@@ -1,5 +1,5 @@
 header {
-  padding: 0 0.2rem;
+  overflow: hidden;
 }
 
 header .icon {
@@ -11,8 +11,10 @@ header .icon {
   align-items: center;
   width: 100%;
   line-height: 1.5rem;
+  overflow: hidden;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 0.2rem;
+  overflow: hidden;
 }
 
 .section .price, .section em {
@@ -54,6 +56,7 @@ header .icon {
 }
 
 .pd_new_list_detail {
+  overflow: hidden;
   padding: 0.266667rem 0.266667rem;
   border-bottom: 1px solid #e0e0e0;
   margin: 0 0.133333rem;
@@ -143,4 +146,94 @@ header .icon {
 .icon-xiangzuo {
   font-size: 0.6rem !important;
   color: #fff;
+}
+
+.rightSearch {
+  width: 90%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  right: -9rem;
+  top: 0;
+  overflow: hidden;
+  z-index: 1000;
+  color: #EDEDEA;
+  font-size: 0.4rem;
+  display: none;
+}
+
+.rightSearch a {
+  color: #EDEDEA;
+}
+
+.rightSearch .rightSearch-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.26rem;
+  height: 1.18rem;
+  border-bottom: 0.02rem solid #EDEDEA;
+  align-items: center;
+}
+
+.rightSearch .rightSearch-title .titleTitle {
+  font-size: 0.5rem;
+}
+
+.rightSearch .rightSearch-title .confirm_btn {
+  display: block;
+  background: #4DC496;
+  padding: 0.133333rem 0.3rem;
+  border-radius: 0.066667rem;
+}
+
+.rightSearch .rightSearch-content p {
+  padding: 0 0.266667rem;
+  line-height: 0.8rem;
+  margin: 0 0.266667rem;
+  border-bottom: 0.02rem solid #EDEDEA;
+  padding: 0;
+}
+
+.rightSearch .rightSearch-content .rightSearch-brand a {
+  display: block;
+}
+
+.rightSearch .rightSearch-content .rightSearch-brand .choseBrand {
+  margin: 0 0.2rem;
+}
+
+.rightSearch .rightSearch-content .rightSearch-brand .choseBrand p {
+  border: 0;
+  line-height: 0.8rem;
+  display: flex;
+}
+
+.rightSearch .rightSearch-content .rightSearch-brand .choseBrand p span {
+  display: inline-block;
+  width: 0.8rem;
+  text-align: center;
+}
+
+.rightSearch .rightSearch-content .rightSearch-price p {
+  border-bottom: 0.02rem solid #EDEDEA;
+}
+
+.rightSearch .rightSearch-content .rightSearch-price .chosePrice {
+  padding: 0 0.4rem;
+}
+
+.rightSearch .rightSearch-content .rightSearch-price a {
+  display: inline-block;
+  line-height: 0.8rem;
+  width: 36%;
+  margin-left: 0.933333rem;
+}
+
+.rightSearch .rightSearch-content .brandshow, .rightSearch .rightSearch-content .priceshow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pdScreening {
+  color: #4DC496;
 }
