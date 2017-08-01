@@ -133,6 +133,7 @@ require(['config'],function(){
 			$colorBg:$('.colorBg'),
 			$info_arrow:$('.info_arrow'),
 			$share:$('.share'),
+			$btn_cancle:$('.btn_cancle'),
 			init : function(){
 				//添加物品事件
 				this.$jia.on('click',function(){
@@ -251,7 +252,12 @@ require(['config'],function(){
 					//console.log(111);
 					//console.log(document.documentElement.clientHeight);
 					//console.log($('body').width());
-					//$('.shareBg').show();
+					$('.shareBg').show();
+					$('.shareWin').attr('style',`top: ${document.documentElement.clientHeight}px;`).show().animate({'top':document.documentElement.clientHeight*0.75});
+				});
+				this.$btn_cancle.on('click',function(){
+					$('.shareBg').hide();
+					$('.shareWin').hide();
 				});
 				//返回顶部监听
 				setInterval(function(){
