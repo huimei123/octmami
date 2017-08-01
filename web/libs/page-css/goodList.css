@@ -1,5 +1,5 @@
 header {
-  padding: 0 0.2rem;
+  overflow: hidden;
 }
 
 header .icon {
@@ -11,8 +11,10 @@ header .icon {
   align-items: center;
   width: 100%;
   line-height: 1.5rem;
+  overflow: hidden;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 0.2rem;
+  overflow: hidden;
 }
 
 .section .price, .section em {
@@ -54,6 +56,7 @@ header .icon {
 }
 
 .pd_new_list_detail {
+  overflow: hidden;
   padding: 0.266667rem 0.266667rem;
   border-bottom: 1px solid #e0e0e0;
   margin: 0 0.133333rem;
@@ -152,6 +155,7 @@ header .icon {
   position: fixed;
   right: -9rem;
   top: 0;
+  overflow: hidden;
   z-index: 1000;
   color: #EDEDEA;
   font-size: 0.4rem;
