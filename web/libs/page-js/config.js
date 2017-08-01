@@ -2,7 +2,7 @@ require.config({
 	paths : {
 		jquery :　'../jquery/jquery-3.1.1',
 		swiper : '../swiper/swiper-3.4.2.jquery.min',
-		hxLimitTime : '../hxLimitTime/hx-limitTime',
+		hxLimitTime : '../hxlimitTime/hx-limitTime',
 		common : '../common/common',
 		hxchoice : '../hxchoice/hxchoice',
 		bootstrap : '../bootstrap/bootstrap.min',
@@ -18,9 +18,7 @@ require.config({
 		hxchoice : ['jquery'],
 		bootstrap : ['jquery'],
 		lazyload : ['jquery'],
-
 		lazy : ['jquery'],
-	
 		common: ['jquery']
 
 	}

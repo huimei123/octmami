@@ -132,6 +132,7 @@ require(['config'],function(){
 			$sizeBg:$('.sizeBg'),
 			$colorBg:$('.colorBg'),
 			$info_arrow:$('.info_arrow'),
+			$share:$('.share'),
 			init : function(){
 				//添加物品事件
 				this.$jia.on('click',function(){
@@ -244,6 +245,13 @@ require(['config'],function(){
 						$('.colorType').eq(i-1).removeClass('active');
 					}
 					$('.colorType').eq($(e.target).index()*1-1).addClass('active');
+				});
+				//分享按钮
+				this.$share.on('click',function(){
+					//console.log(111);
+					//console.log(document.documentElement.clientHeight);
+					//console.log($('body').width());
+					//$('.shareBg').show();
 				});
 				//返回顶部监听
 				setInterval(function(){
