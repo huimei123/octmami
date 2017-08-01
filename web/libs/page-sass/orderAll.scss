@@ -1,5 +1,5 @@
 .header{
-	position:fixed;
+	position:absolute;
 	top:0;
 	z-index:100;
 	.header_right{
@@ -13,8 +13,11 @@
 }
 
 .section{
-	position:relative;
+	position:absolute;
+	top:1.333333rem;
 	bottom:1.333333rem;
+	height:auto;
+	padding-bottom:1.333333rem;
 	.addAddress{
 		display: flex;
 		justify-content: space-between;
@@ -66,10 +69,11 @@
 		align-items:center;
 		padding:0.8rem 0.433333rem;
 		font-size:0.346667rem;
+		border-bottom: 0.026667rem solid #d8d8d8;
 		.order_pro_pic{
 			padding-right:0.133333rem;
 			width: 15%;
-			// height: 90%;
+			
 		}
 		.order_pro_text{
 			width: 50%;
@@ -90,7 +94,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items:center;
-		padding:0 0.533333rem;
+		padding:0.266667rem 0.533333rem 0;
 		border-bottom: 0.026667rem solid #d8d8d8;
 
 		textarea{
@@ -131,6 +135,7 @@
 		flex-wrap: wrap;
 		padding: 0.533333rem;
 		font-size:0.346667rem;
+		padding-bottom: 2rem;
 		border-bottom: 0.026667rem solid #d8d8d8;
 		p{
 			width: 100%;
@@ -148,7 +153,6 @@
 	bottom:0;
 	padding:0.266667rem 0;
 	padding-left:4.366667rem;
-	margin-top: 0.266667rem;
 	z-index: 100;
 	background:#fff;
 	border-top:0.026667rem solid #d8d8d8;

@@ -4,7 +4,6 @@ require(['config'],function(){
 		//后退
 		$('.header_left .icon').on('click',function(){
 			history.back();
-			
 		});
 
 		//获取localStorage的收件人信息
@@ -19,16 +18,7 @@ require(['config'],function(){
 		//获取订单信息
 		var shoppingcar = JSON.parse(localStorage.shoppingcar);
 		console.log(shoppingcar);
-		// $('.order_pro_pic img').attr('src',`./libs/img/productImg/${buyNow.img}`);
-		// $('.order_pro_text').text(buyNow.productName);
-		// $('.price').text(`¥${buyNow.price}`);
-		// $('.qty').text(buyNow.qty);
-
-
-		//订单金额
-		// var sum = `¥${buyNow.price * buyNow.qty}`;
-		// $('.orderPrice').text(sum);
-		// $('.sum .price').text(sum);
+		
 
 		// 确认订单对象
 		var orderPage = {

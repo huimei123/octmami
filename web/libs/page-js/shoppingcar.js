@@ -209,6 +209,11 @@ require(['config'],function(){
 						$('.goodsNull').hide();
 					}
 				})
+				// 立即结算
+				this.$btn_balance.on('click',function(){
+					location.href = './orderAll.html';
+				});
+
 			}
 		}
 		//初始化对象
