@@ -1,22 +1,34 @@
 require(['config'],function(){
 	require(['jquery','common'],function($){
 		
-		console.log(localStorage.myInfor);
-		var newInfor = JSON.parse(localStorage.myInfor);
-		var born = newInfor.born;
+		$.ajax({
+			url :  toggle+'updateusersDetails',
+				type : 'post',						
+				data : {
+					data:JSON.stringify({
+						id : localStorage.getItem('id'),
+					}),
+				},
+				success: function(res){
+					console.log(res);
+					var data = res.data[0];
+					console.log(data.nickname);
+					var born = data.born;
+					
+					//修改个人信息
+					$('.nickName').attr('value',data.nickname);
+					$('#b_year').attr('value',born.year);
+					$('#b_month').attr('value',born.month);
+					if(data.gender == '男'){
+						$('.sex').eq(1).addClass('active');
+					}else{
+						$('.sex').eq(0).addClass('active');
+					}	
+				}
+		});
 
-		console.log(newInfor.gender);
-		//修改个人信息
-		$('.nickName').attr('value',newInfor.nickname);
-		$('.gender').addClass('active').removeClass('active');
-		$('#b_year').attr('value',born.year);
-		$('#b_month').attr('value',born.month);
-		console.log($('.sex').text());
-		if(newInfor.gender == '男'){
-			$('.sex').eq(1).addClass('active');
-		}else{
-			$('.sex').eq(0).addClass('active');
-		}
+		
+		
 				
 		// 信息对象
 		var myInforPage = {
@@ -60,23 +72,8 @@ require(['config'],function(){
 							}),
 						},
 						success : function(res){
+							console.log(res);
 							
-							// data = res.data;
-							// born = data[0].born;
-							// //新的个人信息对象
-							// var newInfor = {
-							// 	id : id,
-							// 	username : username,
-							// 	nickname : data.nickname,
-							// 	gender : data.gender,
-							// 	born : { 'year' : born.year, 'month' :born.month},
-							// };
-							// // 先用JSON.stringify()方法将json对象转换成字符串形式
-							// newInfor = JSON.stringify(newInfor);
-							// localStorage.setItem('myNewInfor',newInfor);
-
-							// newInfor = JSON.parse(localStorage.getItem('myNewInfor'));
-
 							
 						}
 					});
