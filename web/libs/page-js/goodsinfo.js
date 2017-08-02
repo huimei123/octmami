@@ -212,12 +212,13 @@ require(['config'],function(){
 					var storage = window.localStorage;
 					storage.setItem('shoppingcar',stingObj);
 					//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
+					//console.log(localStorage.getItem('id'))
 					if(localStorage.getItem('username').length!=0){
 						$.ajax({
 							url:toggle+'updateusersDetails',
 							data:{
-								id:localStorage.getItem('id'),
-								data:JSON.stringify(obj),
+							id:localStorage.getItem('id'),
+							carStr:JSON.stringify(obj)
 							},
 							type:'POST',
 							success:function(res){

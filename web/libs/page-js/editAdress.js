@@ -198,8 +198,8 @@ require(['config'],function(){
 						url : toggle +  'updateusersDetails',
 						type : 'post',
 						data : {
-							data:JSON.stringify({
 								id: infor.id,
+								detailStr:JSON.stringify({
 								receiver : Addaddress.receiver,
 								phone : Addaddress.phone,
 								province : Addaddress.province,
