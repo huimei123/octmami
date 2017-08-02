@@ -5,19 +5,26 @@ global.baseurl = 'http://10.3.134.218:8888/';
 var local = 'http://localhost:8888/';
 
 var yeyeye = 'http://10.3.134.228:8888/';
+
 var toggle = yeyeye;
+
 
 
 
 
 //动态设置viewport的scale
 var iScale = 1;
-iScale = 1 / window.devicePixelRatio;
-document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=' + iScale + ',minimum-scale=' + iScale + ',maximum-scale=' + iScale + '">')
+
+iScale = iScale / window.devicePixelRatio;
+document.write('<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=' + iScale + ',minimum-scale=' + iScale + ',maximum-scale=' + iScale + '">');
+
 //动态计算html的font-size
 var iWidth = document.documentElement.clientWidth;
 document.getElementsByTagName('html')[0].style.fontSize = iWidth / 10+ 'px';       	
 //1rem=75px
+// alert(iScale);
+// alert(iWidth);
+// alert(iWidth / 10+ 'px');
 
 
 

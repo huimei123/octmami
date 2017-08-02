@@ -18,7 +18,7 @@ exports.usersDetails = function(app){
 	});
 	//更新修改用户信息,购物车，收藏等
 	app.post('/updateusersDetails', urlencodedParser, function(request, response){
-		//console.log('修改个人信息',request.body);
+		console.log('前端信息',request.body);
 		var str = JSON.parse(request.body.data);
 		//console.log('_id',str.id);
 		var serchGood = {"_id":new ObjectID(String(str.id))};
