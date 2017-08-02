@@ -251,7 +251,7 @@ require(['config'],function(){
 					//console.log(111);
 					//console.log(document.documentElement.clientHeight);
 					//console.log($('body').width());
-					$('.shareBg').show();
+					//$('.shareBg').show();
 				});
 				//返回顶部监听
 				setInterval(function(){

@@ -31,8 +31,10 @@ require(['config'],function(){
 		//判断是否有商品，进行显示
 		if(goodsArr==null){
 			$('.footNav').hide();
+			$('.foot').hide();
 		}else{
 			$('.goodsNull').hide();
+			$('.foot').show();
 			var html = goodsArr.map(function(item){
 			//console.log(item);
 			return`
