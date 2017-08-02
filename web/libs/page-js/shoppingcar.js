@@ -29,7 +29,7 @@ require(['config'],function(){
 		goodsArr = JSON.parse(localStorage.getItem('shoppingcar'));
 		console.log(goodsArr);
 		//判断是否有商品，进行显示
-		if(goodsArr==null){
+		if(goodsArr.length==0){
 			$('.footNav').hide();
 			$('.foot').hide();
 		}else{
@@ -211,6 +211,16 @@ require(['config'],function(){
 				})
 				// 立即结算
 				this.$btn_balance.on('click',function(){
+					var buy_goods =[];
+					goodsArr.forEach(function(item,idx){
+						if($('.select').eq(idx).hasClass('act')){
+							buy_goods.push(item);
+							goodsArr.splice(idx,1);
+						}
+					});
+					//console.log(buy_goods);
+					localStorage.setItem('shoppingcar',JSON.stringify(goodsArr)); 
+					localStorage.setItem('buy',JSON.stringify(buy_goods));
 					location.href = './orderAll.html';
 				});
 
