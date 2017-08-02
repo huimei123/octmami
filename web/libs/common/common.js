@@ -12,7 +12,7 @@ var toggle = yeyeye;
 
 //动态设置viewport的scale
 var iScale = 1;
-iScale = iScale / window.devicePixelRatio;
+iScale = 1 / window.devicePixelRatio;
 document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=' + iScale + ',minimum-scale=' + iScale + ',maximum-scale=' + iScale + '">')
 //动态计算html的font-size
 var iWidth = document.documentElement.clientWidth;
