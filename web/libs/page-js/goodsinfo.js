@@ -200,7 +200,8 @@ require(['config'],function(){
 								goodsArr.push(obj);
 						}
 
-					}					
+					}
+					console.log(obj);					
 					number = number*1+$('.qty').val()*1;			
 					$('.foot_car_set span').html(number);
 					//console.log(obj);
@@ -211,6 +212,19 @@ require(['config'],function(){
 					var storage = window.localStorage;
 					storage.setItem('shoppingcar',stingObj);
 					//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
+					if(localStorage.getItem('username').length!=0){
+						$.ajax({
+							url:toggle+'updateusersDetails',
+							data:{
+								id:localStorage.getItem('username'),
+								data:JSON.stringify(obj),
+							},
+							type:'POST',
+							success:function(res){
+								console.log(res);
+							}
+						})
+					}
 				});
 				//立即购买事件
 
