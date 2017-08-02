@@ -32,7 +32,7 @@ require(['config'],function(){
 			autoplayDisableOnInteraction : false,
   		});
   		//限时特惠请求
-		$.ajax({
+		/*$.ajax({
 			url:toggle+'timeLimit',
 			dataType:'json',
 			type:'POST',
@@ -72,7 +72,7 @@ require(['config'],function(){
 					}
 				});
 			}
-		});
+		});*/
 		
 		//首页对象
 		var indexPage = {
@@ -80,7 +80,29 @@ require(['config'],function(){
 			$limitTime : $('.limitTime'),
 			$choice: $('.choice'),
 			$search:$('.header_search'),
+			times:0,
+			arrObj:[{url:toggle+'timeLimit',
+						fn:function(res){
+							$('.limitTime').hxLimitTime({
+								data: res.data,
+							});
+						}},
+					{url: toggle+'selection',
+						fn:function(res){
+							$('.choice').hxchoice({
+								data: res.data,
+							});
+						}},
+					{url: toggle+'flashSale',
+						fn:function(res){
+							$('.choiceOther').hxchoice({
+								data: res.data,
+								type:0,
+							});
+						}}
+					],
 			init : function(){
+				this.fnAjax();
 				//返回顶部
 				setInterval(function(){
 					//console.log($('body').scrollTop());
@@ -107,6 +129,32 @@ require(['config'],function(){
 				});
 				//console.log($('.header_search'));
 			},
+			fnAjax:function(){
+				console.log(this.arrObj);
+				//while(i<this.arrObj.length){
+					$.ajax({
+						url: this.arrObj[this.times].url,
+						dataType:'json',
+						type:'POST',
+						success: function(res){
+							console.log(res);
+							if(res.status==true){
+								this.arrObj[this.times].fn(res);
+								//console.log(this.arrObj[i].fn);
+								this.times++;
+								if(this.times>=this.arrObj.length){
+									//break;
+								}else{
+									this.fnAjax();
+								}
+								
+							}
+						}.bind(this)
+					});
+				//}
+				
+			},
+
 		};
 		//初始化
 		indexPage.init();
