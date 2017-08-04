@@ -13,7 +13,7 @@ require(['config'],function(){
 		$('<section/>').addClass('title').load('search.html',function(){
 			$(this).insertBefore('.swiper-container');
 			console.log();
-			$('.header_search').on('click',function(){
+			$('.header_search').on('touchstart',function(){
 					//var id = $(this).data('id');
 					console.log(666);
 					location.href = './hotSearch.html';
@@ -116,21 +116,21 @@ require(['config'],function(){
 					}
 				}.bind(this),1500);
 
-				this.$limitTime.on('click','li',function(e){
+				this.$limitTime.on('touchstart','li',function(e){
 					//console.log(this);
 					//console.log(e.target);
 					var id = $(this).data('id');
 					location.href = './goodsinfo.html?_id='+id;
 				});
 
-				this.$choice.on('click','li',function(){
+				this.$choice.on('touchstart','li',function(){
 					var id = $(this).data('id');
 					location.href = './goodsinfo.html?_id='+id;
 				});
 				//console.log($('.header_search'));
 			},
 			fnAjax:function(){
-				console.log(this.arrObj);
+				alert('进入ajax方法');
 				//while(i<this.arrObj.length){
 					$.ajax({
 						url: this.arrObj[this.times].url,
@@ -138,6 +138,7 @@ require(['config'],function(){
 						type:'POST',
 						success: function(res){
 							console.log(res);
+							alert('回调信息');
 							if(res.status==true){
 								this.arrObj[this.times].fn(res);
 								//console.log(this.arrObj[i].fn);

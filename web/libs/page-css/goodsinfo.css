@@ -141,7 +141,7 @@
     border: 1px solid #c1c1c1;
     color: #666;
     background: #fff;
-    cursor: default;
+    disable:"disable";
 }
 .disable{
     background-position: -2.133333rem 0px!important;

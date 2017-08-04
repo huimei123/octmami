@@ -6,7 +6,7 @@ var local = 'http://localhost:8888/';
 
 var yeyeye = 'http://10.3.134.228:8888/';
 
-var toggle = yeyeye;
+var toggle = global.baseurl;
 
 
 
@@ -15,6 +15,7 @@ var toggle = yeyeye;
 //动态设置viewport的scale
 var iScale = 1;
 iScale = iScale / window.devicePixelRatio;
+// document.write(123);
 document.write('<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=' + iScale + ',minimum-scale=' + iScale + ',maximum-scale=' + iScale + '">');
 //动态计算html的font-size
 var iWidth = document.documentElement.clientWidth;

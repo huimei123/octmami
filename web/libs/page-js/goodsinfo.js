@@ -136,12 +136,12 @@ require(['config'],function(){
 			$btn_cancle:$('.btn_cancle'),
 			init : function(){
 				//添加物品事件
-				this.$jia.on('click',function(){
+				this.$jia.on('touchstart',function(){
 					$('.qty').val(Number($('.qty').val())+1);
 					$('.jian').removeClass('disable');
 				});
 				//减少物品事件
-				this.$jian.on('click',function(){
+				this.$jian.on('touchstart',function(){
 					if($('.qty').val()==2){
 						//console.log(111);
 						$('.qty').val(Number($('.qty').val())-1);
@@ -151,7 +151,7 @@ require(['config'],function(){
 					}			
 				});
 				//放入购物车点击事件
-				this.$btn_buy.on('click',function(){
+				this.$btn_buy.on('touchstart',function(){
 					//console.log($('.colorType.active').text());	
 					//console.log($('.sizeType.active').text());
 					$('.tips').show().animate({opacity:1}).animate({opacity:0});
@@ -212,7 +212,7 @@ require(['config'],function(){
 					var storage = window.localStorage;
 					storage.setItem('shoppingcar',stingObj);
 					//console.log(JSON.parse(localStorage.getItem('shoppingcar')));
-					if(localStorage.getItem('username').length!=0){
+					if(localStorage.getItem('username')!=null){
 						$.ajax({
 							url:toggle+'updateusersDetails',
 							data:{
@@ -228,7 +228,7 @@ require(['config'],function(){
 				});
 				//立即购买事件
 
-				this.$buy_now.on('click',function(){
+				this.$buy_now.on('touchstart',function(){
 					//console.log(111);
 					obj['qty'] = $('.qty').val()*1;
 					obj['size']= $('.sizeType.active').text()+"";
@@ -246,7 +246,7 @@ require(['config'],function(){
 				})
 
 				//尺寸点击事件
-				this.$sizeBg.on('click','i',function(e){
+				this.$sizeBg.on('touchstart','i',function(e){
 					//console.log($(e.target).index());
 					for(var i=1;i<=sizeNum;i++){
 						$('.sizeType').eq(i-1).removeClass('active');
@@ -254,7 +254,7 @@ require(['config'],function(){
 					$('.sizeType').eq($(e.target).index()*1-1).addClass('active');
 				});
 				//颜色点击事件
-				this.$colorBg.on('click','i',function(e){
+				this.$colorBg.on('touchstart','i',function(e){
 					//console.log($(e.target).index());
 					for(var i=1;i<=sizeNum;i++){
 						$('.colorType').eq(i-1).removeClass('active');
@@ -262,14 +262,14 @@ require(['config'],function(){
 					$('.colorType').eq($(e.target).index()*1-1).addClass('active');
 				});
 				//分享按钮
-				this.$share.on('click',function(){
+				this.$share.on('touchstart',function(){
 					//console.log(111);
 					//console.log(document.documentElement.clientHeight);
 					//console.log($('body').width());
 					$('.shareBg').show();
 					$('.shareWin').attr('style',`top: ${document.documentElement.clientHeight}px;`).show().animate({'top':document.documentElement.clientHeight*0.75});
 				});
-				this.$btn_cancle.on('click',function(){
+				this.$btn_cancle.on('touchstart',function(){
 					$('.shareBg').hide();
 					$('.shareWin').hide();
 				});
@@ -285,7 +285,7 @@ require(['config'],function(){
 						$('.toTop').hide();
 					}
 				}.bind(this),1500);
-				this.$info_arrow.on('click',function(){
+				this.$info_arrow.on('touchstart',function(){
 					history.back();
 				});
 			}			

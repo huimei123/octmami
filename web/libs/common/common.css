@@ -6,12 +6,12 @@
 ul li{list-style: none;}
 a{text-decoration: none;}
 /* 禁用iPhone中Safari的字号自动调整 */
-html { -webkit-text-size-adjust: none; }
-/* 设置HTML5元素为块 */
+/* html { -webkit-text-size-adjust: none; }
+设置HTML5元素为块
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-/* 设置图片视频等自适应调整 */
-img { max-width: 100%; height: auto; width: auto; /* ie8 */ }
-.video embed, .video object, .video iframe { width: 100%; height: auto; }
+设置图片视频等自适应调整
+img { max-width: 100%; height: auto; width: auto; ie8 }
+.video embed, .video object, .video iframe { width: 100%; height: auto; } */
  
  
 body { font: 14px/22px, Helvetica, Arial, sans-serif; background: #fff; color: #595959; overflow-y: scroll; overflow-x: hidden; *overflow-y: auto !important;height: 100%;width: 100%; }
@@ -20,13 +20,13 @@ a { text-decoration: none; cursor: pointer; }
 li { list-style: none; }
 a { text-decoration: none; color: #555756; }
 
-a img { border: none; }
+/* a img { border: none; }
 a > img { vertical-align: bottom; }
 .min-height { min-height: 0; height: auto; _height: 0; overflow: hidden; _overflow: visible; }
 .position-absolute { position: absolute; }
 .position-relative { position: relative; }
 .overflow-hidden { overflow: hidden; }
-button{ border:none; outline: none; }
+button{ border:none; outline: none; } */
 
 /*iconfont样式*/
 .icon {
@@ -36,4 +36,33 @@ button{ border:none; outline: none; }
    fill: currentColor;
    overflow: hidden;
 }
+
+/* html {
+    font-size : 40px;
+}
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 50px !important;
+    }
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 55px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 60px !important; 
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 70px !important; 
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 80px !important; 
+    }
+} */
 

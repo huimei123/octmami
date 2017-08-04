@@ -29,7 +29,7 @@ require(['config'],function(){
 		goodsArr = JSON.parse(localStorage.getItem('shoppingcar'));
 		console.log(goodsArr);
 		//判断是否有商品，进行显示
-		if(goodsArr.length==0){
+		if(goodsArr==null){
 			$('.footNav').hide();
 			$('.foot').hide();
 		}else{
@@ -39,18 +39,27 @@ require(['config'],function(){
 			//console.log(item);
 			return`
 				<li class="carList" data-id="${item.id}">
-				<div class="select "></div>
+				<div class="select act"></div>
 				<img class="btn_img" src="./libs/img/productImg/${item.img}"/>
 				<div class="productName">${item.productName}</div>
 				<div class="attr"><span style="display:${item.size==""?"none":""}">尺寸:${item.size}</span>&nbsp;&nbsp;&nbsp;<span style="display:${item.color==""?"none":""}">颜色:${item.color}</span></div>
 				<div class="price">¥${item.price}</div>
 				<div class="baoyou">包邮</div>
-				<div class="cal"><i class="jian">-</i><input type="text" value='${item.qty}'/><i class="jia">+</i></div>
+				<div class="cal"><i class="jian">-</i><input type="text" readOnly=true value='${item.qty}'/><i class="jia">+</i></div>
 				<div class="delete"></div>
 				</li>
 			`
 			}).join("");
 			$('<ui/>').html(html).appendTo($('.list'));
+			var total=0;
+			goodsArr.forEach(function(item,idx){
+						if($('.select').eq(idx).hasClass('act')){
+							total +=item.qty*1*(item.price.replace('.00',""));
+						}						
+			});
+			$('.total_price span').text(total+'.00');
+			$('.select_all').addClass('act');
+			console.log(111);
 		}
 			//console.log(goodsArr);
 		//shoppingcar对象
@@ -65,13 +74,14 @@ require(['config'],function(){
 			$select_all : $('.select_all'),
 			$delete :$('.delete'),
 			init:function(){
+				
 				//点击跳转到详情页
-				this.$btn_img.on('click',function(e){
+				this.$btn_img.on('touchstart',function(e){
 					var id = $(e.target).parent().data('id');
 					location.href = './goodsinfo.html?_id='+id;
 				})
 				//点击加商品
-				this.$jia.on('click',function(e){
+				this.$jia.on('touchstart',function(e){
 					//console.log($(this).index());
 					var total=0;
 					var num = $(e.target).parent().parent().find('input').val()*1;
@@ -91,7 +101,7 @@ require(['config'],function(){
 					
 				}.bind(this));
 				//点击减商品
-				this.$jian.on('click',function(e){
+				this.$jian.on('touchstart',function(e){
 					var total=0;
 					var num = $(e.target).parent().parent().find('input').val()*1;
 					if(num==1){
@@ -116,7 +126,7 @@ require(['config'],function(){
 
 				}.bind(this));
 				//list选择
-				this.$list.on('click','.select',function(e){
+				this.$list.on('touchstart','.select',function(e){
 					var total=0;
 					var times = 0;
 					this.$select_all.addClass('act');
@@ -134,7 +144,7 @@ require(['config'],function(){
 					this.$pageSpan.text(total+'.00');
 				}.bind(this));
 				//全选
-				this.$select_all.on('click',function(e){
+				this.$select_all.on('touchstart',function(e){
 					var total=0;
 					$(e.target).hasClass('act')?selectAllNone():selectAll();
 					function selectAll(){
@@ -159,22 +169,22 @@ require(['config'],function(){
 					this.$pageSpan.text(total+'.00');
 				}.bind(this));
 				//删除
-				this.$delete.on('click',function(e){
+				this.$delete.on('touchstart',function(e){
 					$('.tips').show();
 					event = e;
 						
 				}.bind(this));
 				//返回
-				$('.head_arrow').on('click',function(){
+				$('.head_arrow').on('touchstart',function(){
 					history.back();
 				})
 				//取消删除
-				$('.btn_cancle').on('click',function(){
+				$('.btn_cancle').on('touchstart',function(){
 					clickType = false;
 					$('.tips').hide();
 				})
 				//确定删除
-				$('.btn_sure').on('click',function(){
+				$('.btn_sure').on('touchstart',function(){
 					clickType = true;
 					$('.tips').hide();
 					var total=0;
@@ -210,7 +220,7 @@ require(['config'],function(){
 					}
 				})
 				// 立即结算
-				this.$btn_balance.on('click',function(){
+				this.$btn_balance.on('touchstart',function(){
 					var buy_goods =[];
 					goodsArr.forEach(function(item,idx){
 						if($('.select').eq(idx).hasClass('act')){
