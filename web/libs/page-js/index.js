@@ -130,15 +130,15 @@ require(['config'],function(){
 				//console.log($('.header_search'));
 			},
 			fnAjax:function(){
-				alert('进入ajax方法');
+				//alert('进入ajax方法');
 				//while(i<this.arrObj.length){
 					$.ajax({
 						url: this.arrObj[this.times].url,
 						dataType:'json',
 						type:'POST',
 						success: function(res){
-							console.log(res);
-							alert('回调信息');
+							//console.log(res);
+							//alert('回调信息');
 							if(res.status==true){
 								this.arrObj[this.times].fn(res);
 								//console.log(this.arrObj[i].fn);
